@@ -1,0 +1,329 @@
+<link rel="stylesheet" href="/plugins/vigipool/core/template/css/vigipool_ui.css">
+
+<div style="height: 800px;" class="cmd #history# " data-type="info" data-subtype="numeric" data-template="vigipool_ui" data-cmd_id="#id#" data-cmd_uid="#uid#" data-version="#version#" data-eqLogic_id="#eqLogic_id#">
+    <div class="top_container" >
+        <div class="top_box">
+            <div class="scroll_container">
+                <div class="scroll_sliding-background">
+                </div>
+            </div>
+        </div>
+        <div class="top_box top_overlay">
+            <table class="table scrolling-image-container" >
+                <tbody class="scrolling-image">
+
+                    <!-- Common -->
+
+                    <tr style="background-color: transparent !important">
+                        <td><img class="vigipool_ui_center_image" src="/plugins/vigipool/desktop/img/vigipool.png" alt="vigipool" width="100" ></td>
+                    </tr>
+                    <tr style="background-color: transparent !important">
+                        <td><img class="vigipool_ui_center_image vigipool_ui_logo" src="/plugins/vigipool/desktop/img/gear-wide-connected.svg" alt="settings" width="25" height="25" ></td>
+                    </tr>
+                    <tr style="background-color: transparent !important">
+                        <td class="vigipool_ui_mqtt" style="text-align: center"><img class="vigipool_ui_mqtt_icon" src="/plugins/vigipool/desktop/img/wifi.svg" alt="mqtt" width="25" height="25"/></td>
+                    </tr>
+                    <tr style="background-color: transparent !important">
+                        <td class="center vigipool_ui_text vigipool_ui_water_temp">27°C</td>
+                    </tr>
+                    <tr style="opacity: 0">
+                        <td></td>
+                    </tr>
+                    <tr style="opacity: 0">
+                        <td></td>
+                    </tr>
+                    <tr style="opacity: 0">
+                        <td></td>
+                    </tr>
+                    <tr style="opacity: 0">
+                        <td></td>
+                    </tr>
+                    <tr style="opacity: 0">
+                        <td></td>
+                    </tr>
+                    <tr style="opacity: 0">
+                        <td></td>
+                    </tr>
+                    <tr style="opacity: 0">
+                        <td></td>
+                    </tr>
+                    <tr style="opacity: 0">
+                        <td></td>
+                    </tr>
+                    <tr style="opacity: 0">
+                        <td></td>
+                    </tr>
+                    <tr style="opacity: 0">
+                        <td></td>
+                    </tr>
+                    
+                    <!-- ||||| Tild ||||| -->
+
+                    <!-- light -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_light_label">
+                                <p class="center vigipool_ui_text">Light</p>
+                            </div>
+                            <div class="vigipool_ui_light_state">
+                                <img class="vigipool_ui_center_image vigipool_ui_light_circle" src="/plugins/vigipool/desktop/img/light_white.png" alt="vigipool_ui_light_circle" width="75" height="75"/>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- filtration  -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_filt_label">
+                                <p class="center vigipool_ui_text">Filtration</p>
+                            </div>
+                            <div class="vigipool_ui_filt_state">
+                                <img class="vigipool_ui_center_image vigipool_ui_tild_flow_on_1" src="/plugins/vigipool/desktop/img/filtration_off.svg" alt="vigipool_ui_flow_on_1" width="75" height="75"/>
+                                <img class="vigipool_ui_center_image vigipool_ui_tild_flow_on_2" src="/plugins/vigipool/desktop/img/filtration_on.svg" alt="vigipool_ui_flow_on_2" width="75" height="75"/>
+                                <img class="vigipool_ui_center_image vigipool_ui_tild_flow_on_3" src="/plugins/vigipool/desktop/img/filtration_off.svg" alt="vigipool_ui_flow_on_3" width="75" height="75"/>
+                                <img class="vigipool_ui_center_image vigipool_ui_tild_flow_on_4" src="/plugins/vigipool/desktop/img/filtration_on.svg" alt="vigipool_ui_flow_on_4" width="75" height="75"/>            
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Auxiliary -->
+
+                    <tr style="background-color: transparent !important">
+                        <td class="vigipool_ui_aux_label">
+                            <div class="vigipool_ui_aux_label">
+                                <p class="center vigipool_ui_text">Treatment</p>
+                            </div>
+                            <div class="vigipool_ui_aux_state">
+                                <div class="vigipool_ui_tild_container_row" >
+                                    <div class="vigipool_ui_aux_layer_1">
+                                        <img class="vigipool_ui_center_image vigipool_ui_aux_circle" src="/plugins/vigipool/desktop/img/auxiliary_on.svg" alt="vigipool_ui_aux_circle" width="75" height="75"/>
+                                    </div>
+                                    <div class="vigipool_ui_aux_layer_2">
+                                        <p class="center clickable">40°C</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- ||||| PhileoX / Phileo VP ||||| -->
+
+                    <!-- PH -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_source_ph_label">
+                                <p class="center vigipool_ui_text">Régulation PH</p>
+                            </div>
+                            <div class="vigipool_ui_source_ph_state">
+                                <p class="center vigipool_ui_text"><i class="fas fa-arrow-circle-right"></i></p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- ||||| Ziphox / Ofix ||||| -->
+
+                    <!-- ORP -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_source_orp_label">
+                                <p class="center vigipool_ui_text">Régulation ORP</p>
+                            </div>
+                            <div class="vigipool_ui_source_orp_state">
+                                <p class="center vigipool_ui_text"><i class="fas fa-arrow-circle-right"></i></p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- inject_on -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_inject_on_label">
+                                <p class="center vigipool_ui_text">Injection en cours</p>
+                            </div>
+                            <div class="vigipool_ui_inject_on_state">
+                                <p class="center vigipool_ui_text">Off</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- vol_max_24h -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_vol_max_24h_label">
+                                <p class="center vigipool_ui_text">Injection en cours</p>
+                            </div>
+                            <div class="vigipool_ui_vol_max_24h_state">
+                                <p class="center vigipool_ui_text">0,0 L / 1.9 L</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- ||||| AnteaM ||||| -->
+
+                    <!-- light M -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_light_m_label">
+                                <p class="center vigipool_ui_text">Light</p>
+                            </div>
+                            <div class="vigipool_ui_light_m_state">
+                                <img class="vigipool_ui_center_image vigipool_ui_light_m_circle" src="/plugins/vigipool/desktop/img/light_white.png" alt="vigipool_ui_light_m_circle" width="75" height="75"/>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Filtration M -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_filt_m_label">
+                                <p class="center vigipool_ui_text">Filtration</p>
+                            </div>
+                            <div class="vigipool_ui_filt_m_state">
+                                <img class="vigipool_ui_center_image vigipool_ui_tild_flow_on_m_1" src="/plugins/vigipool/desktop/img/filtration_off.svg" alt="vigipool_ui_flow_on_m_1" width="75" height="75"/>
+                                <img class="vigipool_ui_center_image vigipool_ui_tild_flow_on_m_2" src="/plugins/vigipool/desktop/img/filtration_on.svg" alt="vigipool_ui_flow_on_m_2" width="75" height="75"/>
+                                <img class="vigipool_ui_center_image vigipool_ui_tild_flow_on_m_3" src="/plugins/vigipool/desktop/img/filtration_off.svg" alt="vigipool_ui_flow_on_m_3" width="75" height="75"/>
+                                <img class="vigipool_ui_center_image vigipool_ui_tild_flow_on_m_4" src="/plugins/vigipool/desktop/img/filtration_on.svg" alt="vigipool_ui_flow_on_m_4" width="75" height="75"/>            
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Auxiliary 1 -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_aux1_label">
+                                <p class="center vigipool_ui_text">Treatment</p>
+                            </div>
+                            <div class="vigipool_ui_aux1_state">
+                                <div class="vigipool_ui_tild_container_row" >
+                                    <div class="vigipool_ui_aux1_layer_1">
+                                        <img class="vigipool_ui_center_image vigipool_ui_aux1_circle" src="/plugins/vigipool/desktop/img/auxiliary_on.svg" alt="vigipool_ui_aux1_circle" width="75" height="75"/>
+                                    </div>
+                                    <div class="vigipool_ui_aux1_layer_2">
+                                        <p class="center clickable">40°C</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Auxiliary 2 -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_aux2_label">
+                                <p class="center vigipool_ui_text">Treatment</p>
+                            </div>
+                            <div class="vigipool_ui_aux2_state">
+                                <div class="vigipool_ui_tild_container_row" >
+                                    <div class="vigipool_ui_aux2_layer_1">
+                                        <img class="vigipool_ui_center_image vigipool_ui_aux2_circle" src="/plugins/vigipool/desktop/img/auxiliary_on.svg" alt="vigipool_ui_aux2_circle" width="75" height="75"/>
+                                    </div>
+                                    <div class="vigipool_ui_aux2_layer_2">
+                                        <p class="center clickable">40°C</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- ||||| Zelix / Zelia ||||| -->
+
+                    <!-- prod_on -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_prod_on_label">
+                                <p class="center vigipool_ui_text clickable">Electrolyse</p>
+                            </div>
+                            <div class="vigipool_ui_prod_on_state">
+                                <p class="center vigipool_ui_text vigipool_special_text">-</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- mode_ely -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_mode_ely_label">
+                                <p class="center vigipool_ui_text clickable">Mode</p>
+                            </div>
+                            <div class="vigipool_ui_mode_ely_state">
+                                <p class="center vigipool_ui_text clickable">-</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- prod_chlore -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_prod_chlore_label">
+                                <p class="center vigipool_ui_text clickable">Prod. Chlore</p>
+                            </div>
+                            <div class="vigipool_ui_prod_chlore_state">
+                                <p class="center vigipool_common_text clickable">0 g/h</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- cell_flow -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_cell_flow_label">
+                                <p class="center vigipool_ui_text clickable">Cell flow</p>
+                            </div>
+                            <div class="vigipool_ui_cell_flow_state">
+                                <p class="center vigipool_common_text clickable">Off</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- couv_on -->
+
+                    <tr style="background-color: transparent !important">
+                        <td>
+                            <div class="vigipool_ui_couv_on_label">
+                                <p class="center vigipool_ui_text clickable">Couverture</p>
+                            </div>
+                            <div class="vigipool_ui_couv_on_state">
+                                <p class="center vigipool_common_text clickable">-</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- value_ph -->
+
+            <div class="vigipool_ui_value_ph_ui">
+                <p class="vigipool_text_pointer vigipool_ui_value_ph"><i class="fas fa-window-close" ></i> 6.3</p>
+                <img src="/plugins/vigipool/desktop/img/bar.png" class="responsive" alt="bar"/>
+                <p class="vigipool_text_pointer_flip vigipool_ui_value_ph_setpoint">Consigne : 6.3</p>
+                <p>pH</p>
+            </div>
+
+            <!-- value_orp -->
+
+            <div class="vigipool_ui_value_orp_ui">
+                <p class="vigipool_text_pointer vigipool_ui_value_orp"><i class="fas fa-window-close" ></i> 6.3</p>
+                <img src="/plugins/vigipool/desktop/img/bar.png" class="responsive" alt="bar"/>
+                <p class="vigipool_text_pointer_flip vigipool_ui_value_orp_setpoint">Consigne : 6.3</p>
+                <p>ORP</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="/plugins/vigipool/core/template/js/everything.js"></script>

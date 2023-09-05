@@ -1,0 +1,172 @@
+.vigipool_x3_modal_light_bright_label, .vigipool_anteam_modal_light_bright_label
+{
+    background-image: linear-gradient(to right, red , yellow);
+}
+
+.filter_invert
+{
+    filter: invert(1);
+}
+
+.vigipool_x3_modal_light_light_modal_duration, .vigipool_anteam_modal_light_light_modal_duration
+{
+    text-align: center;
+}
+
+.vigipool_button_sequence
+{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.vigipool_label_sequence
+{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.vigipool_button
+{
+    text-align: center;
+}
+
+.dot
+{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.vigipool_x3_modal_light_warm_button, .vigipool_anteam_modal_light_warm_button
+{
+    background-color : var(--warm);
+}
+
+.vigipool_x3_modal_light_cold_button, .vigipool_anteam_modal_light_cold_button
+{
+    background-color : var(--cold);
+}
+
+.vigipool_x3_modal_light_blue_button, .vigipool_anteam_modal_light_blue_button
+{
+    background-color : var(--blue);
+}
+
+.vigipool_x3_modal_light_lagoon_button, .vigipool_anteam_modal_light_lagoon_button
+{
+    background-color : var(--lagoon);
+}
+
+.vigipool_x3_modal_light_cyan_button, .vigipool_anteam_modal_light_cyan_button
+{
+    background-color : var(--cyan);
+}
+
+.vigipool_x3_modal_light_green_button, .vigipool_anteam_modal_light_green_button
+{
+    background-color : var(--green);
+}
+
+.vigipool_x3_modal_light_purple_button, .vigipool_anteam_modal_light_purple_button
+{
+    background-color : var(--purple);
+}
+
+.vigipool_x3_modal_light_magenta_button, .vigipool_anteam_modal_light_magenta_button
+{
+    background-color : var(--magenta);
+}
+
+.vigipool_x3_modal_light_pink_button, .vigipool_anteam_modal_light_pink_button
+{
+    background-color : var(--pink);
+}
+
+.vigipool_x3_modal_light_red_button, .vigipool_anteam_modal_light_red_button
+{
+    background-color : var(--red);
+}
+
+.vigipool_x3_modal_light_orange_button, .vigipool_anteam_modal_light_orange_button
+{
+    background-color : var(--orange);
+}
+
+.vigipool_x3_modal_light_favorite_button, .vigipool_anteam_modal_light_favorite_button
+{
+    background-color : var(--favorite);
+}
+
+.vigipool_x3_modal_light_gradiant_button, .vigipool_anteam_modal_light_gradiant_button, .vigipool_x3_modal_light_gradiant_button
+{
+    background-image : url("/plugins/vigipool/desktop/img/sequence_gradiant_small.png");
+    background-color : transparent;
+    background-size:100% 100%;
+    color:white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.vigipool_anteam_modal_light_rainbow_button
+{
+    background-image : url("/plugins/vigipool/desktop/img/sequence_rainbow_small.png");
+    background-color : transparent;
+    background-size:100% 100%;
+    color:white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.vigipool_anteam_modal_light_parade_button
+{
+    background-image : url("/plugins/vigipool/desktop/img/sequence_parade_small.png");
+    background-color : transparent;
+    background-size:100% 100%;
+    color:white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.vigipool_anteam_modal_light_techno_button
+{
+    background-image : url("/plugins/vigipool/desktop/img/sequence_techno_small.png");
+    background-color : transparent;
+    background-size:100% 100%;
+    color:white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.vigipool_anteam_modal_light_horizon_button
+{
+    background-image : url("/plugins/vigipool/desktop/img/sequence_horizon_small.png");
+    background-color : transparent;
+    background-size:100% 100%;
+    color:white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.vigipool_anteam_modal_light_random_button
+{
+    background-image : url("/plugins/vigipool/desktop/img/sequence_random_small.png");
+    background-color : transparent;
+    background-size:100% 100%;
+    color:white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.vigipool_anteam_modal_light_magical_button
+{
+    background-image : url("/plugins/vigipool/desktop/img/sequence_magical_small.png");
+    background-color : transparent;
+    background-size:100% 100%;
+    /*color:white;*/
+    /*text-shadow: 0px 0px 10px rgba(0,0,0,0.5);*/
+}
+
+.vigipool_label
+{
+    text-align: center;
+    font-family: GTWalsheimPro-Thin, sans-serif;
+    /*color:white;*/
+    /*text-shadow: 0px 0px 10px rgba(0,0,0,0.5);*/
+}

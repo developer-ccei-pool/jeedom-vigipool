@@ -1,0 +1,19 @@
+<div class="cmd cmd-widget reportModeHidden" data-type="action" data-subtype="other" data-template="vigipool_scanner" data-cmd_id="#id#" data-cmd_uid="#uid#" data-version="#version#" data-eqLogic_id="#eqLogic_id#" style="display: none;">
+    <div class="content-xs">
+        <a class="btn btn-sm btn-default action tooltips vigipool_scanner">#name_display#</a>
+    </div>
+    <template></template>
+    <script>
+        $('.cmd[data-cmd_uid=#uid#]:last .action').off('click').on('click', function () {
+            jeedom.cmd.execute({id: '#id#'})
+        })
+
+        if ($('.cmd[data-cmd_uid=#uid#]').last().prev().data('subtype') != undefined && $('.cmd[data-cmd_id=#id#]').last().prev().data('subtype') != 'other'
+                && $('.cmd[data-cmd_uid=#uid#]').last().prev().css('display') != 'block') {
+            $('.cmd[data-cmd_uid=#uid#]').last().prepend('<br/>');
+        }
+        if ("#name#" != '#name_display#') {
+            $('.cmd[data-cmd_uid=#uid#]:last .action').attr('title', "#name#")
+        }
+    </script>
+</div>

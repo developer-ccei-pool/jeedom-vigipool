@@ -1,0 +1,368 @@
+@font-face {
+    font-family: GTWalsheimPro-Bold;
+    src: url('/plugins/vigipool/desktop/css/GTWalsheimPro-Medium.woff');
+}
+@font-face {
+    font-family: GTWalsheimPro-Regular;
+    src: url('/plugins/vigipool/desktop/css/GTWalsheimPro-Regular.woff');
+}
+
+:root {
+    --warm : #f4e3be;
+    --cold : #ffffff;
+    --blue : #7eadcf;
+    --lagoon : #a0d4dc;
+    --cyan : #c1f1f9;
+    --green : #9dc46f;
+    --purple : #c25dba;
+    --magenta : #cc86c3;
+    --pink : #ecb7e7;
+    --red : #d3585a;
+    --orange : #e3aa52;
+    --favorite : #758f8d;
+}
+
+/* hover */
+.clickable
+{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.transition
+{
+    transition: 1s;
+}
+
+.clickable:hover
+{
+    filter: drop-shadow(0px 0px 5px #FFFFFF);
+}
+
+/* TOP */
+
+.top_container {
+    /*width: 150px;*/
+    /*height: 150px;*/
+    position: relative;
+    /*margin: 30px;*/
+}
+
+.top_box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*top: 0;*/
+    /*left: 0;*/
+    /*opacity: 0.7;*/
+    /*background: #0057e3;*/
+}
+
+.top_overlay {
+    z-index: 9;
+    /*margin: 30px;*/
+    /*background: #009938;*/
+}
+
+/* vigipool ui text */
+
+.vigipool_ui_text
+{
+    text-shadow: 1px 1px 1px black;
+    color:white;
+    font-family: GTWalsheimPro-Bold;
+    font-size: larger;
+}
+
+.vigipool_ui_text_modal
+{
+    /*text-shadow: 1px 1px 1px black;*/
+    /*color:white;*/
+    font-family: GTWalsheimPro-Regular;
+}
+
+
+/* SLIDE */
+
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-1692px, 0, 0); /* The image width */
+    }
+}
+
+.scroll_container {
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll_sliding-background {
+    background-image:  url("/plugins/vigipool/desktop/img/background_scroll.jpg");
+    background-repeat: repeat-x;
+    height: 2000px;
+    width: 2500px; /* The image width times 3 */
+    animation: slide 60s linear infinite;
+    padding-top: 500px;
+
+}
+
+.vigipool_table
+{
+    font-family: GTWalsheimPro-Bold, sans-serif;
+    background-color: transparent;
+    text-align: center;
+}
+
+.vigipool_ui_center_image
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Time */
+
+/* Location */
+
+/* Temperature */
+.vigipool_ui_water_temp
+{
+    font-size: larger;
+    text-align: center;
+}
+
+/* Water Temperature */
+
+/* Light */
+.vigipool_ui_light_circle, .vigipool_ui_anteam_light_circle, .vigipool_ui_light_m_circle, .vigipool_ui_x3_state_circle
+{
+    background-color: #085a7d;
+    background-size:100% 100%;
+    border-radius: 100px;
+    padding: 15px;
+}
+
+
+
+/* Filtration */
+.vigipool_ui_tild_flow_on_1, .vigipool_ui_tild_flow_on_m_1
+{
+    background-color: #085a7d;
+    border-radius: 50px;
+    padding: 15px;
+}
+.vigipool_ui_tild_flow_on_2, .vigipool_ui_tild_flow_on_m_2
+{
+    background-color: #758f8d;
+    border-radius: 50px;
+    padding: 15px;
+}
+.vigipool_ui_tild_flow_on_3, .vigipool_ui_tild_flow_on_m_3
+{
+    background-color: #fea928;
+    border-radius: 50px;
+    padding: 15px;
+}
+.vigipool_ui_tild_flow_on_4, .vigipool_ui_tild_flow_on_m_4
+{
+    background-color: #fea928;
+    border-radius: 50px;
+    padding: 15px;
+}
+
+/* Rotation */
+@keyframes rotation {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+
+.vigipool_ui_tild_flow_on_2, .vigipool_ui_tild_flow_on_4, .vigipool_ui_tild_flow_on_m_2, .vigipool_ui_tild_flow_on_m_4 {
+    animation-name: rotation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+
+
+/* Auxiliary */
+.vigipool_ui_aux_circle, .vigipool_ui_aux1_circle, .vigipool_ui_aux2_circle
+{
+    /*background-color: #085a7d;*/
+    border-radius: 50px;
+    padding: 15px;
+}
+
+.vigipool_ui_tild_container_row, .vigipool_ui_tild_container_row_1, .vigipool_ui_tild_container_row_2, .vigipool_ui_anteam_container_row, .vigipool_ui_anteam_container_row_1, .vigipool_ui_anteam_container_row_2
+{
+    display: grid;
+}
+
+.vigipool_ui_aux_layer_1, .vigipool_ui_aux_layer_2, .vigipool_ui_aux1_layer_1, .vigipool_ui_aux1_layer_2, .vigipool_ui_aux2_layer_1, .vigipool_ui_aux2_layer_2
+{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.vigipool_ui_aux_layer_1, .vigipool_ui_aux_layer_2, .vigipool_ui_aux1_layer_1, .vigipool_ui_aux1_layer_2, .vigipool_ui_aux2_layer_1, .vigipool_ui_aux2_layer_2
+{
+    margin: auto;
+    padding: 10px;
+    font-family: GTWalsheimPro-Bold, sans-serif;
+    font-size: large;
+    color: white;
+}
+
+/* PH & ORP */
+.vigipool_text_pointer
+{
+    width: fit-content;
+    padding-top: 5px;
+    padding-bottom : 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 0px;
+    background-image: url("/plugins/vigipool/desktop/img/box.png");
+    background-size:100% 100%;
+    font-family: GTWalsheimPro-Regular, sans-serif;
+    color:white;
+}
+
+.vigipool_text_pointer_flip
+{
+    width: fit-content;
+    padding-top: 10px;
+    padding-bottom : 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 0px;
+    background-image: url("/plugins/vigipool/desktop/img/box_flip.png");
+    background-size:100% 100%;
+    font-family: GTWalsheimPro-Regular, sans-serif;
+    color:white;
+}
+
+.vigipool_ui_value_ph_ui, .vigipool_ui_value_orp_ui
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.vigipool_ui_phileox_info_1 > td:nth-child(1), .vigipool_ui_phileox_info_2 > td:nth-child(1), .vigipool_ui_phileox_info_3 > td:nth-child(1)
+{
+    text-shadow: 1px 1px 1px black;
+    color:white;
+    font-family: GTWalsheimPro-Bold;
+    text-align: left;
+    font-size: smaller;
+}
+
+.vigipool_ui_phileox_info_1 > td:nth-child(2), .vigipool_ui_phileox_info_2 > td:nth-child(2), .vigipool_ui_phileox_info_3 > td:nth-child(2)
+{
+    text-shadow: 1px 1px 1px black;
+    color:white;
+    font-family: GTWalsheimPro-Bold;
+    text-align: end;
+    font-size: smaller;
+}
+
+.vigipool_prog_off
+{
+    background-color: #dbdbdb;
+    color: #7e7e7e;
+    text-align: center;
+    border-radius: 100px;
+    min-width: 100px;
+}
+
+.vigipool_prog_on
+{
+    background-color: #758f8d;
+    color: white;
+    text-align: center;
+    border-radius: 100px;
+    min-width: 100px;
+}
+
+.table > tbody > tr > td {
+    vertical-align: inherit;
+}
+
+.vigipool_special_text {
+    background-color: #085a7d;
+    border-radius: 25px;
+    color: white;
+}
+
+.vigipool_common_text {
+    background-color: #ededed;
+    border-radius: 25px;
+    color: #555;
+}
+
+/* SLIDER */
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #085a7d;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #085a7d;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #085a7d;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+.saved_colors
+{
+    font-size: xx-large;
+    text-align: center;
+}

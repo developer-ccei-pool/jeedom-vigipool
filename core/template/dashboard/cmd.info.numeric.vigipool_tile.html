@@ -1,0 +1,30 @@
+<style>
+    @font-face {
+        font-family: GTWalsheimPro-Thin;
+        src: url('/plugins/vigipool/desktop/css/GTWalsheimPro-Thin.woff');
+    }
+
+    #vigipool_value_#eqLogic_id#_#id#_#uid#
+    {
+        font-family: GTWalsheimPro-Thin, sans-serif;
+        font-size: large;
+    }
+
+    #vigipool_unit_#eqLogic_id#_#id#_#uid#
+    {
+        font-family: GTWalsheimPro-Thin, sans-serif;
+        font-size: large;
+    }
+</style>
+<div class="cmd cmd-widget" data-type="info" data-subtype="numeric" data-template="vigipool_tile" data-version="#version#" data-eqLogic_id="#eqLogic_id#" data-cmd_id="#id#" data-cmd_uid="#uid#" style="display:none;">
+    <center>
+        <div class="cmdName #hide_name#">#name_display#</div>
+        <span class="vigipool_value_#eqLogic_id#_#id#_#uid# state">#state#</span><span class="vigipool_unit_#eqLogic_id#_#id#_#uid# unit">#unite#</span>
+    </center>
+    <script>
+        jeedom.cmd.addUpdateFunction('#id#', function (_options) {
+            $('.cmd[data-cmd_id=#id#] .state').empty().append(_options.display_value)
+            $('.cmd[data-cmd_id=#id#] .unit').empty().append(_options.unit);
+        });
+    </script>
+</div>

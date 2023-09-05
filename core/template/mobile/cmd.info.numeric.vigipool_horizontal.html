@@ -1,0 +1,180 @@
+<style>
+    @font-face {
+        font-family: GTWalsheimPro-Regular;
+        src: url('/plugins/vigipool/desktop/css/GTWalsheimPro-Regular.woff');
+    }
+
+    .vigipool_text_pointer
+    {
+        width: fit-content;
+        padding-top: 5px;
+        padding-bottom : 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 0px;
+        background-image: url("/plugins/vigipool/desktop/img/box.png");
+        background-size:100% 100%;
+        font-family: GTWalsheimPro-Regular, sans-serif;
+    }
+
+    .vigipool_bar
+    {
+        position: relative;          /* where the next element will be automatically positioned */
+        display: inline-block;       /* causes element width to shrink to fit content */
+        left: 50%;                   /* moves left side of image/element to center of parent element */
+        transform: translate(-50%);  /* centers image/element on "left: 50%" position */
+    }
+</style>
+<div class="cmd cmd-widget hgauge #history#" data-type="info" data-subtype="numeric" data-template="vigipool_horizontal" data-version="#version#" data-eqLogic_id="#eqLogic_id#" data-cmd_id="#id#" data-cmd_uid="#uid#" style="display:none;">
+    <p class="vigipool_text_#eqLogic_id#_#id#_#uid# vigipool_text" >#state# #unite#</p>
+    <img class="vigipool_bar_#eqLogic_id#_#id#_#uid# vigipool_bar" src="/plugins/vigipool/desktop/img/bar.png" alt="bar" width="150" height="10"/>
+</div>
+<script>
+    var history = ('#history#');
+    console.log("history = " + history);
+    var version = ('#version#');
+    console.log("version = " + version);
+    var eqLogic_id = ('#eqLogic_id#');
+    console.log("eqLogic_id = " + eqLogic_id);
+    var id = ('#id#');
+    console.log("id = " + id);
+    var uid = ('#uid#');
+    console.log("uid = " + uid);
+    var state = ('#state#');
+    console.log("state = " + state);
+    var unite = ('#unite#');
+    console.log("unite = " + unite);
+    var minValue = ('#minValue#');
+    console.log("minValue = " + minValue);
+    var maxValue = ('#maxValue#');
+    console.log("maxValue = " + maxValue);
+    var vigipool_text_ = ('#vigipool_text_#');
+    console.log("vigipool_text_ = " + vigipool_text_);
+    var _ = ('#_#');
+    console.log("_ = " + _);
+    var value = ('#value#');
+    console.log("value = " + value);
+    var valueDate = ('#valueDate#');
+    console.log("valueDate = " + valueDate);
+    var collectDate = ('#collectDate#');
+    console.log("collectDate = " + collectDate);
+    var alertLevel = ('#alertLevel#');
+    console.log("alertLevel = " + alertLevel);
+    var color = ('#color#');
+    console.log("color = " + color);
+
+    jeedom.cmd.addUpdateFunction('#id#', function (_options) {
+        let position = _options.value
+        var minValue = ('#minValue#' == '') ? 0 : parseInt('#minValue#')
+        var maxValue = ('#maxValue#' == '') ? 100 : parseInt('#maxValue#')
+
+        var unite = ('#unite#');
+        var uid = ('#uid#');
+        console.log("unite = " + unite);
+        console.log("uid = " + uid);
+
+        if (unite === "mV") {
+            minValue = 350;
+            maxValue = 950;
+        }
+        if (unite === "pH") {
+            minValue = 6.3;
+            maxValue = 8.1;
+        }
+
+        console.log("position = " + position);
+        console.log("minValue = " + minValue);
+        console.log("maxValue = " + maxValue);
+
+        if (position > maxValue)
+            position = maxValue;
+        if (position < minValue)
+            position = minValue;
+
+        console.log("position = " + position);
+
+        let width = ((position - minValue) * 100) / (maxValue - minValue)
+        width = Math.round(parseFloat(width) * 10) / 10
+        width = parseInt(width);
+
+        console.log("width = " + width);
+
+        var margins = get_margins(width);
+
+        var marginLeftValue = margins[0];
+        var marginRightValue = margins[1];
+
+        $(".vigipool_text_#eqLogic_id#_#id#_#uid#").css({marginLeft: marginLeftValue, marginRight: marginRightValue});
+
+        var colors = get_colors(width);
+
+        var colorRedValue = colors[0];
+        var colorGreenValue = colors[1];
+
+        console.log("colors = " + colors);
+        console.log("colorRedValue = " + colorRedValue);
+        console.log("colorGreenValue = " + colorGreenValue);
+
+        $(".vigipool_text_#eqLogic_id#_#id#_#uid#").css('color', 'rgb(' + colorRedValue + ', ' + colorGreenValue + ', 0)');
+
+    });
+
+    jeedom.cmd.refreshValue([{cmd_id: '#id#', value: '#value#', display_value: '#state#', valueDate: '#valueDate#', collectDate: '#collectDate#', alertLevel: '#alertLevel#', unit: '#unite#'}])
+
+    if ($.issetWidgetOptParam('#color#', 'color')) {
+        $('.cmd[data-cmd_id=#id#] .hgauge-value').css('background', '#color#')
+    }
+
+
+    function get_margins(width) {
+
+        var margin_width = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100];
+        var margin_left = [-150, -147, -144, -141, -138, -135, -132, -129, -126, -123, -120, -117, -114, -111, -108, -105, -102, -99, -96, -93, -90, -87, -84, -81, -78, -75, -72, -69, -66, -63, -60, -57, -54, -51, -48, -45, -42, -39, -36, -33, -30, -27, -24, -21, -18, -15, -12, -9, -6, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var margin_right = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, -6, -9, -12, -15, -18, -21, -24, -27, -30, -33, -36, -39, -42, -45, -48, -51, -54, -57, -60, -63, -66, -69, -72, -75, -78, -81, -84, -87, -90, -93, -96, -99, -102, -105, -108, -111, -114, -117, -120, -123, -126, -129, -132, -135, -138, -141, -144, -147, -150];
+
+        for (let i = 0; i <= 100; i++) {
+            if (width === margin_width[i]) {
+                var result = [margin_left[i], margin_right[i]];
+                return result;
+            }
+        }
+    }
+
+    function get_colors(width) {
+
+        var color_width = [];
+        var color_r = [];
+        var color_g = [];
+        var ratio = 4;
+
+        for (let i = 0; i <= 100; i++) {
+            if (i < 50) {
+                color_width.push(i);
+                color_r.push(255 - i * ratio);
+                color_g.push(0 + i * ratio);
+            }
+            if (i == 50) {
+                color_width.push(i);
+                color_r.push(0);
+                color_g.push(255);
+            }
+            if (i > 50) {
+                color_width.push(i);
+                color_r.push(color_r[50 - (i - 50)]);
+                color_g.push(color_g[50 - (i - 50)]);
+            }
+        }
+
+        console.log("color_width = " + color_width);
+        console.log("color_r = " + color_r);
+        console.log("color_g = " + color_g);
+
+
+        for (let i = 0; i <= 100; i++) {
+            if (width === color_width[i]) {
+                var result = [color_r[i], color_g[i]];
+                return result;
+            }
+        }
+    }
+</script>
