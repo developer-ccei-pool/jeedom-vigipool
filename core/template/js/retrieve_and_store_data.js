@@ -54,7 +54,7 @@ function variable_check(variables) {
 
         if (variable === undefined)
             continue;
-        if (variable > 0)
+        if (variable >= 0)
             return true;
         if (variable.length > 0)
             return true;

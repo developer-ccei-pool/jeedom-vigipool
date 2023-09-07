@@ -54,7 +54,7 @@ function variable_check(variables) {
 
         if (variable === undefined)
             continue;
-        if (variable > 0)
+        if (variable >= 0)
             return true;
         if (variable.length > 0)
             return true;
@@ -5012,16 +5012,16 @@ function quick_assign(button, type, variable, info, desired, value) {
 
 function quick_assign_sched(button, type, variable, info, desired, value) {
 
-    console.log("LAG TEST 3");
+    // console.log("LAG TEST 3");
 
     $(button).click(function () {
 
-        console.log("button = " + button);
-        console.log("type = " + type);
-        console.log("variable = " + variable);
-        console.log("info = " + info);
-        console.log("desired = " + desired);
-        console.log("value = " + value);
+        // console.log("button = " + button);
+        // console.log("type = " + type);
+        // console.log("variable = " + variable);
+        // console.log("info = " + info);
+        // console.log("desired = " + desired);
+        // console.log("value = " + value);
 
         var final_value = "";
 
@@ -5030,22 +5030,22 @@ function quick_assign_sched(button, type, variable, info, desired, value) {
             // 02020A64010488FE5464010C90
             // 020E6464010488715464010C90
             var x3_sched = get_value_from_position(eq_modal, "x3_sched"); // 02020A64010488FE5464010C90
-            console.log("x3_sched = " + x3_sched);
+            // console.log("x3_sched = " + x3_sched);
 
             var off_on_day = converter("hex", "bin", x3_sched[2] + x3_sched[3]); // 00000010
-            console.log("off_on_day = " + off_on_day);
+            // console.log("off_on_day = " + off_on_day);
 
             off_on_day = off_on_day.replaceAt(0, value); // 10000010
-            console.log("off_on_day = " + off_on_day);
+            // console.log("off_on_day = " + off_on_day);
 
             off_on_day = converter("bin", "hex", off_on_day); // 82
-            console.log("off_on_day = " + off_on_day);
+            // console.log("off_on_day = " + off_on_day);
 
             x3_sched = x3_sched.replaceAt(2, off_on_day); // 10000010
-            console.log("x3_sched = " + x3_sched);
+            // console.log("x3_sched = " + x3_sched);
 
             final_value = x3_sched;
-            console.log("off_on_day = " + off_on_day);
+            // console.log("off_on_day = " + off_on_day);
         } else if (variable === "x3_state_samedi") {
             final_value = replace_in_hex(1, value);
         } else if (variable === "x3_state_vendredi") {
@@ -5065,11 +5065,11 @@ function quick_assign_sched(button, type, variable, info, desired, value) {
         } else if (variable === "x3_state_end_1") {
             final_value = replace_in_hex(7, value);
         } else {
-            console.log("ERROR variable = " + variable);
+            // console.log("ERROR variable = " + variable);
         }
 
         var devices = get_master_and_slaves(eq_modal);
-        console.log("devices = " + devices);
+        // console.log("devices = " + devices);
 
         for (var i = 0, max = devices.length - 1; i < max; i++) {
             mosquitto_pub(devices[i], "s44_w", "x3_sched", "info", "desired", ip_selected, final_value);
@@ -5080,17 +5080,17 @@ function quick_assign_sched(button, type, variable, info, desired, value) {
 
 function replace_in_hex(position, value) {
 
-    console.log("position = " + position);
-    console.log("value = " + value);
+    // console.log("position = " + position);
+    // console.log("value = " + value);
 
     // x3_state
     // 02020A64010488FE5464010C90
     // 020E6464010488715464010C90
     var x3_sched = get_value_from_position(eq_modal, "x3_sched"); // 02020A64010488FE5464010C90
-    console.log("x3_sched = " + x3_sched + " (02020A64010488FE5464010C90)");
+    // console.log("x3_sched = " + x3_sched + " (02020A64010488FE5464010C90)");
 
     var off_on_day = converter("hex", "bin", x3_sched[2] + x3_sched[3]); // 00000010
-    console.log("off_on_day = " + off_on_day + " (00000010)");
+    // console.log("off_on_day = " + off_on_day + " (00000010)");
 
     var bit_0 = off_on_day[0];
     var bit_1 = off_on_day[1];
@@ -5119,37 +5119,42 @@ function replace_in_hex(position, value) {
         bit_7 = value;
 
     var off_on_day = bit_0 + bit_1 + bit_2 + bit_3 + bit_4 + bit_5 + bit_6 + bit_7;
-    console.log("off_on_day = " + off_on_day + " (10000010)");
+    // console.log("off_on_day = " + off_on_day + " (10000010)");
 
     off_on_day = converter("bin", "hex", off_on_day); // 82
-    console.log("off_on_day = " + off_on_day + " (82)");
+    // console.log("off_on_day = " + off_on_day + " (82)");
 
     x3_sched = x3_sched.replaceAt(2, off_on_day); // 10000010
-    console.log("x3_sched = " + x3_sched + " (02820A64010488FE5464010C90)");
+    // console.log("x3_sched = " + x3_sched + " (02820A64010488FE5464010C90)");
 
     final_value = x3_sched;
-    console.log("off_on_day = " + off_on_day + " (02820A64010488FE5464010C90)");
+    // console.log("off_on_day = " + off_on_day + " (02820A64010488FE5464010C90)");
 
     return final_value;
 }
 
 function quick_send(type, variable, info, desired, value) {
     var devices = get_master_and_slaves(eq_modal);
+
+    // console.log("devices = ");
+    // console.log(devices);
+
     for (var i = 0, max = devices.length - 1; i < max; i++) {
         mosquitto_pub(devices[i], type, variable, info, desired, ip_selected, value);
     }
+
     actualize_data();
 }
 
 function insert_value_in_sched(position, value) {
     var x3_sched = get_value_from_position(eq_modal, "x3_sched"); // 02020A64010488FE5464010C90
-    console.log("x3_sched = " + x3_sched);
+    // console.log("x3_sched = " + x3_sched);
 
     var value = converter("dec", "hex", value); // 82
-    console.log("value = " + value);
+    // console.log("value = " + value);
 
     x3_sched = x3_sched.replaceAt(position, value); // 10000010
-    console.log("x3_sched = " + x3_sched);
+    // console.log("x3_sched = " + x3_sched);
 
     return final_value = x3_sched;
 }
@@ -5171,6 +5176,10 @@ function actualize_data() {
 
 function check_variable_device(device, type, variable) {
 
+    // console.log("device = " + device);
+    // console.log("type = " + type);
+    // console.log("variable = " + variable);
+
     get_all_mqtt_data();
 
     var eq_mqtt_data = all_mqtt_data[eq_modal];
@@ -5184,26 +5193,32 @@ function check_variable_device(device, type, variable) {
         if (eq_mqtt_line.includes(device + "/")) {
             if (eq_mqtt_line.includes("/" + type + "/")) {
                 if (eq_mqtt_line.includes("/" + variable + "/")) {
-                    console.log("check_variable_device return true");
+                    // console.log("check_variable_device return true");
                     return true;
+                } else {
+                    // console.log("wrong variable = " + variable);
                 }
+            } else {
+                // console.log("wrong type = " + type);
             }
         }
     }
 
-    console.log("check_variable_device return false");
+    // console.log("check_variable_device return false");
     return false;
 }
 
 function mosquitto_pub($device, $type, $variable, $info, $desired, $ip, $value) {
     var check = check_variable_device($device, $type, $variable);
+    // console.log("check = " + check);
+
     if (check) {
         $.ajax({
             url: '/plugins/vigipool/core/ajax/mosquitto_pub.php',
             type: "post",
             data: {device: $device, type: $type, variable: $variable, info: $info, desired: $desired, ip: $ip, value: $value},
             success: function (data) {
-                console.log('mosquitto_pub = ' + data);
+                // console.log('mosquitto_pub = ' + data);
             }
         });
     }
@@ -14468,11 +14483,11 @@ function change_aux_conf(aux_conf, aux_type, bit, value) {
     var aux_conf = parseInt(aux_conf);
     var aux_type = parseInt(aux_type);
 
-    console.log("aux_conf = " + aux_conf);
+    // console.log("aux_conf = " + aux_conf);
 
     var aux_conf = converter("dec", "bin", aux_conf);
 
-    console.log("aux_conf = " + aux_conf);
+    // console.log("aux_conf = " + aux_conf);
 
     var en_marche = aux_conf[7];
     var asservi_filt = aux_conf[6];
@@ -14481,15 +14496,15 @@ function change_aux_conf(aux_conf, aux_type, bit, value) {
     var aux_min_temp = aux_conf[3];
     var consigne_orp = aux_conf[2];
 
-    console.log("aux_conf = " + aux_conf);
-    console.log("en_marche = " + en_marche);
-    console.log("asservi_filt = " + asservi_filt);
-    console.log("prio_aux = " + prio_aux);
-    console.log("consigne_temp = " + consigne_temp);
-    console.log("aux_min_temp = " + aux_min_temp);
-    console.log("consigne_orp = " + consigne_orp);
+    // console.log("aux_conf = " + aux_conf);
+    // console.log("en_marche = " + en_marche);
+    // console.log("asservi_filt = " + asservi_filt);
+    // console.log("prio_aux = " + prio_aux);
+    // console.log("consigne_temp = " + consigne_temp);
+    // console.log("aux_min_temp = " + aux_min_temp);
+    // console.log("consigne_orp = " + consigne_orp);
 
-    console.log("Before -> " + `00${consigne_orp}${aux_min_temp}${consigne_temp}${prio_aux}${asservi_filt}${en_marche}`);
+    // console.log("Before -> " + `00${consigne_orp}${aux_min_temp}${consigne_temp}${prio_aux}${asservi_filt}${en_marche}`);
 
     switch (aux_type) {
         case 0:
@@ -14647,7 +14662,7 @@ function change_aux_conf(aux_conf, aux_type, bit, value) {
             break;
     }
 
-    console.log("After -> " + `00${consigne_orp}${aux_min_temp}${consigne_temp}${prio_aux}${asservi_filt}${en_marche}`);
+//    console.log("After -> " + `00${consigne_orp}${aux_min_temp}${consigne_temp}${prio_aux}${asservi_filt}${en_marche}`);
 
     return converter("bin", "dec", `00${consigne_orp}${aux_min_temp}${consigne_temp}${prio_aux}${asservi_filt}${en_marche}`);
 }
@@ -20508,16 +20523,16 @@ function update_vigipool_modal_light_advanced_options() {
 
     // Logs
 
-    // console.log("filt_light_force = " + filt_light_force);
+//    console.log("filt_light_force = " + filt_light_force);
 
     // Check
 
     const variables = [filt_light_force];
 
     if (variable_check(variables)) {
-        // console.log("go");
+//         console.log("go");
     } else {
-        // console.log("no go");
+//         console.log("no go");
         return;
     }
 
@@ -20533,7 +20548,7 @@ function update_vigipool_modal_light_advanced_options() {
 }function update_vigipool_modal_filtration_advanced_options() {
 
     // console.log("///// update_vigipool_modal_filtration_advanced_options /////");
-    
+
     // Variables
 
     var frost_free = get_value_from_position(eq_modal, "frost_free");
@@ -20554,6 +20569,10 @@ function update_vigipool_modal_light_advanced_options() {
     }
 
     // Display
+    $(".vigipool_modal_filtration_advanced_options_frost_free_off").removeClass("btn-primary");
+    $(".vigipool_modal_filtration_advanced_options_frost_free_0").removeClass("btn-primary");
+    $(".vigipool_modal_filtration_advanced_options_frost_free_1").removeClass("btn-primary");
+    $(".vigipool_modal_filtration_advanced_options_frost_free_2").removeClass("btn-primary");
 
     switch (frost_free) {
         case 255:
@@ -21949,9 +21968,8 @@ function update_vigipool_modal_auxiliary_2() {
 }
 
 $(".vigipool_ui_source_ph_label > p").html(get_text("ph_regulation"));
-$(".vigipool_ui_source_orp_label > p").html(get_text("orp_regulation"));
-$(".vigipool_ui_inject_on_label > p").html(get_text("injection_in_progress"));
-$(".vigipool_ui_vol_max_24h_label > p").html(get_text("volume_injected_in_24h"));
+$(".vigipool_ui_ph_inject_on_label > p").html(get_text("injection_in_progress"));
+$(".vigipool_ui_ph_vol_max_24h_label > p").html(get_text("volume_injected_in_24h"));
 
 function update_vigipool_ui_source_ph() {
 
@@ -21960,8 +21978,9 @@ function update_vigipool_ui_source_ph() {
     for (var i = 0, max = max_devices; i < max; i++) {
 
         var source_ph = get_value_from_position(i, "source_ph");
-        var inject_on = get_value_from_position(i, "inject_on");
-        var vol_max_24h = get_value_from_position(i, "vol_max_24h");
+        var inject_on = get_value_from_eq(i, "inject_on", "phileox");
+        var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "phileox");
+
 //        console.log("source_ph = " + source_ph);
 //        console.log("inject_on = " + inject_on);
 //        console.log("vol_max_24h = " + vol_max_24h);
@@ -21974,48 +21993,51 @@ function update_vigipool_ui_source_ph() {
             $(".vigipool_ui_source_ph_state").eq(i).show();
         }
         if (!is_variable_available(i, "inject_on")) {
-            $(".vigipool_ui_inject_on_label").eq(i).hide();
-            $(".vigipool_ui_inject_on_state").eq(i).hide();
+            $(".vigipool_ui_ph_inject_on_label").eq(i).hide();
+            $(".vigipool_ui_ph_inject_on_state").eq(i).hide();
         } else {
-            $(".vigipool_ui_inject_on_label").eq(i).show();
-            $(".vigipool_ui_inject_on_state").eq(i).show();
+            $(".vigipool_ui_ph_inject_on_label").eq(i).show();
+            $(".vigipool_ui_ph_inject_on_state").eq(i).show();
         }
         if (!is_variable_available(i, "vol_max_24h")) {
-            $(".vigipool_ui_vol_max_24h_label").eq(i).hide();
-            $(".vigipool_ui_vol_max_24h_state").eq(i).hide();
+            $(".vigipool_ui_ph_vol_max_24h_label").eq(i).hide();
+            $(".vigipool_ui_ph_vol_max_24h_state").eq(i).hide();
         } else {
-            $(".vigipool_ui_vol_max_24h_label").eq(i).show();
-            $(".vigipool_ui_vol_max_24h_state").eq(i).show();
+            $(".vigipool_ui_ph_vol_max_24h_label").eq(i).show();
+            $(".vigipool_ui_ph_vol_max_24h_state").eq(i).show();
         }
 
         switch (inject_on) {
             case 0:
-                $(".vigipool_ui_inject_on_state > p").eq(i).html(`Off`);
+                $(".vigipool_ui_ph_inject_on_state > p").eq(i).html(`Off`);
                 break;
             case 1:
-                $(".vigipool_ui_inject_on_state > p").eq(i).html(`On`);
+                $(".vigipool_ui_ph_inject_on_state > p").eq(i).html(`On`);
                 break;
         }
 
-        $(".vigipool_ui_vol_max_24h_label > p").eq(i).html(get_text("vol_24h_inject"));
+        $(".vigipool_ui_ph_vol_max_24h_label > p").eq(i).html(get_text("vol_24h_inject"));
 
         var vol_max_24h = get_value_from_position(i, "vol_max_24h");
-        $(".vigipool_ui_vol_max_24h_state > p").eq(i).html(`0.0 L / ${vol_max_24h} L`);
+        $(".vigipool_ui_ph_vol_max_24h_state > p").eq(i).html(`0.0 L / ${vol_max_24h} L`);
     }
-}function update_vigipool_ui_source_orp() {
+}$(".vigipool_ui_source_orp_label > p").html(get_text("orp_regulation"));
+$(".vigipool_ui_orp_inject_on_label > p").html(get_text("injection_in_progress"));
+$(".vigipool_ui_orp_vol_max_24h_label > p").html(get_text("volume_injected_in_24h"));
+
+function update_vigipool_ui_source_orp() {
 
     var max_devices = $(".vigipool_ipaddr").length;
 
     for (var i = 0, max = max_devices; i < max; i++) {
 
-        var device_id = get_value_from_position(i, "device_id");
-
         var source_orp = get_value_from_position(i, "source_orp");
-        var inject_on = get_value_from_position(i, "inject_on");
-        var vol_max_24h = get_value_from_position(i, "vol_max_24h");
-        // console.log("source_orp = " + source_orp);
-        // console.log("inject_on = " + inject_on);
-        // console.log("vol_max_24h = " + vol_max_24h);
+        var inject_on = get_value_from_eq(i, "inject_on", "oxeox");
+        var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "oxeox");
+
+//        console.log("source_orp = " + source_orp);
+//        console.log("inject_on = " + inject_on);
+//        console.log("vol_max_24h = " + vol_max_24h);
 
         if (!is_variable_available(i, "source_orp") || !is_variable_available(i, "inject_on")) {
             $(".vigipool_ui_source_orp_label").eq(i).hide();
@@ -22025,33 +22047,33 @@ function update_vigipool_ui_source_ph() {
             $(".vigipool_ui_source_orp_state").eq(i).show();
         }
         if (!is_variable_available(i, "inject_on")) {
-            $(".vigipool_ui_inject_on_label").eq(i).hide();
-            $(".vigipool_ui_inject_on_state").eq(i).hide();
+            $(".vigipool_ui_orp_inject_on_label").eq(i).hide();
+            $(".vigipool_ui_orp_inject_on_state").eq(i).hide();
         } else {
-            $(".vigipool_ui_vol_max_24h_label").eq(i).show();
-            $(".vigipool_ui_vol_max_24h_state").eq(i).show();
+            $(".vigipool_ui_orp_vol_max_24h_label").eq(i).show();
+            $(".vigipool_ui_orp_vol_max_24h_state").eq(i).show();
         }
         if (!is_variable_available(i, "vol_max_24h")) {
-            $(".vigipool_ui_vol_max_24h_label").eq(i).hide();
-            $(".vigipool_ui_vol_max_24h_state").eq(i).hide();
+            $(".vigipool_ui_orp_vol_max_24h_label").eq(i).hide();
+            $(".vigipool_ui_orp_vol_max_24h_state").eq(i).hide();
         } else {
-            $(".vigipool_ui_vol_max_24h_label").eq(i).show();
-            $(".vigipool_ui_vol_max_24h_state").eq(i).show();
+            $(".vigipool_ui_orp_vol_max_24h_label").eq(i).show();
+            $(".vigipool_ui_orp_vol_max_24h_state").eq(i).show();
         }
 
         switch (inject_on) {
             case 0:
-                $(".vigipool_ui_inject_on_state > p").eq(i).html(`Off`);
+                $(".vigipool_ui_orp_inject_on_state > p").eq(i).html(`Off`);
                 break;
             case 1:
-                $(".vigipool_ui_inject_on_state > p").eq(i).html(`On`);
+                $(".vigipool_ui_orp_inject_on_state > p").eq(i).html(`On`);
                 break;
         }
 
-        $(".vigipool_ui_vol_max_24h_label > p").eq(i).html(get_text("vol_24h_inject"));
+        $(".vigipool_ui_orp_vol_max_24h_label > p").eq(i).html(get_text("vol_24h_inject"));
 
         var vol_max_24h = get_value_from_position(i, "vol_max_24h");
-        $(".vigipool_ui_vol_max_24h_state > p").eq(i).html(`0.0 L / ${vol_max_24h} L`);
+        $(".vigipool_ui_orp_vol_max_24h_state > p").eq(i).html(`0.0 L / ${vol_max_24h} L`);
     }
 }
 function update_vigipool_ui_value_ph() {

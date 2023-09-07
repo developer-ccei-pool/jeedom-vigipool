@@ -25,8 +25,8 @@
 /* hover */
 .clickable
 {
-    cursor: pointer;
-    transition: 0.3s;
+    cursor: pointer !important;
+    transition: 0.3s !important;
 }
 
 .transition
@@ -36,7 +36,7 @@
 
 .clickable:hover
 {
-    filter: drop-shadow(0px 0px 5px #FFFFFF);
+    filter: drop-shadow(0px 0px 5px #FFFFFF) !important;
 }
 
 /* TOP */

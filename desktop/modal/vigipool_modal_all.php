@@ -86,11 +86,11 @@ include 'manager.php';
     quick_assign('.vigipool_common_modal_all_aux_type_booster', "u8_w", "aux_type", "info", "desired", "4");
     quick_assign('.vigipool_common_modal_all_aux_type_auxiliary', "u8_w", "aux_type", "info", "desired", "5");
 
-    quick_assign('.vigipool_common_modal_all_aux_type_none', "u8_w", "aux_conf", "info", "desired", desactive);
-    quick_assign('.vigipool_common_modal_all_aux_type_heater', "u8_w", "aux_conf", "info", "desired", chauffage);
-    quick_assign('.vigipool_common_modal_all_aux_type_treatment', "u8_w", "aux_conf", "info", "desired", trait);
-    quick_assign('.vigipool_common_modal_all_aux_type_booster', "u8_w", "aux_conf", "info", "desired", surpresseur);
-    quick_assign('.vigipool_common_modal_all_aux_type_auxiliary', "u8_w", "aux_conf", "info", "desired", aux);
+    quick_assign('.vigipool_common_modal_all_aux_type_none', "u16_w", "aux_conf", "info", "desired", desactive);
+    quick_assign('.vigipool_common_modal_all_aux_type_heater', "u16_w", "aux_conf", "info", "desired", chauffage);
+    quick_assign('.vigipool_common_modal_all_aux_type_treatment', "u16_w", "aux_conf", "info", "desired", trait);
+    quick_assign('.vigipool_common_modal_all_aux_type_booster', "u16_w", "aux_conf", "info", "desired", surpresseur);
+    quick_assign('.vigipool_common_modal_all_aux_type_auxiliary', "u16_w", "aux_conf", "info", "desired", aux);
 
     quick_assign('.vigipool_common_modal_all_winter_mode_off', "u8_w", "winter_mode", "info", "desired", "0");
     quick_assign('.vigipool_common_modal_all_winter_mode_on', "u8_w", "winter_mode", "info", "desired", "1");

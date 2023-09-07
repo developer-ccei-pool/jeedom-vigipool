@@ -89,7 +89,7 @@ include 'manager.php';
         $("." + button).click(function () {
             var aux_conf = get_value_from_position(eq_modal, "aux_conf");
             var aux_type = get_value_from_position(eq_modal, "aux_type");
-            quick_send("u8_w", "aux_conf", "info", "desired", change_aux_conf(aux_conf, aux_type, bit, value));
+            quick_send("u16_w", "aux_conf", "info", "desired", change_aux_conf(aux_conf, aux_type, bit, value));
         });
     }
 
