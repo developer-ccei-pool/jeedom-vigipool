@@ -6,24 +6,35 @@ if (!isConnect('admin')) {
 }
 
 include 'manager.php';
-?>
 
+modal_top();
+?>
 <div class="transition vigipool_ui_text_modal">
 
     <h2 class="transition vigipool_modal_title"></h2>
 
-    <h3><?php get_text("state"); ?></h3>
+    <h3><?php get_text("description_wix"); ?></h3>
 
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <h3><?php get_text("state"); ?></h3>
     <button type="button" class="transition btn btn-light vigipool_modal_x3_state_button_off"><?php get_text("off"); ?></button>
     <button type="button" class="transition btn btn-light vigipool_modal_x3_state_button_on"><?php get_text("on"); ?></button>
 
-    <h3><?php get_text("color_picker"); ?></h3>
+    <br/>
+    <br/>
 
+    <h3><?php get_text("color_picker"); ?></h3>
     <input type="color" class="vigipool_modal_x3_state_button_color_picker">
 
-    <h3><?php get_text("saved_colors"); ?></h3>
+    <br/>
+    <br/>
 
-    <table>
+    <h3><?php get_text("saved_colors"); ?></h3>
+    <table class="centerer">
         <tr>
             <td style="color: #fbdfc6; font-size: 50px !important;" class="saved_colors vigipool_modal_x3_state_button_saved_color_1">●</td>
             <td style="color: #fbdfc6; font-size: 50px !important;" class="saved_colors vigipool_modal_x3_state_button_saved_color_2">●</td>
@@ -40,7 +51,7 @@ include 'manager.php';
 
     <h3><?php get_text("sequences"); ?></h3>
 
-    <table>
+    <table class="centerer">
         <tr>
             <th class="transition vigipool_button_sequence vigipool_modal_x3_state_rainbow_button"><img width="103px" height="59px" src="/plugins/vigipool/desktop/img/x3_rainbow.png"></th>
             <th class="transition vigipool_button_sequence vigipool_modal_x3_state_fun_button"><img width="103px" height="59px" src="/plugins/vigipool/desktop/img/x3_fun.png"></th>
@@ -54,7 +65,7 @@ include 'manager.php';
             <th class="transition vigipool_label_sequence vigipool_modal_x3_state_flamme_label"><?php get_text("flamme"); ?></th>
         </tr>
     </table>
-    <table>
+    <table class="centerer">
         <tr>
             <th class="transition vigipool_button_sequence vigipool_modal_x3_state_parade_button"><img width="103px" height="59px" src="/plugins/vigipool/desktop/img/x3_parade.png"></th>
             <th class="transition vigipool_button_sequence vigipool_modal_x3_state_elegant_button"><img width="103px" height="59px" src="/plugins/vigipool/desktop/img/x3_elegant.png"></th>
@@ -69,12 +80,15 @@ include 'manager.php';
         </tr>
     </table>
 
+    <br/>
+    <br/>
+
     <h3><?php get_text("bright"); ?></h3>
     <?php create_slider("x3_bright", 0, 100); ?>
 
     <h3 class="transition vigipool_modal_x3_state_speed_title"><?php get_text("speed"); ?></h3>
 
-    <table>
+    <table class="centerer">
         <tr class="transition vigipool_modal_x3_state_speed">
             <th>
                 <img style="filter: invert(1); vertical-align: super;" src="/plugins/vigipool/desktop/img/rocket-takeoff-fill.svg">
@@ -91,10 +105,15 @@ include 'manager.php';
         </tr>
     </table>
 
+    <br/>
+    <br/>
+
     <h3><?php get_text("scheduling"); ?></h3>
     <?php create_program("vigipool_modal_x3_state", 1); ?>
     <?php create_program("vigipool_modal_x3_state", 2); ?>
 </div>
+
+<?php modal_bot(); ?>
 
 <script>
     common_modals_finish_load();

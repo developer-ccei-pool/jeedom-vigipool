@@ -4,37 +4,62 @@ if (!isConnect('admin')) {
 }
 
 include 'manager.php';
+
+modal_top();
 ?>
 
 <div class="transition vigipool_ui_text_modal">
 
     <h2 class="transition vigipool_modal_title"></h2>
 
-    <?php create_ui_options("vigipool_modal_auxiliary"); ?>
-
     <h3><?php get_text("heater"); ?></h3>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
 
     <h4><?php get_text("aux_state"); ?></h4>
 
     <button type="button" class="transition btn btn-light vigipool_modal_auxiliary_aux_state_off"><?php get_text("off"); ?></button>
     <button type="button" class="transition btn btn-light vigipool_modal_auxiliary_aux_state_on"><?php get_text("on"); ?></button>
 
+    <br/>
+    <br/>
+
     <h4><?php get_text("consigne_temp"); ?></h4>
 
     <?php create_slider("consigne_temp", 10, 40); ?>
+
+    <br/>
+    <br/>
 
     <h4><?php get_text("aux_min_temp"); ?></h4>
 
     <?php create_slider("aux_min_temp", 10, 18); ?>
 
+    <br/>
+    <br/>
+
     <?php create_program("vigipool_modal_auxiliary", 1); ?>
     <?php create_program("vigipool_modal_auxiliary", 2); ?>
+
+    <br/>
+    <br/>
 
     <h3><?php get_text("history_title"); ?></h3>
 
     <button type="button" class="transition btn btn-light vigipool_modal_auxiliary_button_aux_state"><?php get_text("history"); ?></button>
 
+    <br/>
+    <br/>
+
+    <?php create_ui_options("vigipool_modal_auxiliary"); ?>
+
 </div>
+
+<?php modal_bot(); ?>
 
 <script>
     common_modals_finish_load();

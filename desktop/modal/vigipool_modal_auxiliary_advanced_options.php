@@ -4,15 +4,25 @@ if (!isConnect('admin')) {
 }
 
 include 'manager.php';
+
+modal_top();
 ?>
 
 <div class="transition vigipool_ui_text_modal">
 
     <h2 class="transition vigipool_modal_title"></h2>
 
+    <h3><?php get_text("settings"); ?></h3>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
     <button type="button" class="transition btn btn-light vigipool_modal_auxiliary_advanced_options_back"><?php get_text("go_back"); ?></button>
 
-    <h3><?php get_text("settings"); ?></h3>
+    <br/>
+    <br/>
 
     <!-- enslaved_to_filtration -->
 
@@ -23,6 +33,9 @@ include 'manager.php';
         <button style="display: none;" type="button" class="transition btn btn-light vigipool_modal_auxiliary_advanced_options_enslaved_to_filtration_on"><?php get_text("on"); ?></button>
     </div>
 
+    <br/>
+    <br/>
+
     <!-- force_filtration_during_aux -->
 
     <div class="vigipool_modal_auxiliary_advanced_options_force_filtration_during_aux">
@@ -32,6 +45,9 @@ include 'manager.php';
         <button style="display: none;" type="button" class="transition btn btn-light vigipool_modal_auxiliary_advanced_options_force_filtration_during_aux_on"><?php get_text("on"); ?></button>
     </div>
 
+    <br/>
+    <br/>
+
     <!-- consigne_temp -->
 
     <div class="vigipool_modal_auxiliary_advanced_options_consigne_temp">
@@ -39,6 +55,9 @@ include 'manager.php';
         <button style="display: none;" type="button" class="transition btn btn-light vigipool_modal_auxiliary_advanced_options_consigne_temp_off"><?php get_text("off"); ?></button>
         <button style="display: none;" type="button" class="transition btn btn-light vigipool_modal_auxiliary_advanced_options_consigne_temp_on"><?php get_text("on"); ?></button>
     </div>
+
+    <br/>
+    <br/>
 
     <!-- aux_min_temp -->
 
@@ -49,6 +68,9 @@ include 'manager.php';
         <button style="display: none;" type="button" class="transition btn btn-light vigipool_modal_auxiliary_advanced_options_aux_min_temp_on"><?php get_text("on"); ?></button>
     </div>
 
+    <br/>
+    <br/>
+
     <!-- consigne_orp -->
 
     <div class="vigipool_modal_auxiliary_advanced_options_consigne_orp">
@@ -58,6 +80,8 @@ include 'manager.php';
     </div>
 
 </div>
+
+<?php modal_bot(); ?>
 
 <script>
     common_modals_finish_load();

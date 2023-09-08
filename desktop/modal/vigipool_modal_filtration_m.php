@@ -1,45 +1,44 @@
 <?php
-/* This file is part of Jeedom.
- *
- * Jeedom is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Jeedom is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
- */
-
 if (!isConnect('admin')) {
     throw new Exception('{{401 - Accès non autorisé}}');
 }
 
 include 'manager.php';
+
+modal_top();
 ?>
 
 <div class="vigipool_ui_text_modal">
 
     <h2 class="vigipool_modal_title"></h2>
 
-    <h3>Filtration</h3>
+    <h3><?php get_text("common_filtration_type"); ?></h3>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
     <button type="button" class="btn btn-light vigipool_modal_filtration_m_off"><?php get_text("off"); ?></button>
     <button type="button" class="btn btn-light vigipool_modal_filtration_m_on"><?php get_text("on"); ?></button>
     <button type="button" class="btn btn-light vigipool_modal_filtration_m_prog"><?php get_text("prog"); ?></button>
     <button type="button" class="btn btn-light vigipool_modal_filtration_m_auto"><?php get_text("auto"); ?></button>
 
+    <br/>
+    <br/>
+
     <h3><?php get_text("scheduling"); ?></h3>
     <?php create_program_simple("vigipool_modal_filtration_m", 1); ?>
-    <h3><?php echo $history_title[$lang] ?></h3>
 
+    <br/>
+    <br/>
+
+    <h3><?php echo $history_title[$lang] ?></h3>
     <button type="button" class="btn btn-light vigipool_anteam_modal_filtration_button_state"><?php get_text("history"); ?></button>
 
 </div>
+
+<?php modal_bot(); ?>
 
 <script>
     common_modals_finish_load();

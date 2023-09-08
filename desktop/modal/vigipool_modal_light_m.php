@@ -1,53 +1,64 @@
 <link rel="stylesheet" href="/plugins/vigipool/core/template/css/modal_light.css">
 
 <?php
-/* This file is part of Jeedom.
- *
- * Jeedom is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Jeedom is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
- */
-
 if (!isConnect('admin')) {
     throw new Exception('{{401 - Accès non autorisé}}');
 }
 
 include 'manager.php';
+
+modal_top();
 ?>
 
 <div class="transition vigipool_ui_text_modal">
 
     <h2 class="transition vigipool_modal_title"></h2>
 
-    <?php // create_ui_options("vigipool_modal_light_m"); ?>
+    <h3><?php get_text("light"); ?></h3>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
     <?php create_ui_on_off("vigipool_modal_light_m"); ?>
 
+    <br/>
+    <br/>
+
     <?php create_ui_prog_auto("vigipool_modal_light_m"); ?>
+
+    <br/>
+    <br/>
 
     <?php create_ui_tild_light("vigipool_modal_light_m") ?>
 
+    <br/>
+    <br/>
+
     <?php create_ui_bright("vigipool_modal_light_m"); ?>
+
+    <br/>
+    <br/>
 
     <?php create_ui_speed("vigipool_modal_light_m"); ?>
 
+    <br/>
+    <br/>
+
     <h3><?php get_text("scheduling"); ?></h3>
     <?php create_program_simple("vigipool_modal_light_m", 1); ?>
+
+    <br/>
+    <br/>
 
     <h3>Historique</h3>
 
     <button type="button" class="transition btn btn-light vigipool_modal_light_m_button_code"><?php get_text("history"); ?></button>
 
 </div>
+
+<?php modal_bot(); ?>
 
 <script>
     common_modals_finish_load();

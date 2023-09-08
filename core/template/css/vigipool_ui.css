@@ -361,8 +361,26 @@
     text-align: center;
 }
 
+.centerer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .saved_colors
 {
     font-size: xx-large;
     text-align: center;
+}
+
+.slidecontainer > input {
+    width: 50%;
+    display: initial;
+}
+
+:not(.ui-dialog-content) table:not(.tableCmd) > tbody tr:nth-child(odd) {
+    background: none !important;
+}
+
+:not(.ui-dialog-content) table:not(.tableCmd) > tbody tr:nth-child(even) {
+    background: none !important;
 }

@@ -6,20 +6,38 @@ if (!isConnect('admin')) {
 }
 
 include 'manager.php';
+
+modal_top();
 ?>
 
 <div class="transition vigipool_ui_text_modal">
 
     <h2 class="transition vigipool_modal_title"></h2>
 
+    <h3><?php get_text("scheduling"); ?></h3>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
     <h3><?php get_text("save"); ?></h3>
 
     <button type="button" class="transition btn btn-light vigipool_modal_light_prog_2_button_save"><?php get_text("save"); ?></button>
     <button type="button" class="transition btn btn-light vigipool_modal_light_prog_2_button_back"><?php get_text("back"); ?></button>
 
+    <br/>
+    <br/>
+
     <?php create_ui_on_off("vigipool_modal_light_prog_2"); ?>
 
+    <br/>
+    <br/>
+
     <?php create_ui_tild_light("vigipool_modal_light_prog_2") ?>
+
+    <br/>
+    <br/>
 
     <h3><?php get_text("select_the_start_time_and_duration_of_the_program"); ?></h3>
 
@@ -28,6 +46,9 @@ include 'manager.php';
     <?php create_slider("vigipool_modal_light_prog_2_sched_1_begin", 0, 24 * 4); ?>
     <h4><?php get_text("during"); ?></h4>
     <?php create_slider("vigipool_modal_light_prog_2_sched_1_end", 0, 24 * 4); ?>
+
+    <br/>
+    <br/>
 
     <button type="button" class="transition btn btn-light vigipool_modal_light_prog_2_sched_2_add"><?php get_text("add"); ?></button>
 
@@ -39,6 +60,9 @@ include 'manager.php';
         <?php create_slider("vigipool_modal_light_prog_2_sched_2_end", 0, 24 * 4); ?>
     </div>
 
+    <br/>
+    <br/>
+
     <button type="button" class="transition btn btn-light vigipool_modal_light_prog_2_sched_3_add"><?php get_text("add"); ?></button>
 
     <div class="vigipool_modal_light_prog_2_sched_3">
@@ -49,19 +73,31 @@ include 'manager.php';
         <?php create_slider("vigipool_modal_light_prog_2_sched_3_end", 0, 24 * 4); ?>
     </div>
 
+    <br/>
+    <br/>
+
     <?php create_ui_bright("vigipool_modal_light_prog_2"); ?>
 
+    <br/>
+    <br/>
+
     <?php create_ui_speed("vigipool_modal_light_prog_2"); ?>
+
+    <br/>
+    <br/>
 
     <h3><?php get_text("scheduling"); ?></h3>
     <?php create_program("vigipool_modal_light_prog_2", 2); ?>
 
-    <h3><?php get_text("save"); ?></h3>
+    <br/>
+    <br/>
 
+    <h3><?php get_text("save"); ?></h3>
     <button type="button" class="transition btn btn-light vigipool_modal_light_prog_2_button_save"><?php get_text("save"); ?></button>
     <button type="button" class="transition btn btn-light vigipool_modal_light_prog_2_button_back"><?php get_text("back"); ?></button>
-
 </div>
+
+<?php modal_bot(); ?>
 
 <script>
     // Common
@@ -146,7 +182,7 @@ include 'manager.php';
     });
 
     // Color
-    
+
     create_ui_tild_light("vigipool_modal_light_prog_2");
 
     var id_warm = 0;

@@ -1778,6 +1778,19 @@ function get_sched_value(variable_sched, selection) {
     if (selection === "program_2_color")
         return parseInt(program_2_bright);
 
+    if (selection === "1")
+        return parseInt(programs_number);
+    if (selection === "2")
+        return parseInt(program_1_off_on_and_days);
+    if (selection === "3")
+        return parseInt(program_1_bright);
+    if (selection === "4")
+        return parseInt(program_1_speed);
+    if (selection === "5")
+        return parseInt(program_1_sched_number);
+    if (selection === "6")
+        return parseInt(program_1_sched_1_begin);
+
     if (program_1_off_on_and_days === undefined) {
         return;
     }
@@ -4341,7 +4354,7 @@ var set_filtration_m_sched_value_save = "";
 
 function set_filtration_m_sched_value(name, value) {
 
-    // Récupération des valeurs de basesselected_program_1_sched_2_begin
+    // Récupération de la valeur de base
 
     if (set_filtration_m_sched_value_save === "") {
         var filtration_sched_m = get_value_from_position(eq_modal, "filt_sched_m");
@@ -4349,13 +4362,21 @@ function set_filtration_m_sched_value(name, value) {
         var filtration_sched_m = set_filtration_m_sched_value_save;
     }
     console.log("filtration_sched_m = " + filtration_sched_m);
+    
+    // 02 04 06 08 00 0A
 
-    var selected_begin_1 = get_sched_value(filtration_sched_m, "programs_number");
-    var selected_end_1 = get_sched_value(filtration_sched_m, "program_1_off_on_and_days");
-    var selected_begin_2 = get_sched_value(filtration_sched_m, "program_1_bright");
-    var selected_end_2 = get_sched_value(filtration_sched_m, "program_1_speed");
-    var selected_begin_3 = get_sched_value(filtration_sched_m, "program_1_sched_number");
-    var selected_end_3 = get_sched_value(filtration_sched_m, "program_1_sched_1_begin");
+    var iterator = 0;
+    var selected_begin_1 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
+    iterator = iterator + 2;
+    var selected_end_1 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
+    iterator = iterator + 2;
+    var selected_begin_2 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
+    iterator = iterator + 2;
+    var selected_end_2 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
+    iterator = iterator + 2;
+    var selected_begin_3 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
+    iterator = iterator + 2;
+    var selected_end_3 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
 
     console.log("selected_begin_1 = " + selected_begin_1);
     console.log("selected_end_1 = " + selected_end_1);

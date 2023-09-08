@@ -1,32 +1,25 @@
 <link rel="stylesheet" href="/plugins/vigipool/core/template/css/modal_light.css">
 
 <?php
-/* This file is part of Jeedom.
- *
- * Jeedom is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Jeedom is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
- */
-
 if (!isConnect('admin')) {
     throw new Exception('{{401 - Accès non autorisé}}');
 }
 
 include 'manager.php';
+
+modal_top();
 ?>
 
 <div class="transition vigipool_ui_text_modal">
 
     <h2 class="transition vigipool_modal_title"></h2>
+
+    <h3><?php get_text("vigipool_modal_ely"); ?></h3>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
     <h3><?php get_text("mode"); ?></h3>
 
@@ -36,20 +29,32 @@ include 'manager.php';
     <button type="button" class="transition btn btn-light vigipool_modal_ely_mode_regulated"><?php get_text("regulated"); ?></button>
     <button type="button" class="transition btn btn-light vigipool_modal_ely_mode_shock"><?php get_text("shock"); ?></button>
 
+    <br/>
+    <br/>
+
     <div class="vigipool_modal_ely_slider_ely_duration_theo">
         <h3><?php get_text("daily_production_duration"); ?></h3>
         <?php create_slider("ely_duration_theo", 0, 24); ?>
     </div>
+
+    <br/>
+    <br/>
 
     <div class="vigipool_modal_ely_slider_consigne_orp">
         <h3><?php get_text("consigne_orp"); ?></h3>
         <?php create_slider("consigne_orp", 45, 85); ?>
     </div>
 
+    <br/>
+    <br/>
+
     <div class="vigipool_modal_ely_slider_choc_duration">
         <h3><?php get_text("choc_duration"); ?></h3>
         <?php create_slider("choc_duration", 1, 72); ?>
     </div>
+
+    <br/>
+    <br/>
 
     <div class="vigipool_modal_ely_slider_power_ely">
         <h3><?php get_text("power"); ?></h3>
@@ -57,21 +62,32 @@ include 'manager.php';
         <?php create_slider("power_ely", 50, 125); ?>
     </div>
 
+    <br/>
+    <br/>
 
     <h3><?php get_text("instant_chlorine_prod"); ?></h3>
     <p class="transition vigipool_modal_ely_instant_chlorine_prod"></p>
 
-    <h3><?php get_text("temperature"); ?></h3>
+    <br/>
+    <br/>
 
+    <h3><?php get_text("temperature"); ?></h3>
     <p class="transition vigipool_modal_ely_temperature"></p>
 
-    <h3><?php get_text("min_temperature"); ?></h3>
+    <br/>
+    <br/>
 
+    <h3><?php get_text("min_temperature"); ?></h3>
     <?php create_slider("temp_min_off_ely", 10, 20); ?>
 
-    <h3><?php get_text("chlorine_prod"); ?></h3>
+    <br/>
+    <br/>
 
+    <h3><?php get_text("chlorine_prod"); ?></h3>
     <p class="transition vigipool_modal_ely_chlorine_prod"></p>
+
+    <br/>
+    <br/>
 
     <h3><?php get_text("water_hardness"); ?></h3>
 
@@ -83,19 +99,27 @@ include 'manager.php';
     <!--<button type="button" class="transition btn btn-light vigipool_modal_ely_water_hardness_5"><?php get_text("very_hard"); ?></button>-->
     <?php create_slider("water_hardness", 0, 5); ?>
 
-    <h3><?php get_text("voltage"); ?></h3>
 
+    <br/>
+    <br/>
+
+    <h3><?php get_text("voltage"); ?></h3>
     <p class="transition vigipool_modal_ely_voltage"></p>
 
-    <h3><?php get_text("amperage"); ?></h3>
+    <br/>
+    <br/>
 
+    <h3><?php get_text("amperage"); ?></h3>
     <p class="transition vigipool_modal_ely_amperage"></p>
 
-    <h3><?php get_text("internal_temperature"); ?></h3>
+    <br/>
+    <br/>
 
+    <h3><?php get_text("internal_temperature"); ?></h3>
     <p class="transition vigipool_modal_ely_internal_temperature"></p>
 </div>
 
+<?php modal_bot(); ?>
 
 <script>
     common_modals_finish_load();

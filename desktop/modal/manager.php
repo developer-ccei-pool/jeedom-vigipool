@@ -53,7 +53,7 @@ function create_ui_speed($file_name) {
 
     echo "<h3 class=\"transition {$file_name}_speed_title\">$speed</h3>";
 
-    echo "<table>";
+    echo "<table class=\"centerer\">";
     echo "<tr class=\"transition {$file_name}_speed\">";
     echo "<th>";
     echo "<img style=\"filter: invert(1); vertical-align: super;\" src=\"/plugins/vigipool/desktop/img/rocket-takeoff-fill.svg\">";
@@ -81,7 +81,7 @@ function create_ui_bright($file_name) {
 
     echo "<h3 class=\"transition {$file_name}_bright_title\">$bright</h3>";
 
-    echo "<table>";
+    echo "<table class=\"centerer\">";
     echo "<tr class=\"transition {$file_name}_bright\">";
     echo "<th>";
     echo "<img style=\"filter: invert(1); vertical-align: super;\" src=\"/plugins/vigipool/desktop/img/sun.svg\">";
@@ -131,7 +131,7 @@ function create_ui_tild_light($file_name) {
 
     echo "<h3>$colors</h3>";
 
-    echo "<table style=\"table-layout: fixed;width: 400px;\">";
+    echo "<table class=\"centerer\" style=\"table-layout: fixed;width: 400px;\">";
     echo "<tr>";
     echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_warm_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
     echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_cold_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
@@ -168,7 +168,7 @@ function create_ui_tild_light($file_name) {
 
     echo "<h3>$sequences</h3>";
 
-    echo "<table>";
+    echo "<table class=\"centerer\">";
     echo "<tr>";
     echo "<th class=\"clickable transition vigipool_button_sequence {$file_name}_gradiant_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
     echo "<th class=\"clickable transition vigipool_button_sequence {$file_name}_rainbow_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
@@ -270,7 +270,7 @@ function create_program($file_name, $sched_number) {
     $duration = get_text("duration", false);
     $hours = get_text("hours", false);
 
-    echo "<table>";
+    echo "<table class=\"centerer\">";
     echo "<tr>";
     echo "<td>$program $sched_number</td>";
     echo "<td></td>";
@@ -323,7 +323,7 @@ function create_program_simple($file_name, $sched_number) {
 
     echo "<h4>$program $sched_number</h4>";
 
-    echo "<table>";
+    echo "<table class=\"centerer\">";
     echo "<tr>";
     echo "<td class=\"transition {$file_name}_{$sched_number}_from_label_1\">$from</td>";
     echo "<td class=\"transition {$file_name}_{$sched_number}_from_value_1\"></td>";
@@ -354,4 +354,20 @@ function create_program_simple($file_name, $sched_number) {
     echo "</table>";
 
     echo "<p class=\"transition {$file_name}_{$sched_number}_duration\">$duration : $hours</p>";
+}
+
+function modal_top() {
+    echo "<div class=\"top_container\" >";
+    echo "<div class=\"top_box\">";
+    echo "<div class=\"scroll_container\">";
+    echo "<div class=\"scroll_sliding-background\">";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>";
+    echo "<div class=\"top_box top_overlay center\">";
+}
+
+function modal_bot() {
+    echo "</div>";
+    echo "</div>";
 }

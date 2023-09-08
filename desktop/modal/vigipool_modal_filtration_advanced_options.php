@@ -4,17 +4,25 @@ if (!isConnect('admin')) {
 }
 
 include 'manager.php';
+
+modal_top();
 ?>
 
 <div class="transition vigipool_ui_text_modal">
 
     <h2 class="transition vigipool_modal_title"></h2>
 
+    <h3><?php get_text("options"); ?></h3>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
     <button type="button" class="transition btn btn-filtration vigipool_modal_filtration_advanced_options_back"><?php get_text("go_back"); ?></button>
 
-    <h3><?php get_text("settings"); ?></h3>
-
-    <!-- frost_free -->
+    <br/>
+    <br/>
 
     <div class="vigipool_modal_filtration_advanced_options_frost_free">
         <h4 class="transition"><?php get_text("settings_button_frost_protection_mode"); ?></h4>
@@ -26,6 +34,8 @@ include 'manager.php';
     </div>
 
 </div>
+
+<?php modal_bot(); ?>
 
 <script>
     common_modals_finish_load();
