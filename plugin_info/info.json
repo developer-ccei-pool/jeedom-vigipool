@@ -12,7 +12,7 @@
 	"hasDependency" : false,
 	"hasOwnDeamon" : false,
 	"maxDependancyInstallTime" : 0,
-	"documentation" : "https://github.com/developer-ccei-pool/jeedom-vigipool/tree/beta",
+	"documentation_beta" : "https://github.com/developer-ccei-pool/jeedom-vigipool/tree/beta",
 	"link" : {
 		"forum":"Lien vers le forum",
 		"video" : "Lien vers une video"
