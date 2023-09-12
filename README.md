@@ -44,6 +44,7 @@ Il y a plusieurs moyens pour le faire
 - Automatiquement
 
 Vous avez un bouton "Rechercher les produits Vigipool" qui va scanner toutes les adresses IP de votre réseau et va afficher dans la liste "Périphériques Vigipool détectés" ses résultats
+
 Le bouton "Rapide" est moins exhaustif que le bouton "Lent"
 
 Vous pouvez ensuite cliquer sur le résultat pour compléter automatiquement "Adresse IP de cet équipement" et "ID de cet équipement"
