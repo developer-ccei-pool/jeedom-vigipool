@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://market.jeedom.com/index.php?v=d&p=market_display&id=4437/">
-    <img src="https://market.jeedom.com/filestore/market/plugin/images/vigipool_icon.png" alt="Vigipool Jeedom Logo" width="200" height="165">
+    <img src="https://market.jeedom.com/filestore/market/plugin/images/vigipool_icon.png" alt="Vigipool Jeedom Logo">
   </a>
 </p>
 
