@@ -5,6 +5,10 @@
 		"fr_FR": "Vigipool, l'appli innovante pour contrôler et piloter votre piscine à distance.",
 		"en-US": "Vigipool, the innovative app to remotely monitor and control your swimming pool."
 	},
+        "utilization" : {
+                "fr_FR": "Pour voir comment utiliser le plugin, lisez le readme sur ce lien : https://github.com/developer-ccei-pool/jeedom-vigipool/tree/beta",
+		"en-US": "To see how to use the plugin, read the readme at this link: https://github.com/developer-ccei-pool/jeedom-vigipool/tree/beta"
+        },
 	"licence" : "AGPL",
 	"author" : "CCEI",
 	"require" : "4.2.0",
