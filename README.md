@@ -25,7 +25,7 @@
 
 ## Ajouter un équipement
 
-Après installer le Plugin Jeedom Vigipool, aller dans le menu "Plugins" puis "Monitoring" puis "Vigipool"
+Après installer le Plugin Jeedom Vigipool, aller dans le menu "Plugins" puis "Objets Connectés" puis "Vigipool"
 
 Cliquer sur "Ajouter"
 
