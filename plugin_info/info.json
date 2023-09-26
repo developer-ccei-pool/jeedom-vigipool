@@ -2,8 +2,8 @@
     "id": "vigipool",
     "name": "Vigipool",
     "description": {
-        "fr_FR": "Vigipool, l'appli innovante pour contrôler et piloter votre piscine à distance.<br/>Liste des équipements Vigipool compatibles avec Le plugin :<br/>- Tild<br/>- PhileoX / Phileo VP<br/>- Ziphox / Ofix<br/>- AnteaM<br/>- Zelix / Zelia<br/>- VigiBrio",
-        "en-US": "Vigipool, the innovative app to remotely monitor and control your swimming pool.<br/>List of Vigipool equipments compatible with the plugin:<br/>- Tild<br/>- PhileoX / Phileo VP<br/>- Ziphox / Ofix<br/>- AnteaM<br/>- Zelix / Zelia<br/>- VigiBrio"
+        "fr_FR": "Vigipool, l'appli innovante pour contrôler et piloter votre piscine à distance. Liste des équipements Vigipool compatibles avec Le plugin : Tild, PhileoX/Phileo VP, Ziphox/Ofix, AnteaM, Zelix/Zelia, VigiBrio",
+        "en-US": "Vigipool, the innovative app to remotely monitor and control your swimming pool. List of Vigipool equipments compatible with the plugin : Tild, PhileoX/Phileo VP, Ziphox/Ofix, AnteaM, Zelix/Zelia, VigiBrio"
     },
     "utilization": "https://github.com/developer-ccei-pool/jeedom-vigipool/tree/beta",
     "licence": "AGPL",
