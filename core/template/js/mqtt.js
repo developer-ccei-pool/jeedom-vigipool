@@ -162,7 +162,7 @@ function replace_in_hex(position, value) {
 function quick_send(type, variable, info, desired, value) {
     var devices = get_master_and_slaves(eq_modal);
 
-    // console.log("devices = ");
+//     console.log("devices = ");
     // console.log(devices);
 
     for (var i = 0, max = devices.length - 1; i < max; i++) {
@@ -236,7 +236,7 @@ function check_variable_device(device, type, variable) {
 
 function mosquitto_pub($device, $type, $variable, $info, $desired, $ip, $value) {
     var check = check_variable_device($device, $type, $variable);
-    // console.log("check = " + check);
+//    console.log("check = " + check);
 
     if (check) {
         $.ajax({
@@ -244,7 +244,7 @@ function mosquitto_pub($device, $type, $variable, $info, $desired, $ip, $value) 
             type: "post",
             data: {device: $device, type: $type, variable: $variable, info: $info, desired: $desired, ip: $ip, value: $value},
             success: function (data) {
-                // console.log('mosquitto_pub = ' + data);
+//                console.log('mosquitto_pub = ' + data);
             }
         });
     }

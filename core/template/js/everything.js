@@ -9,14 +9,32 @@ var x3_elegant_value = "SK8038KBF38KFF38KBF38K4438K0038K4438";
 var x3_horizon_value = "S#0000FF7FK897F#04FFFF7F";
 var x3_psyche_value = "S#FF005004#00000000#0000FF04#00000000#15EDFF04#00000000#C000FF04#00000000#FFFF0004#00000000#FF00FF04#00000000";
 
-var x3_rainbow_button = ".vigipool_modal_x3_state_prog_2_rainbow_button > img";
-var x3_fun_button = ".vigipool_modal_x3_state_prog_2_fun_button > img";
-var x3_ocean_button = ".vigipool_modal_x3_state_prog_2_ocean_button > img";
-var x3_flamme_button = ".vigipool_modal_x3_state_prog_2_flamme_button > img";
-var x3_parade_button = ".vigipool_modal_x3_state_prog_2_parade_button > img";
-var x3_elegant_button = ".vigipool_modal_x3_state_prog_2_elegant_button > img";
-var x3_horizon_button = ".vigipool_modal_x3_state_prog_2_horizon_button > img";
-var x3_psyche_button = ".vigipool_modal_x3_state_prog_2_psyche_button > img";
+var x3_rainbow_button = ".vigipool_modal_x3_state_rainbow_button > img";
+var x3_fun_button = ".vigipool_modal_x3_state_fun_button > img";
+var x3_ocean_button = ".vigipool_modal_x3_state_ocean_button > img";
+var x3_flamme_button = ".vigipool_modal_x3_state_flamme_button > img";
+var x3_parade_button = ".vigipool_modal_x3_state_parade_button > img";
+var x3_elegant_button = ".vigipool_modal_x3_state_elegant_button > img";
+var x3_horizon_button = ".vigipool_modal_x3_state_horizon_button > img";
+var x3_psyche_button = ".vigipool_modal_x3_state_psyche_button > img";
+
+var x3_prog_1_rainbow_button = ".vigipool_modal_x3_state_prog_1_rainbow_button > img";
+var x3_prog_1_fun_button = ".vigipool_modal_x3_state_prog_1_fun_button > img";
+var x3_prog_1_ocean_button = ".vigipool_modal_x3_state_prog_1_ocean_button > img";
+var x3_prog_1_flamme_button = ".vigipool_modal_x3_state_prog_1_flamme_button > img";
+var x3_prog_1_parade_button = ".vigipool_modal_x3_state_prog_1_parade_button > img";
+var x3_prog_1_elegant_button = ".vigipool_modal_x3_state_prog_1_elegant_button > img";
+var x3_prog_1_horizon_button = ".vigipool_modal_x3_state_prog_1_horizon_button > img";
+var x3_prog_1_psyche_button = ".vigipool_modal_x3_state_prog_1_psyche_button > img";
+
+var x3_prog_2_rainbow_button = ".vigipool_modal_x3_state_prog_2_rainbow_button > img";
+var x3_prog_2_fun_button = ".vigipool_modal_x3_state_prog_2_fun_button > img";
+var x3_prog_2_ocean_button = ".vigipool_modal_x3_state_prog_2_ocean_button > img";
+var x3_prog_2_flamme_button = ".vigipool_modal_x3_state_prog_2_flamme_button > img";
+var x3_prog_2_parade_button = ".vigipool_modal_x3_state_prog_2_parade_button > img";
+var x3_prog_2_elegant_button = ".vigipool_modal_x3_state_prog_2_elegant_button > img";
+var x3_prog_2_horizon_button = ".vigipool_modal_x3_state_prog_2_horizon_button > img";
+var x3_prog_2_psyche_button = ".vigipool_modal_x3_state_prog_2_psyche_button > img";
 
 var x3_rainbow_image = "/plugins/vigipool/desktop/img/x3_rainbow.png";
 var x3_fun_image = "/plugins/vigipool/desktop/img/x3_fun.png";
@@ -44,7 +62,7 @@ if (eq === undefined || eq >= $(".vigipool_ipaddr").length - 1) {
 }
 
 function create_ui_options_click(file_name) {
-    access_modal(`.${file_name}_see_advanced_options`, `${file_name}_advanced_options`, eq_modal);
+    access_modal(`.${file_name}_see_advanced_options`, `${file_name}_advanced_options`, 0, eq_modal);
 }
 
 function variable_check(variables) {
@@ -4362,7 +4380,7 @@ function set_filtration_m_sched_value(name, value) {
         var filtration_sched_m = set_filtration_m_sched_value_save;
     }
     console.log("filtration_sched_m = " + filtration_sched_m);
-    
+
     // 02 04 06 08 00 0A
 
     var iterator = 0;
@@ -5157,7 +5175,7 @@ function replace_in_hex(position, value) {
 function quick_send(type, variable, info, desired, value) {
     var devices = get_master_and_slaves(eq_modal);
 
-    // console.log("devices = ");
+//     console.log("devices = ");
     // console.log(devices);
 
     for (var i = 0, max = devices.length - 1; i < max; i++) {
@@ -5231,7 +5249,7 @@ function check_variable_device(device, type, variable) {
 
 function mosquitto_pub($device, $type, $variable, $info, $desired, $ip, $value) {
     var check = check_variable_device($device, $type, $variable);
-    // console.log("check = " + check);
+//    console.log("check = " + check);
 
     if (check) {
         $.ajax({
@@ -5239,7 +5257,7 @@ function mosquitto_pub($device, $type, $variable, $info, $desired, $ip, $value) 
             type: "post",
             data: {device: $device, type: $type, variable: $variable, info: $info, desired: $desired, ip: $ip, value: $value},
             success: function (data) {
-                // console.log('mosquitto_pub = ' + data);
+//                console.log('mosquitto_pub = ' + data);
             }
         });
     }
@@ -14730,19 +14748,27 @@ function create_slider(id, init_value, division, unit, disable, type, variable, 
             output.innerHTML = (slider.value / division) + " " + unit; // Display the default slider value
     };
 
-    switch (id) {
-        case "light_timer":
-            var value_mqtt = convert_time_4_to_timer(slider.value * value);
-            break;
-        default:
-            var value_mqtt = slider.value * value;
-            break;
-    }
 
     slider.onclick = function () {
+        switch (id) {
+            case "light_timer":
+                var value_mqtt = convert_time_4_to_timer(slider.value * value);
+                break;
+            default:
+                var value_mqtt = slider.value * value;
+                break;
+        }
         quick_send(type, variable, info, desired, value_mqtt);
     };
     slider.ontouchend = function () {
+        switch (id) {
+            case "light_timer":
+                var value_mqtt = convert_time_4_to_timer(slider.value * value);
+                break;
+            default:
+                var value_mqtt = slider.value * value;
+                break;
+        }
         quick_send(type, variable, info, desired, value_mqtt);
     };
 
@@ -15811,22 +15837,26 @@ $('.vigipool_ui_value_orp_ui').eq(20).click(function () {
     });
 }
 
-function access_modal(id, modal, eq) {
+function access_modal(id, modal, id_position, modal_position = id_position) {
 
-    $(id).eq(eq).click(function () {
+//    console.log("id = " + id);
+//    console.log("modal = " + modal);
+//    console.log("id_position = " + id_position);
+
+    $(id).eq(id_position).click(function () {
 
         devices = Array();
-        // console.log("devices = " + devices);
+//        console.log("devices = " + devices);
 
-        // console.log("modal = " + modal);
+//        console.log("modal = " + modal);
 
         var title = modal_to_title(modal);
 
-        // console.log("title = " + title);
+//        console.log("title = " + title);
 
         $('#md_modal')
                 .dialog({title: title})
-                .load('index.php?v=d&plugin=vigipool&eq_modal=' + eq + '&modal=' + modal + '&id=' + $('.eqLogicAttr[data-l1key=id]').value())
+                .load('index.php?v=d&plugin=vigipool&eq_modal=' + modal_position + '&modal=' + modal + '&id=' + $('.eqLogicAttr[data-l1key=id]').value())
                 .dialog('open');
     });
 }
@@ -17940,7 +17970,7 @@ function update_vigipool_modal_all() {
         $(".vigipool_common_modal_all_aux_type_booster").hide();
         $(".vigipool_common_modal_all_aux_type_auxiliary").hide();
     }
-    if (!is_variable_available(eq_modal, "aux_type")) {
+    if (!is_variable_available(eq_modal, "winter_mode")) {
         $(".vigipool_common_modal_all_winter_mode").hide();
         $(".vigipool_common_modal_all_winter_mode_off").hide();
         $(".vigipool_common_modal_all_winter_mode_on").hide();
@@ -18017,6 +18047,11 @@ function update_vigipool_modal_all() {
 
     // frost_free
 
+    $(".vigipool_common_modal_all_frost_free_off").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_frost_free_0").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_frost_free_1").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_frost_free_2").removeClass("btn-primary");
+
     switch (frost_free) {
         case 255:
             $(".vigipool_common_modal_all_frost_free_off").addClass("btn-primary");
@@ -18034,6 +18069,11 @@ function update_vigipool_modal_all() {
 
     // light_type
 
+    $(".vigipool_common_modal_all_light_type_rc").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_light_type_mono").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_light_type_mono_dim").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_light_type_micro_cuts").removeClass("btn-primary");
+
     switch (light_type) {
         case 0:
             $(".vigipool_common_modal_all_light_type_rc").addClass("btn-primary");
@@ -18050,6 +18090,12 @@ function update_vigipool_modal_all() {
     }
 
     // aux_type
+
+    $(".vigipool_common_modal_all_aux_type_none").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_aux_type_heater").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_aux_type_treatment").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_aux_type_booster").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_aux_type_auxiliary").removeClass("btn-primary");
 
     switch (aux_type) {
         case 1:
@@ -18070,6 +18116,9 @@ function update_vigipool_modal_all() {
     }
 
     // winter_mode
+
+    $(".vigipool_common_modal_all_winter_mode_off").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_winter_mode_on").removeClass("btn-primary");
 
     switch (winter_mode) {
         case 0:
@@ -18154,7 +18203,7 @@ function update_vigipool_ui_x3_state() {
     // x3_color
 
     var x3_color = get_value_from_position(eq_modal, "x3_color");
-//    console.log("x3_color = " + x3_color);
+    // console.log("x3_color = " + x3_color);
 
     $(".vigipool_modal_x3_state_button_color_picker").val(x3_color);
 
@@ -18173,11 +18222,15 @@ function update_vigipool_ui_x3_state() {
         // console.log(x3_color + " !== " + x3_fun_value);
     }
     if (x3_color === x3_ocean_value) {
+        console.log("x3_color === x3_ocean_value");
+        console.log("x3_color = " + x3_color);
+        console.log("x3_ocean_value = " + x3_ocean_value);
         $(x3_ocean_button).attr("src", x3_ocean_image_ok);
-        // console.log(x3_color + " === " + x3_ocean_value);
     } else {
+        console.log("x3_color !== x3_ocean_value");
+        console.log("x3_color = " + x3_color);
+        console.log("x3_ocean_value = " + x3_ocean_value);
         $(x3_ocean_button).attr("src", x3_ocean_image);
-        // console.log(x3_color + " !== " + x3_ocean_value);
     }
     if (x3_color === x3_flamme_value) {
         $(x3_flamme_button).attr("src", x3_flamme_image_ok);
@@ -18376,59 +18429,59 @@ update_vigipool_modal_x3_state();function update_vigipool_modal_x3_state_prog_1(
     // Sequences
 
     if (p1_color === x3_rainbow_value) {
-        $(x3_rainbow_button).attr("src", x3_rainbow_image_ok);
+        $(x3_prog_1_rainbow_button).attr("src", x3_rainbow_image_ok);
         // console.log(p1_color + " === " + x3_rainbow_value);
     } else {
-        $(x3_rainbow_button).attr("src", x3_rainbow_image);
+        $(x3_prog_1_rainbow_button).attr("src", x3_rainbow_image);
         // console.log(p1_color + " !== " + x3_rainbow_value);
     }
     if (p1_color === x3_fun_value) {
-        $(x3_fun_button).attr("src", x3_fun_image_ok);
+        $(x3_prog_1_fun_button).attr("src", x3_fun_image_ok);
         // console.log(p1_color + " === " + x3_fun_value);
     } else {
-        $(x3_fun_button).attr("src", x3_fun_image);
+        $(x3_prog_1_fun_button).attr("src", x3_fun_image);
         // console.log(p1_color + " !== " + x3_fun_value);
     }
     if (p1_color === x3_ocean_value) {
-        $(x3_ocean_button).attr("src", x3_ocean_image_ok);
+        $(x3_prog_1_ocean_button).attr("src", x3_ocean_image_ok);
         // console.log(p1_color + " === " + x3_ocean_value);
     } else {
-        $(x3_ocean_button).attr("src", x3_ocean_image);
+        $(x3_prog_1_ocean_button).attr("src", x3_ocean_image);
         // console.log(p1_color + " !== " + x3_ocean_value);
     }
     if (p1_color === x3_flamme_value) {
-        $(x3_flamme_button).attr("src", x3_flamme_image_ok);
+        $(x3_prog_1_flamme_button).attr("src", x3_flamme_image_ok);
         // console.log(p1_color + " === " + x3_flamme_value);
     } else {
-        $(x3_flamme_button).attr("src", x3_flamme_image);
+        $(x3_prog_1_flamme_button).attr("src", x3_flamme_image);
         // console.log(p1_color + " !== " + x3_flamme_value);
     }
     if (p1_color === x3_parade_value) {
-        $(x3_parade_button).attr("src", x3_parade_image_ok);
+        $(x3_prog_1_parade_button).attr("src", x3_parade_image_ok);
         // console.log(p1_color + " === " + x3_parade_value);
     } else {
-        $(x3_parade_button).attr("src", x3_parade_image);
+        $(x3_prog_1_parade_button).attr("src", x3_parade_image);
         // console.log(p1_color + " !== " + x3_parade_value);
     }
     if (p1_color === x3_elegant_value) {
-        $(x3_elegant_button).attr("src", x3_elegant_image_ok);
+        $(x3_prog_1_elegant_button).attr("src", x3_elegant_image_ok);
         // console.log(p1_color + " === " + x3_elegant_value);
     } else {
-        $(x3_elegant_button).attr("src", x3_elegant_image);
+        $(x3_prog_1_elegant_button).attr("src", x3_elegant_image);
         // console.log(p1_color + " !== " + x3_elegant_value);
     }
     if (p1_color === x3_horizon_value) {
-        $(x3_horizon_button).attr("src", x3_horizon_image_ok);
+        $(x3_prog_1_horizon_button).attr("src", x3_horizon_image_ok);
         // console.log(p1_color + " === " + x3_horizon_value);
     } else {
-        $(x3_horizon_button).attr("src", x3_horizon_image);
+        $(x3_prog_1_horizon_button).attr("src", x3_horizon_image);
         // console.log(p1_color + " !== " + x3_horizon_value);
     }
     if (p1_color === x3_psyche_value) {
-        $(x3_psyche_button).attr("src", x3_psyche_image_ok);
+        $(x3_prog_1_psyche_button).attr("src", x3_psyche_image_ok);
         // console.log(p1_color + " === " + x3_psyche_value);
     } else {
-        $(x3_psyche_button).attr("src", x3_psyche_image);
+        $(x3_prog_1_psyche_button).attr("src", x3_psyche_image);
         // console.log(p1_color + " !== " + x3_psyche_value);
     }
 
@@ -18542,7 +18595,7 @@ function update_vigipool_modal_x3_state_prog_2(set_sched_value_save = "") {
     }
 
     // Display
-    
+
     var p2_color = get_value_from_position(eq_modal, "p2_color");
 
     var programs_number = get_sched_value(x3_sched, "programs_number");
@@ -18616,59 +18669,59 @@ function update_vigipool_modal_x3_state_prog_2(set_sched_value_save = "") {
     // Sequences
 
     if (p2_color === x3_rainbow_value) {
-        $(x3_rainbow_button).attr("src", x3_rainbow_image_ok);
+        $(x3_prog_2_rainbow_button).attr("src", x3_rainbow_image_ok);
         // console.log(p2_color + " === " + x3_rainbow_value);
     } else {
-        $(x3_rainbow_button).attr("src", x3_rainbow_image);
+        $(x3_prog_2_rainbow_button).attr("src", x3_rainbow_image);
         // console.log(p2_color + " !== " + x3_rainbow_value);
     }
     if (p2_color === x3_fun_value) {
-        $(x3_fun_button).attr("src", x3_fun_image_ok);
+        $(x3_prog_2_fun_button).attr("src", x3_fun_image_ok);
         // console.log(p2_color + " === " + x3_fun_value);
     } else {
-        $(x3_fun_button).attr("src", x3_fun_image);
+        $(x3_prog_2_fun_button).attr("src", x3_fun_image);
         // console.log(p2_color + " !== " + x3_fun_value);
     }
     if (p2_color === x3_ocean_value) {
-        $(x3_ocean_button).attr("src", x3_ocean_image_ok);
+        $(x3_prog_2_ocean_button).attr("src", x3_ocean_image_ok);
         // console.log(p2_color + " === " + x3_ocean_value);
     } else {
-        $(x3_ocean_button).attr("src", x3_ocean_image);
+        $(x3_prog_2_ocean_button).attr("src", x3_ocean_image);
         // console.log(p2_color + " !== " + x3_ocean_value);
     }
     if (p2_color === x3_flamme_value) {
-        $(x3_flamme_button).attr("src", x3_flamme_image_ok);
+        $(x3_prog_2_flamme_button).attr("src", x3_flamme_image_ok);
         // console.log(p2_color + " === " + x3_flamme_value);
     } else {
-        $(x3_flamme_button).attr("src", x3_flamme_image);
+        $(x3_prog_2_flamme_button).attr("src", x3_flamme_image);
         // console.log(p2_color + " !== " + x3_flamme_value);
     }
     if (p2_color === x3_parade_value) {
-        $(x3_parade_button).attr("src", x3_parade_image_ok);
+        $(x3_prog_2_parade_button).attr("src", x3_parade_image_ok);
         // console.log(p2_color + " === " + x3_parade_value);
     } else {
-        $(x3_parade_button).attr("src", x3_parade_image);
+        $(x3_prog_2_parade_button).attr("src", x3_parade_image);
         // console.log(p2_color + " !== " + x3_parade_value);
     }
     if (p2_color === x3_elegant_value) {
-        $(x3_elegant_button).attr("src", x3_elegant_image_ok);
+        $(x3_prog_2_elegant_button).attr("src", x3_elegant_image_ok);
         // console.log(p2_color + " === " + x3_elegant_value);
     } else {
-        $(x3_elegant_button).attr("src", x3_elegant_image);
+        $(x3_prog_2_elegant_button).attr("src", x3_elegant_image);
         // console.log(p2_color + " !== " + x3_elegant_value);
     }
     if (p2_color === x3_horizon_value) {
-        $(x3_horizon_button).attr("src", x3_horizon_image_ok);
+        $(x3_prog_2_horizon_button).attr("src", x3_horizon_image_ok);
         // console.log(p2_color + " === " + x3_horizon_value);
     } else {
-        $(x3_horizon_button).attr("src", x3_horizon_image);
+        $(x3_prog_2_horizon_button).attr("src", x3_horizon_image);
         // console.log(p2_color + " !== " + x3_horizon_value);
     }
     if (p2_color === x3_psyche_value) {
-        $(x3_psyche_button).attr("src", x3_psyche_image_ok);
+        $(x3_prog_2_psyche_button).attr("src", x3_psyche_image_ok);
         // console.log(p2_color + " === " + x3_psyche_value);
     } else {
-        $(x3_psyche_button).attr("src", x3_psyche_image);
+        $(x3_prog_2_psyche_button).attr("src", x3_psyche_image);
         // console.log(p2_color + " !== " + x3_psyche_value);
     }
 
@@ -18989,7 +19042,7 @@ function update_vigipool_ui_filt_state() {
         var en_marche = get_bit(aux_conf, 0);
         var asservi_filt = get_bit(aux_conf, 1);
         var prio_aux = get_bit(aux_conf, 2);
-        var consigne_temp = get_bit(aux_conf, 3);
+        // var consigne_temp = get_bit(aux_conf, 3);
         var aux_min_temp = get_bit(aux_conf, 4);
         var consigne_orp = get_bit(aux_conf, 5);
 
@@ -19016,9 +19069,7 @@ function update_vigipool_ui_filt_state() {
             $(".vigipool_ui_aux_state").eq(i).show();
         }
 
-
         // console.log("aux_sched = " + aux_sched);
-        // 
         // 
         // console.log("aux_type = " + aux_type);
         // console.log("aux_temp_hyst = " + aux_temp_hyst);
@@ -19417,6 +19468,26 @@ function fix_duration_bug(programmation_1_duration, hex)
 
     // light_code
 
+    $(".vigipool_modal_light_prog_1_warm_button > img").hide();
+    $(".vigipool_modal_light_prog_1_cold_button > img").hide();
+    $(".vigipool_modal_light_prog_1_blue_button > img").hide();
+    $(".vigipool_modal_light_prog_1_lagoon_button > img").hide();
+    $(".vigipool_modal_light_prog_1_cyan_button > img").hide();
+    $(".vigipool_modal_light_prog_1_green_button > img").hide();
+    $(".vigipool_modal_light_prog_1_purple_button > img").hide();
+    $(".vigipool_modal_light_prog_1_magenta_button > img").hide();
+    $(".vigipool_modal_light_prog_1_pink_button > img").hide();
+    $(".vigipool_modal_light_prog_1_red_button > img").hide();
+    $(".vigipool_modal_light_prog_1_orange_button > img").hide();
+    $(".vigipool_modal_light_prog_1_favorite_button > img").hide();
+    $(".vigipool_modal_light_prog_1_gradiant_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_rainbow_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_parade_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_techno_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_horizon_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_random_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_magical_button > img").css("opacity", "0%");
+
     $(document).ready(function () {
         switch (p1_color) {
             case 0:
@@ -19629,7 +19700,7 @@ function update_vigipool_modal_light_prog_2(set_sched_value_save = "") {
     }
 
     // Display
-    
+
     var p2_color = get_sched_value(light_sched, "program_2_color");
 
     var programs_number = get_sched_value(light_sched, "programs_number");
@@ -19730,6 +19801,26 @@ function update_vigipool_modal_light_prog_2(set_sched_value_save = "") {
     }
 
     // light_code
+
+    $(".vigipool_modal_light_prog_2_warm_button > img").hide();
+    $(".vigipool_modal_light_prog_2_cold_button > img").hide();
+    $(".vigipool_modal_light_prog_2_blue_button > img").hide();
+    $(".vigipool_modal_light_prog_2_lagoon_button > img").hide();
+    $(".vigipool_modal_light_prog_2_cyan_button > img").hide();
+    $(".vigipool_modal_light_prog_2_green_button > img").hide();
+    $(".vigipool_modal_light_prog_2_purple_button > img").hide();
+    $(".vigipool_modal_light_prog_2_magenta_button > img").hide();
+    $(".vigipool_modal_light_prog_2_pink_button > img").hide();
+    $(".vigipool_modal_light_prog_2_red_button > img").hide();
+    $(".vigipool_modal_light_prog_2_orange_button > img").hide();
+    $(".vigipool_modal_light_prog_2_favorite_button > img").hide();
+    $(".vigipool_modal_light_prog_2_gradiant_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_rainbow_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_parade_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_techno_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_horizon_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_random_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_magical_button > img").css("opacity", "0%");
 
     $(document).ready(function () {
         create_ui_tild_light("vigipool_modal_light_prog_2", p2_color);
@@ -20223,15 +20314,16 @@ function update_vigipool_modal_auxiliary() {
 
     // consigne_temp
     if (aux_type !== 2) {
-        $("#md_modal > div > h4:nth-child(6)").hide();
-        $("#consigne_temp").hide();
-        $("#md_modal > div > div:nth-child(8)").hide();
+        $(".vigipool_modal_auxiliary_slider_consigne_temp").hide();
+    } else {
+        $(".vigipool_modal_auxiliary_slider_consigne_temp").show();
     }
 
     // aux_min_temp
     if (aux_type !== 3) {
-        $("#md_modal > div > h4:nth-child(9)").hide();
-        $("#md_modal > div > div:nth-child(11)").hide();
+        $(".vigipool_modal_auxiliary_slider_aux_min_temp").hide();
+    } else {
+        $(".vigipool_modal_auxiliary_slider_aux_min_temp").show();
     }
 
     create_program("vigipool_modal_auxiliary", 1, aux_sched);
@@ -21368,8 +21460,8 @@ function update_vigipool_ui_aux1_state() {
 
     var light_sched = get_value_from_position(eq_modal, "light_sched_m");
     var light_mode = get_value_from_position(eq_modal, "light_mode");
-    var light_type = get_value_from_position(eq_modal, ".light_type_m");
-    var light_code = get_value_from_position(eq_modal, ".light_code");
+    var light_type = get_value_from_position(eq_modal, "light_type_m");
+    var light_code = get_value_from_position(eq_modal, "light_code");
     var light_bright = get_value_from_position(eq_modal, "light_bright");
     var light_speed = get_value_from_position(eq_modal, "light_speed");
     var light_state = get_value_from_position(eq_modal, "light_state_m");
@@ -22002,28 +22094,22 @@ function update_vigipool_ui_source_ph() {
         var inject_on = get_value_from_eq(i, "inject_on", "phileox");
         var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "phileox");
 
-//        console.log("source_ph = " + source_ph);
-//        console.log("inject_on = " + inject_on);
-//        console.log("vol_max_24h = " + vol_max_24h);
+        // console.log("source_ph = " + source_ph);
+        // console.log("inject_on = " + inject_on);
+        // console.log("vol_max_24h = " + vol_max_24h);
 
         if (!is_variable_available(i, "source_ph")) {
             $(".vigipool_ui_source_ph_label").eq(i).hide();
             $(".vigipool_ui_source_ph_state").eq(i).hide();
-        } else {
-            $(".vigipool_ui_source_ph_label").eq(i).show();
-            $(".vigipool_ui_source_ph_state").eq(i).show();
-        }
-        if (!is_variable_available(i, "inject_on")) {
             $(".vigipool_ui_ph_inject_on_label").eq(i).hide();
             $(".vigipool_ui_ph_inject_on_state").eq(i).hide();
-        } else {
-            $(".vigipool_ui_ph_inject_on_label").eq(i).show();
-            $(".vigipool_ui_ph_inject_on_state").eq(i).show();
-        }
-        if (!is_variable_available(i, "vol_max_24h")) {
             $(".vigipool_ui_ph_vol_max_24h_label").eq(i).hide();
             $(".vigipool_ui_ph_vol_max_24h_state").eq(i).hide();
         } else {
+            $(".vigipool_ui_source_ph_label").eq(i).show();
+            $(".vigipool_ui_source_ph_state").eq(i).show();
+            $(".vigipool_ui_ph_inject_on_label").eq(i).show();
+            $(".vigipool_ui_ph_inject_on_state").eq(i).show();
             $(".vigipool_ui_ph_vol_max_24h_label").eq(i).show();
             $(".vigipool_ui_ph_vol_max_24h_state").eq(i).show();
         }
@@ -22056,30 +22142,24 @@ function update_vigipool_ui_source_orp() {
         var inject_on = get_value_from_eq(i, "inject_on", "oxeox");
         var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "oxeox");
 
-//        console.log("source_orp = " + source_orp);
-//        console.log("inject_on = " + inject_on);
-//        console.log("vol_max_24h = " + vol_max_24h);
+        // console.log("source_orp = " + source_orp);
+        // console.log("inject_on = " + inject_on);
+        // console.log("vol_max_24h = " + vol_max_24h);
 
-        if (!is_variable_available(i, "source_orp") || !is_variable_available(i, "inject_on")) {
-            $(".vigipool_ui_source_orp_label").eq(i).hide();
-            $(".vigipool_ui_source_orp_state").eq(i).hide();
-        } else {
+        if (is_variable_available(i, "source_orp") && is_variable_available(i, "inject_on")) {
             $(".vigipool_ui_source_orp_label").eq(i).show();
             $(".vigipool_ui_source_orp_state").eq(i).show();
-        }
-        if (!is_variable_available(i, "inject_on")) {
+            $(".vigipool_ui_orp_vol_max_24h_label").eq(i).show();
+            $(".vigipool_ui_orp_vol_max_24h_state").eq(i).show();
+            $(".vigipool_ui_orp_vol_max_24h_label").eq(i).show();
+            $(".vigipool_ui_orp_vol_max_24h_state").eq(i).show();
+        } else {
+            $(".vigipool_ui_source_orp_label").eq(i).hide();
+            $(".vigipool_ui_source_orp_state").eq(i).hide();
             $(".vigipool_ui_orp_inject_on_label").eq(i).hide();
             $(".vigipool_ui_orp_inject_on_state").eq(i).hide();
-        } else {
-            $(".vigipool_ui_orp_vol_max_24h_label").eq(i).show();
-            $(".vigipool_ui_orp_vol_max_24h_state").eq(i).show();
-        }
-        if (!is_variable_available(i, "vol_max_24h")) {
             $(".vigipool_ui_orp_vol_max_24h_label").eq(i).hide();
             $(".vigipool_ui_orp_vol_max_24h_state").eq(i).hide();
-        } else {
-            $(".vigipool_ui_orp_vol_max_24h_label").eq(i).show();
-            $(".vigipool_ui_orp_vol_max_24h_state").eq(i).show();
         }
 
         switch (inject_on) {
@@ -23720,7 +23800,7 @@ function update_vigipool_ui_ely_state() {
     var prod_on = get_value_from_position(eq_modal, "prod_on");
     var prod_chlore = get_value_from_position(eq_modal, "prod_chlore");
     var power_ely = get_value_from_position(eq_modal, "power_ely");
-    var value_temp = get_value_from_position(eq_modal, "value_temp");
+    var value_temp = get_value_from_eq(eq_modal, "value_temp", "zelix");
     var value_temp_int = get_value_from_position(eq_modal, "value_temp_int");
     var temp_min_off_ely = get_value_from_position(eq_modal, "temp_min_off_ely");
     var water_hardness = get_value_from_position(eq_modal, "water_hardness");
@@ -23748,7 +23828,7 @@ function update_vigipool_ui_ely_state() {
     // console.log("current_ely = " + current_ely);
 
     // Check
-    
+
     const variables = [mode_ely, mode_choc, prod_on, prod_chlore, power_ely, value_temp, value_temp_int, temp_min_off_ely, water_hardness, ely_duration_theo, consigne_orp, choc_duration, voltage_ely, current_ely];
 
     if (variable_check(variables)) {
@@ -23848,7 +23928,7 @@ function update_vigipool_ui_ely_state() {
     $(".vigipool_modal_ely_instant_chlorine_prod").html(prod_chlore + " g/h");
 
     // value_temp
-    $(".vigipool_modal_ely_temperature").html(value_temp + " °C");
+    $(".vigipool_modal_ely_temperature").html(value_temp/10 + " °C");
 
     // temp_min_off_ely
     link_variable_to_buttons(temp_min_off_ely, "vigipool_modal_ely_temp_min_off_ely_", 10, 20);

@@ -229,19 +229,27 @@ function create_slider(id, init_value, division, unit, disable, type, variable, 
             output.innerHTML = (slider.value / division) + " " + unit; // Display the default slider value
     };
 
-    switch (id) {
-        case "light_timer":
-            var value_mqtt = convert_time_4_to_timer(slider.value * value);
-            break;
-        default:
-            var value_mqtt = slider.value * value;
-            break;
-    }
 
     slider.onclick = function () {
+        switch (id) {
+            case "light_timer":
+                var value_mqtt = convert_time_4_to_timer(slider.value * value);
+                break;
+            default:
+                var value_mqtt = slider.value * value;
+                break;
+        }
         quick_send(type, variable, info, desired, value_mqtt);
     };
     slider.ontouchend = function () {
+        switch (id) {
+            case "light_timer":
+                var value_mqtt = convert_time_4_to_timer(slider.value * value);
+                break;
+            default:
+                var value_mqtt = slider.value * value;
+                break;
+        }
         quick_send(type, variable, info, desired, value_mqtt);
     };
 

@@ -4,22 +4,26 @@ function common_modals_finish_load() {
     });
 }
 
-function access_modal(id, modal, eq) {
+function access_modal(id, modal, id_position, modal_position = id_position) {
 
-    $(id).eq(eq).click(function () {
+//    console.log("id = " + id);
+//    console.log("modal = " + modal);
+//    console.log("id_position = " + id_position);
+
+    $(id).eq(id_position).click(function () {
 
         devices = Array();
-        // console.log("devices = " + devices);
+//        console.log("devices = " + devices);
 
-        // console.log("modal = " + modal);
+//        console.log("modal = " + modal);
 
         var title = modal_to_title(modal);
 
-        // console.log("title = " + title);
+//        console.log("title = " + title);
 
         $('#md_modal')
                 .dialog({title: title})
-                .load('index.php?v=d&plugin=vigipool&eq_modal=' + eq + '&modal=' + modal + '&id=' + $('.eqLogicAttr[data-l1key=id]').value())
+                .load('index.php?v=d&plugin=vigipool&eq_modal=' + modal_position + '&modal=' + modal + '&id=' + $('.eqLogicAttr[data-l1key=id]').value())
                 .dialog('open');
     });
 }

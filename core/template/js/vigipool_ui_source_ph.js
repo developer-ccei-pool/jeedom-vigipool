@@ -12,28 +12,22 @@ function update_vigipool_ui_source_ph() {
         var inject_on = get_value_from_eq(i, "inject_on", "phileox");
         var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "phileox");
 
-//        console.log("source_ph = " + source_ph);
-//        console.log("inject_on = " + inject_on);
-//        console.log("vol_max_24h = " + vol_max_24h);
+        // console.log("source_ph = " + source_ph);
+        // console.log("inject_on = " + inject_on);
+        // console.log("vol_max_24h = " + vol_max_24h);
 
         if (!is_variable_available(i, "source_ph")) {
             $(".vigipool_ui_source_ph_label").eq(i).hide();
             $(".vigipool_ui_source_ph_state").eq(i).hide();
-        } else {
-            $(".vigipool_ui_source_ph_label").eq(i).show();
-            $(".vigipool_ui_source_ph_state").eq(i).show();
-        }
-        if (!is_variable_available(i, "inject_on")) {
             $(".vigipool_ui_ph_inject_on_label").eq(i).hide();
             $(".vigipool_ui_ph_inject_on_state").eq(i).hide();
-        } else {
-            $(".vigipool_ui_ph_inject_on_label").eq(i).show();
-            $(".vigipool_ui_ph_inject_on_state").eq(i).show();
-        }
-        if (!is_variable_available(i, "vol_max_24h")) {
             $(".vigipool_ui_ph_vol_max_24h_label").eq(i).hide();
             $(".vigipool_ui_ph_vol_max_24h_state").eq(i).hide();
         } else {
+            $(".vigipool_ui_source_ph_label").eq(i).show();
+            $(".vigipool_ui_source_ph_state").eq(i).show();
+            $(".vigipool_ui_ph_inject_on_label").eq(i).show();
+            $(".vigipool_ui_ph_inject_on_state").eq(i).show();
             $(".vigipool_ui_ph_vol_max_24h_label").eq(i).show();
             $(".vigipool_ui_ph_vol_max_24h_state").eq(i).show();
         }

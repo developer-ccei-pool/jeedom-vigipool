@@ -47,15 +47,16 @@ function update_vigipool_modal_auxiliary() {
 
     // consigne_temp
     if (aux_type !== 2) {
-        $("#md_modal > div > h4:nth-child(6)").hide();
-        $("#consigne_temp").hide();
-        $("#md_modal > div > div:nth-child(8)").hide();
+        $(".vigipool_modal_auxiliary_slider_consigne_temp").hide();
+    } else {
+        $(".vigipool_modal_auxiliary_slider_consigne_temp").show();
     }
 
     // aux_min_temp
     if (aux_type !== 3) {
-        $("#md_modal > div > h4:nth-child(9)").hide();
-        $("#md_modal > div > div:nth-child(11)").hide();
+        $(".vigipool_modal_auxiliary_slider_aux_min_temp").hide();
+    } else {
+        $(".vigipool_modal_auxiliary_slider_aux_min_temp").show();
     }
 
     create_program("vigipool_modal_auxiliary", 1, aux_sched);

@@ -9,7 +9,7 @@ function update_vigipool_modal_ely() {
     var prod_on = get_value_from_position(eq_modal, "prod_on");
     var prod_chlore = get_value_from_position(eq_modal, "prod_chlore");
     var power_ely = get_value_from_position(eq_modal, "power_ely");
-    var value_temp = get_value_from_position(eq_modal, "value_temp");
+    var value_temp = get_value_from_eq(eq_modal, "value_temp", "zelix");
     var value_temp_int = get_value_from_position(eq_modal, "value_temp_int");
     var temp_min_off_ely = get_value_from_position(eq_modal, "temp_min_off_ely");
     var water_hardness = get_value_from_position(eq_modal, "water_hardness");
@@ -37,7 +37,7 @@ function update_vigipool_modal_ely() {
     // console.log("current_ely = " + current_ely);
 
     // Check
-    
+
     const variables = [mode_ely, mode_choc, prod_on, prod_chlore, power_ely, value_temp, value_temp_int, temp_min_off_ely, water_hardness, ely_duration_theo, consigne_orp, choc_duration, voltage_ely, current_ely];
 
     if (variable_check(variables)) {
@@ -137,7 +137,7 @@ function update_vigipool_modal_ely() {
     $(".vigipool_modal_ely_instant_chlorine_prod").html(prod_chlore + " g/h");
 
     // value_temp
-    $(".vigipool_modal_ely_temperature").html(value_temp + " °C");
+    $(".vigipool_modal_ely_temperature").html(value_temp/10 + " °C");
 
     // temp_min_off_ely
     link_variable_to_buttons(temp_min_off_ely, "vigipool_modal_ely_temp_min_off_ely_", 10, 20);

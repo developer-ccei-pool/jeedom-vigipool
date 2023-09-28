@@ -128,14 +128,14 @@ modal_top();
     quick_assign('.vigipool_modal_light_m_speed > th:nth-child(4) > p', "u8_w", "light_speed", "info", "desired", 2);
 
     $('.vigipool_modal_light_m_button_code').click(function () {
-        show_history("light_state", eq_modal);
+        show_history("light_state_m", eq_modal);
     });
 
     // Sched
 
-    access_modal(".vigipool_modal_light_m_1_from_label_1", "vigipool_modal_light_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_m_1_from_value_1", "vigipool_modal_light_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_m_1_to_label_1", "vigipool_modal_light_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_m_1_to_value_1", "vigipool_modal_light_m_prog_1", eq_modal);
+    access_modal(".vigipool_modal_light_m_1_from_label_1", "vigipool_modal_light_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_m_1_from_value_1", "vigipool_modal_light_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_m_1_to_label_1", "vigipool_modal_light_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_m_1_to_value_1", "vigipool_modal_light_m_prog_1", 0, eq_modal);
 
 </script>

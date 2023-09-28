@@ -59,9 +59,9 @@ modal_top();
         show_history("aux1_state", eq_modal);
     });
 
-    access_modal(".vigipool_modal_auxiliary_1_1_from_label_1", "vigipool_modal_auxiliary_1_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_1_from_value_1", "vigipool_modal_auxiliary_1_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_1_to_label_1", "vigipool_modal_auxiliary_1_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_1_to_value_1", "vigipool_modal_auxiliary_1_prog_1", eq_modal);
+    // access_modal(".vigipool_modal_auxiliary_1_1_from_label_1", "vigipool_modal_auxiliary_1_prog_1", 0, eq_modal);
+    // access_modal(".vigipool_modal_auxiliary_1_1_from_value_1", "vigipool_modal_auxiliary_1_prog_1", 0, eq_modal);
+    // access_modal(".vigipool_modal_auxiliary_1_1_to_label_1", "vigipool_modal_auxiliary_1_prog_1", 0, eq_modal);
+    // access_modal(".vigipool_modal_auxiliary_1_1_to_value_1", "vigipool_modal_auxiliary_1_prog_1", 0, eq_modal);
 
 </script>

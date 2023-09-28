@@ -102,7 +102,7 @@
     background-image:  url("/plugins/vigipool/desktop/img/background_scroll.jpg");
     background-repeat: repeat-x;
     height: 2000px;
-    width: 2500px; /* The image width times 3 */
+    width: 3333px; /* The image width times 3 */
     animation: slide 60s linear infinite;
     padding-top: 500px;
 

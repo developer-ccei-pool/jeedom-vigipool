@@ -41,7 +41,7 @@ modal_top();
     var id_selected = $(".vigipool_device_id").eq(eq_modal).html();
     set_title(ip_selected, id_selected, "vigipool_modal_title");
 
-    access_modal(".vigipool_modal_light_advanced_options_back", "vigipool_modal_light", eq_modal);
+    access_modal(".vigipool_modal_light_advanced_options_back", "vigipool_modal_light", 0, eq_modal);
 
     quick_assign('.vigipool_modal_light_advanced_options_lighting_settings_dialog_forced_filtration_off', "u8_w", "filt_light_force", "info", "desired", 0);
     quick_assign('.vigipool_modal_light_advanced_options_lighting_settings_dialog_forced_filtration_on', "u8_w", "filt_light_force", "info", "desired", 1);

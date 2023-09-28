@@ -9,14 +9,32 @@ var x3_elegant_value = "SK8038KBF38KFF38KBF38K4438K0038K4438";
 var x3_horizon_value = "S#0000FF7FK897F#04FFFF7F";
 var x3_psyche_value = "S#FF005004#00000000#0000FF04#00000000#15EDFF04#00000000#C000FF04#00000000#FFFF0004#00000000#FF00FF04#00000000";
 
-var x3_rainbow_button = ".vigipool_modal_x3_state_prog_2_rainbow_button > img";
-var x3_fun_button = ".vigipool_modal_x3_state_prog_2_fun_button > img";
-var x3_ocean_button = ".vigipool_modal_x3_state_prog_2_ocean_button > img";
-var x3_flamme_button = ".vigipool_modal_x3_state_prog_2_flamme_button > img";
-var x3_parade_button = ".vigipool_modal_x3_state_prog_2_parade_button > img";
-var x3_elegant_button = ".vigipool_modal_x3_state_prog_2_elegant_button > img";
-var x3_horizon_button = ".vigipool_modal_x3_state_prog_2_horizon_button > img";
-var x3_psyche_button = ".vigipool_modal_x3_state_prog_2_psyche_button > img";
+var x3_rainbow_button = ".vigipool_modal_x3_state_rainbow_button > img";
+var x3_fun_button = ".vigipool_modal_x3_state_fun_button > img";
+var x3_ocean_button = ".vigipool_modal_x3_state_ocean_button > img";
+var x3_flamme_button = ".vigipool_modal_x3_state_flamme_button > img";
+var x3_parade_button = ".vigipool_modal_x3_state_parade_button > img";
+var x3_elegant_button = ".vigipool_modal_x3_state_elegant_button > img";
+var x3_horizon_button = ".vigipool_modal_x3_state_horizon_button > img";
+var x3_psyche_button = ".vigipool_modal_x3_state_psyche_button > img";
+
+var x3_prog_1_rainbow_button = ".vigipool_modal_x3_state_prog_1_rainbow_button > img";
+var x3_prog_1_fun_button = ".vigipool_modal_x3_state_prog_1_fun_button > img";
+var x3_prog_1_ocean_button = ".vigipool_modal_x3_state_prog_1_ocean_button > img";
+var x3_prog_1_flamme_button = ".vigipool_modal_x3_state_prog_1_flamme_button > img";
+var x3_prog_1_parade_button = ".vigipool_modal_x3_state_prog_1_parade_button > img";
+var x3_prog_1_elegant_button = ".vigipool_modal_x3_state_prog_1_elegant_button > img";
+var x3_prog_1_horizon_button = ".vigipool_modal_x3_state_prog_1_horizon_button > img";
+var x3_prog_1_psyche_button = ".vigipool_modal_x3_state_prog_1_psyche_button > img";
+
+var x3_prog_2_rainbow_button = ".vigipool_modal_x3_state_prog_2_rainbow_button > img";
+var x3_prog_2_fun_button = ".vigipool_modal_x3_state_prog_2_fun_button > img";
+var x3_prog_2_ocean_button = ".vigipool_modal_x3_state_prog_2_ocean_button > img";
+var x3_prog_2_flamme_button = ".vigipool_modal_x3_state_prog_2_flamme_button > img";
+var x3_prog_2_parade_button = ".vigipool_modal_x3_state_prog_2_parade_button > img";
+var x3_prog_2_elegant_button = ".vigipool_modal_x3_state_prog_2_elegant_button > img";
+var x3_prog_2_horizon_button = ".vigipool_modal_x3_state_prog_2_horizon_button > img";
+var x3_prog_2_psyche_button = ".vigipool_modal_x3_state_prog_2_psyche_button > img";
 
 var x3_rainbow_image = "/plugins/vigipool/desktop/img/x3_rainbow.png";
 var x3_fun_image = "/plugins/vigipool/desktop/img/x3_fun.png";
@@ -44,7 +62,7 @@ if (eq === undefined || eq >= $(".vigipool_ipaddr").length - 1) {
 }
 
 function create_ui_options_click(file_name) {
-    access_modal(`.${file_name}_see_advanced_options`, `${file_name}_advanced_options`, eq_modal);
+    access_modal(`.${file_name}_see_advanced_options`, `${file_name}_advanced_options`, 0, eq_modal);
 }
 
 function variable_check(variables) {
@@ -4362,7 +4380,7 @@ function set_filtration_m_sched_value(name, value) {
         var filtration_sched_m = set_filtration_m_sched_value_save;
     }
     console.log("filtration_sched_m = " + filtration_sched_m);
-    
+
     // 02 04 06 08 00 0A
 
     var iterator = 0;

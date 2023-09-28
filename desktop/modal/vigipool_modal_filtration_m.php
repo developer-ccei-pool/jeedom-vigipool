@@ -56,19 +56,19 @@ modal_top();
         $("[data-template='vigipool_flow_on']").click();
     });
 
-    access_modal(".vigipool_modal_filtration_m_1_from_label_1", "vigipool_modal_filtration_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_filtration_m_1_from_value_1", "vigipool_modal_filtration_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_filtration_m_1_to_label_1", "vigipool_modal_filtration_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_filtration_m_1_to_value_1", "vigipool_modal_filtration_m_prog_1", eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_from_label_1", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_from_value_1", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_to_label_1", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_to_value_1", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
 
-    access_modal(".vigipool_modal_filtration_m_1_from_label_2", "vigipool_modal_filtration_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_filtration_m_1_from_value_2", "vigipool_modal_filtration_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_filtration_m_1_to_label_2", "vigipool_modal_filtration_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_filtration_m_1_to_value_2", "vigipool_modal_filtration_m_prog_1", eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_from_label_2", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_from_value_2", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_to_label_2", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_to_value_2", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
 
-    access_modal(".vigipool_modal_filtration_m_1_from_label_3", "vigipool_modal_filtration_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_filtration_m_1_from_value_3", "vigipool_modal_filtration_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_filtration_m_1_to_label_3", "vigipool_modal_filtration_m_prog_1", eq_modal);
-    access_modal(".vigipool_modal_filtration_m_1_to_value_3", "vigipool_modal_filtration_m_prog_1", eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_from_label_3", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_from_value_3", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_to_label_3", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_filtration_m_1_to_value_3", "vigipool_modal_filtration_m_prog_1", 0, eq_modal);
 
 </script>

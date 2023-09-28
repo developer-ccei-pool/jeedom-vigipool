@@ -16,7 +16,7 @@ function update_vigipool_ui_aux_state() {
         var en_marche = get_bit(aux_conf, 0);
         var asservi_filt = get_bit(aux_conf, 1);
         var prio_aux = get_bit(aux_conf, 2);
-        var consigne_temp = get_bit(aux_conf, 3);
+        // var consigne_temp = get_bit(aux_conf, 3);
         var aux_min_temp = get_bit(aux_conf, 4);
         var consigne_orp = get_bit(aux_conf, 5);
 
@@ -43,9 +43,7 @@ function update_vigipool_ui_aux_state() {
             $(".vigipool_ui_aux_state").eq(i).show();
         }
 
-
         // console.log("aux_sched = " + aux_sched);
-        // 
         // 
         // console.log("aux_type = " + aux_type);
         // console.log("aux_temp_hyst = " + aux_temp_hyst);

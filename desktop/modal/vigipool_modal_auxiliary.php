@@ -28,19 +28,19 @@ modal_top();
     <br/>
     <br/>
 
-    <h4><?php get_text("consigne_temp"); ?></h4>
+    <div class="vigipool_modal_auxiliary_slider_consigne_temp">
+        <h4><?php get_text("consigne_temp"); ?></h4>
+        <?php create_slider("consigne_temp", 10, 40); ?>
+        <br/>
+        <br/>
+    </div>
 
-    <?php create_slider("consigne_temp", 10, 40); ?>
-
-    <br/>
-    <br/>
-
-    <h4><?php get_text("aux_min_temp"); ?></h4>
-
-    <?php create_slider("aux_min_temp", 10, 18); ?>
-
-    <br/>
-    <br/>
+    <div class="vigipool_modal_auxiliary_slider_aux_min_temp">
+        <h4><?php get_text("aux_min_temp"); ?></h4>
+        <?php create_slider("aux_min_temp", 10, 18); ?>
+        <br/>
+        <br/>
+    </div>
 
     <?php create_program("vigipool_modal_auxiliary", 1); ?>
     <?php create_program("vigipool_modal_auxiliary", 2); ?>
@@ -119,28 +119,28 @@ modal_top();
         show_history("aux_state", eq_modal);
     });
 
-    access_modal(".vigipool_modal_auxiliary_1_off_on", "vigipool_modal_auxiliary_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_lundi", "vigipool_modal_auxiliary_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_mardi", "vigipool_modal_auxiliary_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_mercredi", "vigipool_modal_auxiliary_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_jeudi", "vigipool_modal_auxiliary_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_vendredi", "vigipool_modal_auxiliary_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_samedi", "vigipool_modal_auxiliary_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_dimanche", "vigipool_modal_auxiliary_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_color", "vigipool_modal_auxiliary_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_color_circle", "vigipool_modal_auxiliary_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_duration", "vigipool_modal_auxiliary_prog_1", eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_off_on", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_lundi", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_mardi", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_mercredi", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_jeudi", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_vendredi", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_samedi", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_dimanche", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_color", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_color_circle", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_1_duration", "vigipool_modal_auxiliary_prog_1", 0, eq_modal);
 
-    access_modal(".vigipool_modal_auxiliary_2_off_on", "vigipool_modal_auxiliary_prog_2", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_2_lundi", "vigipool_modal_auxiliary_prog_2", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_2_mardi", "vigipool_modal_auxiliary_prog_2", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_2_mercredi", "vigipool_modal_auxiliary_prog_2", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_2_jeudi", "vigipool_modal_auxiliary_prog_2", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_2_vendredi", "vigipool_modal_auxiliary_prog_2", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_2_samedi", "vigipool_modal_auxiliary_prog_2", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_2_dimanche", "vigipool_modal_auxiliary_prog_2", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_2_color", "vigipool_modal_auxiliary_prog_2", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_2_color_circle", "vigipool_modal_auxiliary_prog_2", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_2_duration", "vigipool_modal_auxiliary_prog_2", eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_off_on", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_lundi", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_mardi", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_mercredi", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_jeudi", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_vendredi", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_samedi", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_dimanche", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_color", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_color_circle", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_auxiliary_2_duration", "vigipool_modal_auxiliary_prog_2", 0, eq_modal);
 
 </script>

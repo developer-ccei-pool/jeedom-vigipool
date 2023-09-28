@@ -27,10 +27,10 @@ modal_top();
 
     <?php create_ui_tild_light("vigipool_modal_light") ?>
 
-    <br/>
-    <br/>
+    <!--<br/>-->
+    <!--<br/>-->
 
-    <?php create_ui_timer("vigipool_modal_light") ?>
+    <?php // create_ui_timer("vigipool_modal_light") ?>
 
     <br/>
     <br/>
@@ -210,28 +210,30 @@ modal_top();
 
     // Sched
 
-    access_modal(".vigipool_modal_light_1_off_on", "vigipool_modal_light_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_1_lundi", "vigipool_modal_light_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_1_mardi", "vigipool_modal_light_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_1_mercredi", "vigipool_modal_light_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_1_jeudi", "vigipool_modal_light_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_1_vendredi", "vigipool_modal_light_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_1_samedi", "vigipool_modal_light_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_1_dimanche", "vigipool_modal_light_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_1_color", "vigipool_modal_light_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_1_color_circle", "vigipool_modal_light_prog_1", eq_modal);
-    access_modal(".vigipool_modal_light_1_duration", "vigipool_modal_light_prog_1", eq_modal);
+    console.log("eq_modal = " + eq_modal);
 
-    access_modal(".vigipool_modal_light_2_off_on", "vigipool_modal_light_prog_2", eq_modal);
-    access_modal(".vigipool_modal_light_2_lundi", "vigipool_modal_light_prog_2", eq_modal);
-    access_modal(".vigipool_modal_light_2_mardi", "vigipool_modal_light_prog_2", eq_modal);
-    access_modal(".vigipool_modal_light_2_mercredi", "vigipool_modal_light_prog_2", eq_modal);
-    access_modal(".vigipool_modal_light_2_jeudi", "vigipool_modal_light_prog_2", eq_modal);
-    access_modal(".vigipool_modal_light_2_vendredi", "vigipool_modal_light_prog_2", eq_modal);
-    access_modal(".vigipool_modal_light_2_samedi", "vigipool_modal_light_prog_2", eq_modal);
-    access_modal(".vigipool_modal_light_2_dimanche", "vigipool_modal_light_prog_2", eq_modal);
-    access_modal(".vigipool_modal_light_2_color", "vigipool_modal_light_prog_2", eq_modal);
-    access_modal(".vigipool_modal_light_2_color_circle", "vigipool_modal_light_prog_2", eq_modal);
-    access_modal(".vigipool_modal_light_2_duration", "vigipool_modal_light_prog_2", eq_modal);
+    access_modal(".vigipool_modal_light_1_off_on", "vigipool_modal_light_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_1_lundi", "vigipool_modal_light_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_1_mardi", "vigipool_modal_light_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_1_mercredi", "vigipool_modal_light_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_1_jeudi", "vigipool_modal_light_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_1_vendredi", "vigipool_modal_light_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_1_samedi", "vigipool_modal_light_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_1_dimanche", "vigipool_modal_light_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_1_color", "vigipool_modal_light_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_1_color_circle", "vigipool_modal_light_prog_1", 0, eq_modal);
+    access_modal(".vigipool_modal_light_1_duration", "vigipool_modal_light_prog_1", 0, eq_modal);
 
+    access_modal(".vigipool_modal_light_2_off_on", "vigipool_modal_light_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_light_2_lundi", "vigipool_modal_light_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_light_2_mardi", "vigipool_modal_light_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_light_2_mercredi", "vigipool_modal_light_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_light_2_jeudi", "vigipool_modal_light_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_light_2_vendredi", "vigipool_modal_light_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_light_2_samedi", "vigipool_modal_light_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_light_2_dimanche", "vigipool_modal_light_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_light_2_color", "vigipool_modal_light_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_light_2_color_circle", "vigipool_modal_light_prog_2", 0, eq_modal);
+    access_modal(".vigipool_modal_light_2_duration", "vigipool_modal_light_prog_2", 0, eq_modal);
+    
 </script>
