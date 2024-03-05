@@ -387,3 +387,8 @@
 :not(.ui-dialog-content) table:not(.tableCmd) > tbody tr:nth-child(even) {
     background: none !important;
 }
+
+.inactiveLink {
+   pointer-events: none !important;
+   cursor: default !important;
+}
