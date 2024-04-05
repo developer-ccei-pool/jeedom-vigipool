@@ -1,21 +1,30 @@
-<link rel="stylesheet" href="/plugins/vigipool/core/template/css/vigipool_modal_light_m_prog_1.css">
-
 <?php
 if (!isConnect('admin')) {
     throw new Exception('{{401 - Accès non autorisé}}');
 }
 
 include 'manager.php';
+
+modal_top();
 ?>
 
 <div class="transition vigipool_ui_text_modal">
 
     <h2 class="transition vigipool_modal_title"></h2>
 
-    <h3><?php get_text("save"); ?></h3>
+    <h3><?php get_text("scheduling"); ?></h3>
 
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <h3><?php get_text("save"); ?></h3>
     <button type="button" class="transition btn btn-light vigipool_modal_light_m_prog_1_button_save"><?php get_text("save"); ?></button>
     <button type="button" class="transition btn btn-light vigipool_modal_light_m_prog_1_button_back"><?php get_text("back"); ?></button>
+
+    <br/>
+    <br/>
 
     <h4><?php get_text("schedule"); ?> 1</h4>
     <h4><?php get_text("at"); ?></h4>
@@ -24,6 +33,8 @@ include 'manager.php';
     <?php create_slider("vigipool_modal_light_m_prog_1_sched_1_end", 0, 24 * 2); ?>
 
 </div>
+
+<?php modal_bot(); ?>
 
 <script>
     // Common

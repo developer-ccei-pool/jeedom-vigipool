@@ -1,7 +1,7 @@
 function update_vigipool_modal_filtration_advanced_options() {
 
     // console.log("///// update_vigipool_modal_filtration_advanced_options /////");
-    
+
     // Variables
 
     var frost_free = get_value_from_position(eq_modal, "frost_free");
@@ -22,6 +22,10 @@ function update_vigipool_modal_filtration_advanced_options() {
     }
 
     // Display
+    $(".vigipool_modal_filtration_advanced_options_frost_free_off").removeClass("btn-primary");
+    $(".vigipool_modal_filtration_advanced_options_frost_free_0").removeClass("btn-primary");
+    $(".vigipool_modal_filtration_advanced_options_frost_free_1").removeClass("btn-primary");
+    $(".vigipool_modal_filtration_advanced_options_frost_free_2").removeClass("btn-primary");
 
     switch (frost_free) {
         case 255:

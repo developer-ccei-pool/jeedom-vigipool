@@ -1,18 +1,64 @@
-# Plugin template
+<p align="center">
+    <a href="https://market.jeedom.com/index.php?v=d&p=market_display&id=4437/">
+        <img src="https://market.jeedom.com/filestore/market/plugin/images/vigipool_icon.png" alt="Vigipool Jeedom Logo" width="150">
+    </a>
+</p>
 
-Ce "template de plugin" sert de base à la réalisation de plugins pour **Jeedom**.
+<h3 align="center">Plugin Jeedom - Vigipool</h3>
 
-La documentation générale relative à la conception de plugin est consultable [ici](https://doc.jeedom.com/fr_FR/dev/).
+<p align="center">
+    Vigipool, l'appli innovante pour contrôler et piloter votre piscine à distance.
+</p>
 
-Dans le détail :   
-* [Utilisation du template de plugin](https://doc.jeedom.com/fr_FR/dev/plugin_template) : Le template de plugin est une base de plugin pour Jeedom qui doit être adaptée avec l'id de votre plugin et à laquelle il suffit d'ajouter vos propres fonctions.
+# Tutoriel pour utiliser le plugin Vigipool pour Jeedom
 
-* [Fichier info.json](https://doc.jeedom.com/fr_FR/dev/structure_info_json) : Intégré depuis la version 3.0 de Jeedom, le fichier **info.json** est obligatoire pour le bon fonctionnement des plugins et leur bon déploiement sur le Market Jeedom.
+## Ajouter un équipement
 
-* [Icône du plugin](https://doc.jeedom.com/fr_FR/dev/Icone_de_plugin) : Afin de pouvoir être publié sur le Market Jeedom, tout plugin doit disposer d’une icône. Attention à ne pas utiliser le même code couleur que les icônes des plugins Jeedom officiels.
+Après installer le Plugin Jeedom Vigipool, aller dans le menu "Plugins" puis "Objets Connectés" puis "Vigipool"
 
-* [Widget du plugin](https://doc.jeedom.com/fr_FR/dev/widget_plugin) : Présentation des différentes manières d'inclure des widgets personnalisés au plugin.
+Cliquer sur "Ajouter"
 
-* [Documentation du plugin](https://doc.jeedom.com/fr_FR/dev/documentation_plugin) : Présentation de la mise en place d'une documentation car un bon plugin n'est rien sans documentation adéquate.
+Entrer le nom de l'équipement que vous voulez (Si vous ne connaissez pas le nom de l'équipement, cela n'empêchera pas le plugin de fonctionner), puis cliquez sur Ok
 
-* [Publication du plugin](https://doc.jeedom.com/fr_FR/dev/publication_plugin) : Description des pré-requis indispensables à la publication du plugin.
+Une fois dans le menu des "Paramètres généraux"
+Pensez à choisir un Objet parent si vous voulez
+Penser à activer les cases "Activer et Visible"
+
+Pour que le Plugin se connecte à votre périphérique Vigipool, il faudra remplir obligatoirement les deux Paramètres suivants
+- "Adresse IP de cet équipement"
+- "ID de cet équipement"
+
+Il y a plusieurs moyens pour le faire
+
+- Automatiquement
+
+Vous avez un bouton "Rechercher les produits Vigipool" qui va scanner toutes les adresses IP de votre réseau et va afficher dans la liste "Périphériques Vigipool détectés" ses résultats
+
+Le bouton "Rapide" est moins exhaustif que le bouton "Lent"
+
+Vous pouvez ensuite cliquer sur le résultat pour compléter automatiquement "Adresse IP de cet équipement" et "ID de cet équipement"
+
+- Manuellement
+
+Vous pouvez trouver par vous-même l'IP et trouver l'ID sur l'application Mobile Vigipool
+
+Si vous avez l'adresse IP de votre périphérique, mais pas l'ID, vous pouvez utiliser "Récupérer l'ID à partir de l'IP " après avoir rempli le paramètre Adresse IP de cet équipement
+
+À la fin, n'oubliez pas de cliquer sur "Sauvegarder"
+
+## Redimensionner le Plugin
+
+Une fois le plugin configuré, vous allez pouvoir le retrouver dans votre tableau de bord
+
+Il y a de forte chances que la taille de la fenêtre par défaut soit trop petite, si c'est le cas un message s'affichera pour vous prévenir
+
+Pour régler ce problème utilisé le crayon en haut a droit de la fenêtre pour l'agrandir
+
+## Utiliser le plugin
+
+Vous pouvez voir
+- En haut à droite : la version de votre équipement
+- À gauche : vous pouvez cliquer sur la roue dentée pour accéder à certaines options
+- En bas à gauche : L'icône de connexion est verte, jaune, rouge ou grise en fonction de la qualité de la connexion avec le périphérique Vigipool
+
+En dessous vont apparaitre en fonction des périphériques connecter les fonctionnalités similaires à l'application mobile Vigipool

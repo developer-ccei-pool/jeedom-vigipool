@@ -26,7 +26,7 @@ function update_vigipool_modal_x3_state_prog_2(set_sched_value_save = "") {
     }
 
     // Display
-    
+
     var p2_color = get_value_from_position(eq_modal, "p2_color");
 
     var programs_number = get_sched_value(x3_sched, "programs_number");
@@ -100,59 +100,59 @@ function update_vigipool_modal_x3_state_prog_2(set_sched_value_save = "") {
     // Sequences
 
     if (p2_color === x3_rainbow_value) {
-        $(x3_rainbow_button).attr("src", x3_rainbow_image_ok);
+        $(x3_prog_2_rainbow_button).attr("src", x3_rainbow_image_ok);
         // console.log(p2_color + " === " + x3_rainbow_value);
     } else {
-        $(x3_rainbow_button).attr("src", x3_rainbow_image);
+        $(x3_prog_2_rainbow_button).attr("src", x3_rainbow_image);
         // console.log(p2_color + " !== " + x3_rainbow_value);
     }
     if (p2_color === x3_fun_value) {
-        $(x3_fun_button).attr("src", x3_fun_image_ok);
+        $(x3_prog_2_fun_button).attr("src", x3_fun_image_ok);
         // console.log(p2_color + " === " + x3_fun_value);
     } else {
-        $(x3_fun_button).attr("src", x3_fun_image);
+        $(x3_prog_2_fun_button).attr("src", x3_fun_image);
         // console.log(p2_color + " !== " + x3_fun_value);
     }
     if (p2_color === x3_ocean_value) {
-        $(x3_ocean_button).attr("src", x3_ocean_image_ok);
+        $(x3_prog_2_ocean_button).attr("src", x3_ocean_image_ok);
         // console.log(p2_color + " === " + x3_ocean_value);
     } else {
-        $(x3_ocean_button).attr("src", x3_ocean_image);
+        $(x3_prog_2_ocean_button).attr("src", x3_ocean_image);
         // console.log(p2_color + " !== " + x3_ocean_value);
     }
     if (p2_color === x3_flamme_value) {
-        $(x3_flamme_button).attr("src", x3_flamme_image_ok);
+        $(x3_prog_2_flamme_button).attr("src", x3_flamme_image_ok);
         // console.log(p2_color + " === " + x3_flamme_value);
     } else {
-        $(x3_flamme_button).attr("src", x3_flamme_image);
+        $(x3_prog_2_flamme_button).attr("src", x3_flamme_image);
         // console.log(p2_color + " !== " + x3_flamme_value);
     }
     if (p2_color === x3_parade_value) {
-        $(x3_parade_button).attr("src", x3_parade_image_ok);
+        $(x3_prog_2_parade_button).attr("src", x3_parade_image_ok);
         // console.log(p2_color + " === " + x3_parade_value);
     } else {
-        $(x3_parade_button).attr("src", x3_parade_image);
+        $(x3_prog_2_parade_button).attr("src", x3_parade_image);
         // console.log(p2_color + " !== " + x3_parade_value);
     }
     if (p2_color === x3_elegant_value) {
-        $(x3_elegant_button).attr("src", x3_elegant_image_ok);
+        $(x3_prog_2_elegant_button).attr("src", x3_elegant_image_ok);
         // console.log(p2_color + " === " + x3_elegant_value);
     } else {
-        $(x3_elegant_button).attr("src", x3_elegant_image);
+        $(x3_prog_2_elegant_button).attr("src", x3_elegant_image);
         // console.log(p2_color + " !== " + x3_elegant_value);
     }
     if (p2_color === x3_horizon_value) {
-        $(x3_horizon_button).attr("src", x3_horizon_image_ok);
+        $(x3_prog_2_horizon_button).attr("src", x3_horizon_image_ok);
         // console.log(p2_color + " === " + x3_horizon_value);
     } else {
-        $(x3_horizon_button).attr("src", x3_horizon_image);
+        $(x3_prog_2_horizon_button).attr("src", x3_horizon_image);
         // console.log(p2_color + " !== " + x3_horizon_value);
     }
     if (p2_color === x3_psyche_value) {
-        $(x3_psyche_button).attr("src", x3_psyche_image_ok);
+        $(x3_prog_2_psyche_button).attr("src", x3_psyche_image_ok);
         // console.log(p2_color + " === " + x3_psyche_value);
     } else {
-        $(x3_psyche_button).attr("src", x3_psyche_image);
+        $(x3_prog_2_psyche_button).attr("src", x3_psyche_image);
         // console.log(p2_color + " !== " + x3_psyche_value);
     }
 

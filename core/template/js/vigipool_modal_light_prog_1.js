@@ -130,6 +130,26 @@ function update_vigipool_modal_light_prog_1(set_sched_value_save = "") {
 
     // light_code
 
+    $(".vigipool_modal_light_prog_1_warm_button > img").hide();
+    $(".vigipool_modal_light_prog_1_cold_button > img").hide();
+    $(".vigipool_modal_light_prog_1_blue_button > img").hide();
+    $(".vigipool_modal_light_prog_1_lagoon_button > img").hide();
+    $(".vigipool_modal_light_prog_1_cyan_button > img").hide();
+    $(".vigipool_modal_light_prog_1_green_button > img").hide();
+    $(".vigipool_modal_light_prog_1_purple_button > img").hide();
+    $(".vigipool_modal_light_prog_1_magenta_button > img").hide();
+    $(".vigipool_modal_light_prog_1_pink_button > img").hide();
+    $(".vigipool_modal_light_prog_1_red_button > img").hide();
+    $(".vigipool_modal_light_prog_1_orange_button > img").hide();
+    $(".vigipool_modal_light_prog_1_favorite_button > img").hide();
+    $(".vigipool_modal_light_prog_1_gradiant_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_rainbow_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_parade_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_techno_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_horizon_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_random_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_1_magical_button > img").css("opacity", "0%");
+
     $(document).ready(function () {
         switch (p1_color) {
             case 0:

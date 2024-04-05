@@ -26,7 +26,7 @@ function update_vigipool_modal_light_prog_2(set_sched_value_save = "") {
     }
 
     // Display
-    
+
     var p2_color = get_sched_value(light_sched, "program_2_color");
 
     var programs_number = get_sched_value(light_sched, "programs_number");
@@ -127,6 +127,26 @@ function update_vigipool_modal_light_prog_2(set_sched_value_save = "") {
     }
 
     // light_code
+
+    $(".vigipool_modal_light_prog_2_warm_button > img").hide();
+    $(".vigipool_modal_light_prog_2_cold_button > img").hide();
+    $(".vigipool_modal_light_prog_2_blue_button > img").hide();
+    $(".vigipool_modal_light_prog_2_lagoon_button > img").hide();
+    $(".vigipool_modal_light_prog_2_cyan_button > img").hide();
+    $(".vigipool_modal_light_prog_2_green_button > img").hide();
+    $(".vigipool_modal_light_prog_2_purple_button > img").hide();
+    $(".vigipool_modal_light_prog_2_magenta_button > img").hide();
+    $(".vigipool_modal_light_prog_2_pink_button > img").hide();
+    $(".vigipool_modal_light_prog_2_red_button > img").hide();
+    $(".vigipool_modal_light_prog_2_orange_button > img").hide();
+    $(".vigipool_modal_light_prog_2_favorite_button > img").hide();
+    $(".vigipool_modal_light_prog_2_gradiant_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_rainbow_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_parade_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_techno_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_horizon_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_random_button > img").css("opacity", "0%");
+    $(".vigipool_modal_light_prog_2_magical_button > img").css("opacity", "0%");
 
     $(document).ready(function () {
         create_ui_tild_light("vigipool_modal_light_prog_2", p2_color);

@@ -34,7 +34,7 @@ function update_vigipool_modal_x3_state() {
     // x3_color
 
     var x3_color = get_value_from_position(eq_modal, "x3_color");
-//    console.log("x3_color = " + x3_color);
+    // console.log("x3_color = " + x3_color);
 
     $(".vigipool_modal_x3_state_button_color_picker").val(x3_color);
 
@@ -53,11 +53,15 @@ function update_vigipool_modal_x3_state() {
         // console.log(x3_color + " !== " + x3_fun_value);
     }
     if (x3_color === x3_ocean_value) {
+        console.log("x3_color === x3_ocean_value");
+        console.log("x3_color = " + x3_color);
+        console.log("x3_ocean_value = " + x3_ocean_value);
         $(x3_ocean_button).attr("src", x3_ocean_image_ok);
-        // console.log(x3_color + " === " + x3_ocean_value);
     } else {
+        console.log("x3_color !== x3_ocean_value");
+        console.log("x3_color = " + x3_color);
+        console.log("x3_ocean_value = " + x3_ocean_value);
         $(x3_ocean_button).attr("src", x3_ocean_image);
-        // console.log(x3_color + " !== " + x3_ocean_value);
     }
     if (x3_color === x3_flamme_value) {
         $(x3_flamme_button).attr("src", x3_flamme_image_ok);

@@ -53,7 +53,7 @@ function update_vigipool_modal_all() {
         $(".vigipool_common_modal_all_aux_type_booster").hide();
         $(".vigipool_common_modal_all_aux_type_auxiliary").hide();
     }
-    if (!is_variable_available(eq_modal, "aux_type")) {
+    if (!is_variable_available(eq_modal, "winter_mode")) {
         $(".vigipool_common_modal_all_winter_mode").hide();
         $(".vigipool_common_modal_all_winter_mode_off").hide();
         $(".vigipool_common_modal_all_winter_mode_on").hide();
@@ -130,6 +130,11 @@ function update_vigipool_modal_all() {
 
     // frost_free
 
+    $(".vigipool_common_modal_all_frost_free_off").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_frost_free_0").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_frost_free_1").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_frost_free_2").removeClass("btn-primary");
+
     switch (frost_free) {
         case 255:
             $(".vigipool_common_modal_all_frost_free_off").addClass("btn-primary");
@@ -147,6 +152,11 @@ function update_vigipool_modal_all() {
 
     // light_type
 
+    $(".vigipool_common_modal_all_light_type_rc").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_light_type_mono").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_light_type_mono_dim").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_light_type_micro_cuts").removeClass("btn-primary");
+
     switch (light_type) {
         case 0:
             $(".vigipool_common_modal_all_light_type_rc").addClass("btn-primary");
@@ -163,6 +173,12 @@ function update_vigipool_modal_all() {
     }
 
     // aux_type
+
+    $(".vigipool_common_modal_all_aux_type_none").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_aux_type_heater").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_aux_type_treatment").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_aux_type_booster").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_aux_type_auxiliary").removeClass("btn-primary");
 
     switch (aux_type) {
         case 1:
@@ -183,6 +199,9 @@ function update_vigipool_modal_all() {
     }
 
     // winter_mode
+
+    $(".vigipool_common_modal_all_winter_mode_off").removeClass("btn-primary");
+    $(".vigipool_common_modal_all_winter_mode_on").removeClass("btn-primary");
 
     switch (winter_mode) {
         case 0:

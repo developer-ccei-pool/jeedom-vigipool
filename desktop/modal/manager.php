@@ -53,7 +53,7 @@ function create_ui_speed($file_name) {
 
     echo "<h3 class=\"transition {$file_name}_speed_title\">$speed</h3>";
 
-    echo "<table>";
+    echo "<table class=\"centerer\">";
     echo "<tr class=\"transition {$file_name}_speed\">";
     echo "<th>";
     echo "<img style=\"filter: invert(1); vertical-align: super;\" src=\"/plugins/vigipool/desktop/img/rocket-takeoff-fill.svg\">";
@@ -81,7 +81,7 @@ function create_ui_bright($file_name) {
 
     echo "<h3 class=\"transition {$file_name}_bright_title\">$bright</h3>";
 
-    echo "<table>";
+    echo "<table class=\"centerer\">";
     echo "<tr class=\"transition {$file_name}_bright\">";
     echo "<th>";
     echo "<img style=\"filter: invert(1); vertical-align: super;\" src=\"/plugins/vigipool/desktop/img/sun.svg\">";
@@ -131,14 +131,14 @@ function create_ui_tild_light($file_name) {
 
     echo "<h3>$colors</h3>";
 
-    echo "<table style=\"table-layout: fixed;width: 400px;\">";
+    echo "<table class=\"centerer\" style=\"table-layout: fixed;width: 400px;\">";
     echo "<tr>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_warm_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_cold_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_blue_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_lagoon_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_cyan_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_green_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_warm_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_cold_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot  {$file_name}_blue_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_lagoon_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_cyan_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_green_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
     echo "</tr>";
     echo "<tr>";
     echo "<th class=\"transition vigipool_label {$file_name}_warm_label\">$warm</th>";
@@ -149,12 +149,12 @@ function create_ui_tild_light($file_name) {
     echo "<th class=\"transition vigipool_label {$file_name}_green_label\">$green</th>";
     echo "</tr>";
     echo "<tr>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_purple_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_magenta_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_pink_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_red_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_orange_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
-    echo "<th class=\"transition vigipool_button\" ><span class=\"transition dot {$file_name}_favorite_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_purple_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_magenta_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_pink_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_red_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_orange_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
+    echo "<th class=\"transition vigipool_button\" ><span class=\"clickable transition dot {$file_name}_favorite_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></span></th>";
     echo "</tr>";
     echo "<tr>";
     echo "<th class=\"transition vigipool_label {$file_name}_purple_label\">$purple</th>";
@@ -168,12 +168,12 @@ function create_ui_tild_light($file_name) {
 
     echo "<h3>$sequences</h3>";
 
-    echo "<table>";
+    echo "<table class=\"centerer\">";
     echo "<tr>";
-    echo "<th class=\"transition vigipool_button_sequence {$file_name}_gradiant_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
-    echo "<th class=\"transition vigipool_button_sequence {$file_name}_rainbow_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
-    echo "<th class=\"transition vigipool_button_sequence {$file_name}_parade_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
-    echo "<th class=\"transition vigipool_button_sequence {$file_name}_techno_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
+    echo "<th class=\"clickable transition vigipool_button_sequence {$file_name}_gradiant_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
+    echo "<th class=\"clickable transition vigipool_button_sequence {$file_name}_rainbow_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
+    echo "<th class=\"clickable transition vigipool_button_sequence {$file_name}_parade_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
+    echo "<th class=\"clickable transition vigipool_button_sequence {$file_name}_techno_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
     echo "</tr>";
     echo "<tr>";
     echo "<th class=\"transition vigipool_label_sequence {$file_name}_gradiant_label\">$gradiant</th>";
@@ -182,9 +182,9 @@ function create_ui_tild_light($file_name) {
     echo "<th class=\"transition vigipool_label_sequence {$file_name}_techno_label\">$techno</th>";
     echo "</tr>";
     echo "<tr>";
-    echo "<th class=\"transition vigipool_button_sequence {$file_name}_horizon_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
-    echo "<th class=\"transition vigipool_button_sequence {$file_name}_random_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
-    echo "<th class=\"transition vigipool_button_sequence {$file_name}_magical_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
+    echo "<th class=\"clickable transition vigipool_button_sequence {$file_name}_horizon_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
+    echo "<th class=\"clickable transition vigipool_button_sequence {$file_name}_random_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
+    echo "<th class=\"clickable transition vigipool_button_sequence {$file_name}_magical_button\"><img src=\"/plugins/vigipool/desktop/img/check-circle.svg\"></th>";
     echo "</tr>";
     echo "<tr>";
     echo "<th class=\"transition vigipool_label_sequence {$file_name}_horizon_label\">$horizon</th>";
@@ -270,7 +270,7 @@ function create_program($file_name, $sched_number) {
     $duration = get_text("duration", false);
     $hours = get_text("hours", false);
 
-    echo "<table>";
+    echo "<table class=\"centerer\">";
     echo "<tr>";
     echo "<td>$program $sched_number</td>";
     echo "<td></td>";
@@ -278,21 +278,21 @@ function create_program($file_name, $sched_number) {
     echo "<td></td>";
     echo "<td></td>";
     echo "<td></td>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_off_on\">Off/On</td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_off_on\">Off/On</td>";
     echo "</tr>";
     echo "<tr>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_lundi\">$monday</td>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_mardi\">$tuesday</td>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_mercredi\">$wednesday</td>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_jeudi\">$thursday</td>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_vendredi\">$friday</td>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_samedi\">$saturday</td>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_dimanche\">$sunday</td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_lundi\">$monday</td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_mardi\">$tuesday</td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_mercredi\">$wednesday</td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_jeudi\">$thursday</td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_vendredi\">$friday</td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_samedi\">$saturday</td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_dimanche\">$sunday</td>";
     echo "</tr>";
     echo "<tr>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_color_label\"></td>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_color\"></td>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_color_circle\">";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_color_label\"></td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_color\"></td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_color_circle\">";
     echo "<svg style=\"display:none;\"  width=\"$width\" height=\"$height\">";
     echo "<circle cx=\"$cx\" cy=\"$cy\" r=\"$r\" fill=\"#ffffff\" />";
     echo "</svg>";
@@ -300,7 +300,7 @@ function create_program($file_name, $sched_number) {
     echo "</td>";
     echo "<td></td>";
     echo "<td>$duration : </td>";
-    echo "<td class=\"transition {$file_name}_{$sched_number}_duration\"></td>";
+    echo "<td class=\"clickable transition {$file_name}_{$sched_number}_duration\"></td>";
     echo "<td>$hours</td>";
     echo "</tr>";
     echo "</table>";
@@ -323,7 +323,7 @@ function create_program_simple($file_name, $sched_number) {
 
     echo "<h4>$program $sched_number</h4>";
 
-    echo "<table>";
+    echo "<table class=\"centerer\">";
     echo "<tr>";
     echo "<td class=\"transition {$file_name}_{$sched_number}_from_label_1\">$from</td>";
     echo "<td class=\"transition {$file_name}_{$sched_number}_from_value_1\"></td>";
@@ -352,6 +352,22 @@ function create_program_simple($file_name, $sched_number) {
     echo "<td></td>";
     echo "</tr>";
     echo "</table>";
-    
+
     echo "<p class=\"transition {$file_name}_{$sched_number}_duration\">$duration : $hours</p>";
+}
+
+function modal_top() {
+    echo "<div class=\"top_container\" >";
+    echo "<div class=\"top_box\">";
+    echo "<div class=\"scroll_container\">";
+    echo "<div class=\"scroll_sliding-background\">";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>";
+    echo "<div class=\"top_box top_overlay center\">";
+}
+
+function modal_bot() {
+    echo "</div>";
+    echo "</div>";
 }

@@ -72,7 +72,7 @@ include 'manager.php';
 
     <h3><?php get_text("sequences"); ?></h3>
 
-    <table>
+    <table class="centerer">
         <tr>
             <th class="transition vigipool_button_sequence vigipool_tild_modal_light_gradiant_button"><img src="/plugins/vigipool/desktop/img/check-circle.svg"></th>
             <th class="transition vigipool_button_sequence vigipool_tild_modal_light_rainbow_button"><img src="/plugins/vigipool/desktop/img/check-circle.svg"></th>
@@ -99,7 +99,7 @@ include 'manager.php';
 
     <h3><?php get_text("bright"); ?></h3>
 
-    <table>
+    <table class="centerer">
         <tr class="transition vigipool_tild_modal_light_bright">
             <th>
                 <img style="filter: invert(1); vertical-align: super;" src="/plugins/vigipool/desktop/img/sun.svg">
@@ -124,7 +124,7 @@ include 'manager.php';
 
     <h3 class="transition vigipool_tild_modal_light_speed_title"><?php get_text("speed"); ?></h3>
 
-    <table>
+    <table class="centerer">
         <tr class="transition vigipool_tild_modal_light_speed">
             <th>
                 <img style="filter: invert(1); vertical-align: super;" src="/plugins/vigipool/desktop/img/rocket-takeoff-fill.svg">
@@ -144,7 +144,7 @@ include 'manager.php';
 
     <div class="transition vigipool_modal_light_sched">
         <h3><?php get_text("programming"); ?></h3>
-        <table>
+        <table class="centerer">
             <tr>
                 <td><?php get_text("program"); ?> 1</td>
                 <td></td>
@@ -174,7 +174,7 @@ include 'manager.php';
             </tr>
         </table>
         <br/>
-        <table>
+        <table class="centerer">
             <tr>
                 <td><?php get_text("program"); ?> 2</td>
                 <td></td>

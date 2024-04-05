@@ -3,11 +3,11 @@ function change_aux_conf(aux_conf, aux_type, bit, value) {
     var aux_conf = parseInt(aux_conf);
     var aux_type = parseInt(aux_type);
 
-    console.log("aux_conf = " + aux_conf);
+    // console.log("aux_conf = " + aux_conf);
 
     var aux_conf = converter("dec", "bin", aux_conf);
 
-    console.log("aux_conf = " + aux_conf);
+    // console.log("aux_conf = " + aux_conf);
 
     var en_marche = aux_conf[7];
     var asservi_filt = aux_conf[6];
@@ -16,15 +16,15 @@ function change_aux_conf(aux_conf, aux_type, bit, value) {
     var aux_min_temp = aux_conf[3];
     var consigne_orp = aux_conf[2];
 
-    console.log("aux_conf = " + aux_conf);
-    console.log("en_marche = " + en_marche);
-    console.log("asservi_filt = " + asservi_filt);
-    console.log("prio_aux = " + prio_aux);
-    console.log("consigne_temp = " + consigne_temp);
-    console.log("aux_min_temp = " + aux_min_temp);
-    console.log("consigne_orp = " + consigne_orp);
+    // console.log("aux_conf = " + aux_conf);
+    // console.log("en_marche = " + en_marche);
+    // console.log("asservi_filt = " + asservi_filt);
+    // console.log("prio_aux = " + prio_aux);
+    // console.log("consigne_temp = " + consigne_temp);
+    // console.log("aux_min_temp = " + aux_min_temp);
+    // console.log("consigne_orp = " + consigne_orp);
 
-    console.log("Before -> " + `00${consigne_orp}${aux_min_temp}${consigne_temp}${prio_aux}${asservi_filt}${en_marche}`);
+    // console.log("Before -> " + `00${consigne_orp}${aux_min_temp}${consigne_temp}${prio_aux}${asservi_filt}${en_marche}`);
 
     switch (aux_type) {
         case 0:
@@ -182,7 +182,7 @@ function change_aux_conf(aux_conf, aux_type, bit, value) {
             break;
     }
 
-    console.log("After -> " + `00${consigne_orp}${aux_min_temp}${consigne_temp}${prio_aux}${asservi_filt}${en_marche}`);
+//    console.log("After -> " + `00${consigne_orp}${aux_min_temp}${consigne_temp}${prio_aux}${asservi_filt}${en_marche}`);
 
     return converter("bin", "dec", `00${consigne_orp}${aux_min_temp}${consigne_temp}${prio_aux}${asservi_filt}${en_marche}`);
 }
@@ -229,19 +229,27 @@ function create_slider(id, init_value, division, unit, disable, type, variable, 
             output.innerHTML = (slider.value / division) + " " + unit; // Display the default slider value
     };
 
-    switch (id) {
-        case "light_timer":
-            var value_mqtt = convert_time_4_to_timer(slider.value * value);
-            break;
-        default:
-            var value_mqtt = slider.value * value;
-            break;
-    }
 
     slider.onclick = function () {
+        switch (id) {
+            case "light_timer":
+                var value_mqtt = convert_time_4_to_timer(slider.value * value);
+                break;
+            default:
+                var value_mqtt = slider.value * value;
+                break;
+        }
         quick_send(type, variable, info, desired, value_mqtt);
     };
     slider.ontouchend = function () {
+        switch (id) {
+            case "light_timer":
+                var value_mqtt = convert_time_4_to_timer(slider.value * value);
+                break;
+            default:
+                var value_mqtt = slider.value * value;
+                break;
+        }
         quick_send(type, variable, info, desired, value_mqtt);
     };
 

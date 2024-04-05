@@ -25,8 +25,9 @@
 /* hover */
 .clickable
 {
-    cursor: pointer;
-    transition: 0.3s;
+    cursor: pointer !important;
+    transition: 0.3s !important;
+    pointer-events: all !important;
 }
 
 .transition
@@ -36,7 +37,8 @@
 
 .clickable:hover
 {
-    filter: drop-shadow(0px 0px 5px #FFFFFF);
+    filter: drop-shadow(0px 0px 5px #FFFFFF) !important;
+    pointer-events: all !important;
 }
 
 /* TOP */
@@ -102,7 +104,7 @@
     background-image:  url("/plugins/vigipool/desktop/img/background_scroll.jpg");
     background-repeat: repeat-x;
     height: 2000px;
-    width: 2500px; /* The image width times 3 */
+    width: 3333px; /* The image width times 3 */
     animation: slide 60s linear infinite;
     padding-top: 500px;
 
@@ -120,6 +122,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    pointer-events: all !important;
 }
 
 .responsive {
@@ -361,8 +364,31 @@
     text-align: center;
 }
 
+.centerer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .saved_colors
 {
     font-size: xx-large;
     text-align: center;
+}
+
+.slidecontainer > input {
+    width: 50%;
+    display: initial;
+}
+
+:not(.ui-dialog-content) table:not(.tableCmd) > tbody tr:nth-child(odd) {
+    background: none !important;
+}
+
+:not(.ui-dialog-content) table:not(.tableCmd) > tbody tr:nth-child(even) {
+    background: none !important;
+}
+
+.inactiveLink {
+   pointer-events: none !important;
+   cursor: default !important;
 }

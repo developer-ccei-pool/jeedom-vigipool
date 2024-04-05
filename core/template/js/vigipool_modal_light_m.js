@@ -6,8 +6,8 @@ function update_vigipool_modal_light_m() {
 
     var light_sched = get_value_from_position(eq_modal, "light_sched_m");
     var light_mode = get_value_from_position(eq_modal, "light_mode");
-    var light_type = get_value_from_position(eq_modal, ".light_type_m");
-    var light_code = get_value_from_position(eq_modal, ".light_code");
+    var light_type = get_value_from_position(eq_modal, "light_type_m");
+    var light_code = get_value_from_position(eq_modal, "light_code");
     var light_bright = get_value_from_position(eq_modal, "light_bright");
     var light_speed = get_value_from_position(eq_modal, "light_speed");
     var light_state = get_value_from_position(eq_modal, "light_state_m");

@@ -8,16 +8,16 @@ function update_vigipool_modal_light_advanced_options() {
 
     // Logs
 
-    // console.log("filt_light_force = " + filt_light_force);
+//    console.log("filt_light_force = " + filt_light_force);
 
     // Check
 
     const variables = [filt_light_force];
 
     if (variable_check(variables)) {
-        // console.log("go");
+//         console.log("go");
     } else {
-        // console.log("no go");
+//         console.log("no go");
         return;
     }
 

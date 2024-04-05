@@ -1,30 +1,23 @@
 <?php
-/* This file is part of Jeedom.
- *
- * Jeedom is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Jeedom is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
- */
-
 if (!isConnect('admin')) {
     throw new Exception('{{401 - Accès non autorisé}}');
 }
 
 include 'manager.php';
+
+modal_top();
 ?>
 
 <div class="transition vigipool_ui_text_modal">
 
     <h2 class="transition vigipool_modal_title"></h2>
+
+    <h3><?php get_text("auxiliary"); ?></h3>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
     <h3><?php get_text("modes"); ?></h3>
 
@@ -33,14 +26,22 @@ include 'manager.php';
     <button type="button" class="transition btn btn-light vigipool_modal_auxiliary_1_prog"><?php get_text("prog"); ?></button>
     <button type="button" class="transition btn btn-light vigipool_modal_auxiliary_1_auto"><?php get_text("auto"); ?></button>
 
+    <br/>
+    <br/>
+
     <h3><?php get_text("scheduling"); ?></h3>
     <?php create_program_simple("vigipool_modal_auxiliary_1", 1); ?>
+
+    <br/>
+    <br/>
 
     <h3><?php get_text("history_title"); ?></h3>
 
     <button type="button" class="transition btn btn-light vigipool_anteam_modal_auxiliary_1_button_state"><?php get_text("history"); ?></button>
 
 </div>
+
+<?php modal_bot(); ?>
 
 <script>
     common_modals_finish_load();
@@ -58,9 +59,9 @@ include 'manager.php';
         show_history("aux1_state", eq_modal);
     });
 
-    access_modal(".vigipool_modal_auxiliary_1_1_from_label_1", "vigipool_modal_auxiliary_1_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_1_from_value_1", "vigipool_modal_auxiliary_1_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_1_to_label_1", "vigipool_modal_auxiliary_1_prog_1", eq_modal);
-    access_modal(".vigipool_modal_auxiliary_1_1_to_value_1", "vigipool_modal_auxiliary_1_prog_1", eq_modal);
+    // access_modal(".vigipool_modal_auxiliary_1_1_from_label_1", "vigipool_modal_auxiliary_1_prog_1", 0, eq_modal);
+    // access_modal(".vigipool_modal_auxiliary_1_1_from_value_1", "vigipool_modal_auxiliary_1_prog_1", 0, eq_modal);
+    // access_modal(".vigipool_modal_auxiliary_1_1_to_label_1", "vigipool_modal_auxiliary_1_prog_1", 0, eq_modal);
+    // access_modal(".vigipool_modal_auxiliary_1_1_to_value_1", "vigipool_modal_auxiliary_1_prog_1", 0, eq_modal);
 
 </script>

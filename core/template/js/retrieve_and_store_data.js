@@ -9,14 +9,32 @@ var x3_elegant_value = "SK8038KBF38KFF38KBF38K4438K0038K4438";
 var x3_horizon_value = "S#0000FF7FK897F#04FFFF7F";
 var x3_psyche_value = "S#FF005004#00000000#0000FF04#00000000#15EDFF04#00000000#C000FF04#00000000#FFFF0004#00000000#FF00FF04#00000000";
 
-var x3_rainbow_button = ".vigipool_modal_x3_state_prog_2_rainbow_button > img";
-var x3_fun_button = ".vigipool_modal_x3_state_prog_2_fun_button > img";
-var x3_ocean_button = ".vigipool_modal_x3_state_prog_2_ocean_button > img";
-var x3_flamme_button = ".vigipool_modal_x3_state_prog_2_flamme_button > img";
-var x3_parade_button = ".vigipool_modal_x3_state_prog_2_parade_button > img";
-var x3_elegant_button = ".vigipool_modal_x3_state_prog_2_elegant_button > img";
-var x3_horizon_button = ".vigipool_modal_x3_state_prog_2_horizon_button > img";
-var x3_psyche_button = ".vigipool_modal_x3_state_prog_2_psyche_button > img";
+var x3_rainbow_button = ".vigipool_modal_x3_state_rainbow_button > img";
+var x3_fun_button = ".vigipool_modal_x3_state_fun_button > img";
+var x3_ocean_button = ".vigipool_modal_x3_state_ocean_button > img";
+var x3_flamme_button = ".vigipool_modal_x3_state_flamme_button > img";
+var x3_parade_button = ".vigipool_modal_x3_state_parade_button > img";
+var x3_elegant_button = ".vigipool_modal_x3_state_elegant_button > img";
+var x3_horizon_button = ".vigipool_modal_x3_state_horizon_button > img";
+var x3_psyche_button = ".vigipool_modal_x3_state_psyche_button > img";
+
+var x3_prog_1_rainbow_button = ".vigipool_modal_x3_state_prog_1_rainbow_button > img";
+var x3_prog_1_fun_button = ".vigipool_modal_x3_state_prog_1_fun_button > img";
+var x3_prog_1_ocean_button = ".vigipool_modal_x3_state_prog_1_ocean_button > img";
+var x3_prog_1_flamme_button = ".vigipool_modal_x3_state_prog_1_flamme_button > img";
+var x3_prog_1_parade_button = ".vigipool_modal_x3_state_prog_1_parade_button > img";
+var x3_prog_1_elegant_button = ".vigipool_modal_x3_state_prog_1_elegant_button > img";
+var x3_prog_1_horizon_button = ".vigipool_modal_x3_state_prog_1_horizon_button > img";
+var x3_prog_1_psyche_button = ".vigipool_modal_x3_state_prog_1_psyche_button > img";
+
+var x3_prog_2_rainbow_button = ".vigipool_modal_x3_state_prog_2_rainbow_button > img";
+var x3_prog_2_fun_button = ".vigipool_modal_x3_state_prog_2_fun_button > img";
+var x3_prog_2_ocean_button = ".vigipool_modal_x3_state_prog_2_ocean_button > img";
+var x3_prog_2_flamme_button = ".vigipool_modal_x3_state_prog_2_flamme_button > img";
+var x3_prog_2_parade_button = ".vigipool_modal_x3_state_prog_2_parade_button > img";
+var x3_prog_2_elegant_button = ".vigipool_modal_x3_state_prog_2_elegant_button > img";
+var x3_prog_2_horizon_button = ".vigipool_modal_x3_state_prog_2_horizon_button > img";
+var x3_prog_2_psyche_button = ".vigipool_modal_x3_state_prog_2_psyche_button > img";
 
 var x3_rainbow_image = "/plugins/vigipool/desktop/img/x3_rainbow.png";
 var x3_fun_image = "/plugins/vigipool/desktop/img/x3_fun.png";
@@ -44,7 +62,7 @@ if (eq === undefined || eq >= $(".vigipool_ipaddr").length - 1) {
 }
 
 function create_ui_options_click(file_name) {
-    access_modal(`.${file_name}_see_advanced_options`, `${file_name}_advanced_options`, eq_modal);
+    access_modal(`.${file_name}_see_advanced_options`, `${file_name}_advanced_options`, 0, eq_modal);
 }
 
 function variable_check(variables) {
@@ -54,7 +72,7 @@ function variable_check(variables) {
 
         if (variable === undefined)
             continue;
-        if (variable > 0)
+        if (variable >= 0)
             return true;
         if (variable.length > 0)
             return true;
@@ -1777,6 +1795,19 @@ function get_sched_value(variable_sched, selection) {
         return parseInt(program_1_bright);
     if (selection === "program_2_color")
         return parseInt(program_2_bright);
+
+    if (selection === "1")
+        return parseInt(programs_number);
+    if (selection === "2")
+        return parseInt(program_1_off_on_and_days);
+    if (selection === "3")
+        return parseInt(program_1_bright);
+    if (selection === "4")
+        return parseInt(program_1_speed);
+    if (selection === "5")
+        return parseInt(program_1_sched_number);
+    if (selection === "6")
+        return parseInt(program_1_sched_1_begin);
 
     if (program_1_off_on_and_days === undefined) {
         return;
@@ -4341,7 +4372,7 @@ var set_filtration_m_sched_value_save = "";
 
 function set_filtration_m_sched_value(name, value) {
 
-    // Récupération des valeurs de basesselected_program_1_sched_2_begin
+    // Récupération de la valeur de base
 
     if (set_filtration_m_sched_value_save === "") {
         var filtration_sched_m = get_value_from_position(eq_modal, "filt_sched_m");
@@ -4350,12 +4381,20 @@ function set_filtration_m_sched_value(name, value) {
     }
     console.log("filtration_sched_m = " + filtration_sched_m);
 
-    var selected_begin_1 = get_sched_value(filtration_sched_m, "programs_number");
-    var selected_end_1 = get_sched_value(filtration_sched_m, "program_1_off_on_and_days");
-    var selected_begin_2 = get_sched_value(filtration_sched_m, "program_1_bright");
-    var selected_end_2 = get_sched_value(filtration_sched_m, "program_1_speed");
-    var selected_begin_3 = get_sched_value(filtration_sched_m, "program_1_sched_number");
-    var selected_end_3 = get_sched_value(filtration_sched_m, "program_1_sched_1_begin");
+    // 02 04 06 08 00 0A
+
+    var iterator = 0;
+    var selected_begin_1 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
+    iterator = iterator + 2;
+    var selected_end_1 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
+    iterator = iterator + 2;
+    var selected_begin_2 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
+    iterator = iterator + 2;
+    var selected_end_2 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
+    iterator = iterator + 2;
+    var selected_begin_3 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
+    iterator = iterator + 2;
+    var selected_end_3 = filtration_sched_m[iterator + 0] + filtration_sched_m[iterator + 1];
 
     console.log("selected_begin_1 = " + selected_begin_1);
     console.log("selected_end_1 = " + selected_end_1);
