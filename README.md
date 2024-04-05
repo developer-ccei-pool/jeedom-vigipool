@@ -23,6 +23,8 @@
 
 # Tutoriel pour utiliser le plugin Vigipool pour Jeedom
 
+Lien vers le plugin : https://market.jeedom.com/index.php?v=d&p=market_display&id=4437
+
 ## Ajouter un équipement
 
 Après installer le Plugin Jeedom Vigipool, aller dans le menu "Plugins" puis "Objets Connectés" puis "Vigipool"
