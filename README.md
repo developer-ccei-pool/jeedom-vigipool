@@ -1,3 +1,7 @@
+[![en](https://img.shields.io/badge/lang-en-white.svg)](https://github.com/developer-ccei-pool/jeedom-vigipool/blob/master/README.md)
+[![fr](https://img.shields.io/badge/lang-fr-white.svg)](https://github.com/developer-ccei-pool/jeedom-vigipool/blob/master/README.fr.md)
+
+
 <p align="center">
   <a href="https://market.jeedom.com/index.php?v=d&p=market_display&id=4437/">
     <img src="https://market.jeedom.com/filestore/market/plugin/images/vigipool_icon.png" alt="Vigipool Jeedom Logo" width="150">
@@ -6,8 +10,6 @@
 
 <h3 align="center">Plugin Jeedom - Vigipool</h3>
 
-[![en](https://img.shields.io/badge/lang-en-white.svg)](https://github.com/developer-ccei-pool/jeedom-vigipool/blob/master/README.md)
-[![fr](https://img.shields.io/badge/lang-fr-white.svg)](https://github.com/developer-ccei-pool/jeedom-vigipool/blob/master/README.fr.md)
 
 
 <p align="center">
