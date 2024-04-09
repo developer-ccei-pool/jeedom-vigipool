@@ -48,7 +48,7 @@ If you don't know the device name, this won't stop the plugin from working.
 In our example, it will be a Tild
 Click OK.
 
-![Capture d’écran du 2024-04-09 12-57-00](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/4de86c0c-1472-48be-8bc9-2b34f713406b)
+![Capture d’écran du 2024-04-09 12-57-00](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/3be34132-bcf4-4590-9be7-94ce09ce8eb7)
 
 Once in the “General Settings” menu
 Remember to choose a Parent Object if you want
