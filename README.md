@@ -6,6 +6,10 @@
 
 <h3 align="center">Plugin Jeedom - Vigipool</h3>
 
+[![en](https://img.shields.io/badge/lang-en-white.svg)](https://github.com/developer-ccei-pool/jeedom-vigipool/blob/master/README.md)
+[![fr](https://img.shields.io/badge/lang-fr-white.svg)](https://github.com/developer-ccei-pool/jeedom-vigipool/blob/master/README.fr.md)
+
+
 <p align="center">
   Vigipool, l'appli innovante pour contrôler et piloter votre piscine à distance.
   <!-- <br>
