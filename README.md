@@ -17,7 +17,7 @@
 
 Link to plugin : https://market.jeedom.com/index.php?v=d&p=market_display&id=4437
 
-![Capture d’écran du 2024-04-09 10-40-44](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/4c7c2138-d1ce-4c43-a430-23591a7f6879)
+![Capture d’écran du 2024-04-09 12-55-38](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/f5080427-8bc7-4977-8265-b49efdf33f81)
 
 ## Add equipment
 
@@ -25,30 +25,30 @@ After installing the Jeedom Vigipool Plugin
 You will receive a message saying "Do you want to go to the configuration page of your new plugin?"
 Click OK
 
-![Capture d’écran du 2024-04-09 10-40-59](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/6a457c3d-5d6e-44aa-a309-71f1a56a0ef5)
+![Capture d’écran du 2024-04-09 12-55-55](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/de464c4b-ff5d-4eae-bd32-cf44ecb042f8)
 
 Then, in the “Status” window, next to the “Action” label, click the “Activate” button.
 
-![Capture d’écran du 2024-04-09 10-41-05](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/e1247bd8-2ff9-4480-8b7a-f48323f7ec6f)
+![Capture d’écran du 2024-04-09 12-56-05](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/7a701953-2daf-4597-88cf-b3a4c7cc2230)
 
 Normally, the banner of the "Status" window has turned green and its "Status" is "Active"
 
-![Capture d’écran du 2024-04-09 10-41-14](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/62bbe62e-1211-411d-8a54-32ef3348e99e)
+![Capture d’écran du 2024-04-09 12-56-13](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/0c51c4eb-fbe2-44a7-998a-a380fb6f9a9b)
 
 Go to the “Plugins” menu then “Connected Objects” then “Vigipool”
 
-![Capture d’écran du 2024-04-09 10-41-27](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/f9ccea3c-95fe-4da4-a4b6-7e9b86823823)
+![Capture d’écran du 2024-04-09 12-56-20](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/93d5d041-c803-4c35-ba6c-bc3cddffe1d1)
 
 Click on “Add”
 
-![Capture d’écran du 2024-04-09 10-41-35](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/d6a7afbd-a4f3-4782-b55a-60d152d5cbcd)
+![Capture d’écran du 2024-04-09 12-56-50](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/dca96fec-19b2-4bac-b61d-1cf00dd5af31)
 
 Enter the name of the equipment you want.
 If you don't know the device name, this won't stop the plugin from working.
 In our example, it will be a Tild
 Click OK.
 
-![Capture d’écran du 2024-04-09 10-41-44](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/44a40d91-bc5f-4f59-a43a-0a1854b9193c)
+![Capture d’écran du 2024-04-09 12-57-00](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/4de86c0c-1472-48be-8bc9-2b34f713406b)
 
 Once in the “General Settings” menu
 Remember to choose a Parent Object if you want
@@ -76,7 +76,7 @@ If you have the IP address of your device, but not the ID, you can use "Get ID f
 
 At the end, don't forget to click "Save".
 
-![Capture d’écran du 2024-04-09 10-44-06](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/69b46876-fb3f-48d2-b9cb-c1532624bb40)
+![Capture d’écran du 2024-04-09 12-57-13](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/b4d521ff-d44c-432c-be80-5c4250ae5a1d)
 
 ## Resize the Plugin
 
@@ -95,4 +95,4 @@ You can see
 
 Below, functionalities similar to the Vigipool mobile application will appear depending on the devices connected.
 
-![Capture d’écran du 2024-04-09 11-16-20](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/897aea95-5448-4b7e-ab9c-5c151fffd7af)
+![Capture d’écran du 2024-04-09 12-57-33](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/7447815d-7951-4601-b6f5-8fd1ad37cb01)
