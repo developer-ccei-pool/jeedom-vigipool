@@ -50,29 +50,29 @@ Click on “Add” ("Ajouter")
 
 ![Capture d’écran du 2024-04-09 12-57-00](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/3be34132-bcf4-4590-9be7-94ce09ce8eb7)
 
-Once in the “General Settings” menu
-Remember to choose a Parent Object if you want
-Remember to activate the “Activate” and “Visible” boxes
+Once in the “General Settings” (Paramètres Généraux) menu
+Remember to choose a Parent Object (Objet parent) if you want
+Remember to activate the “Activate” (Activer) and “Visible” (Visible) boxes
 
 For the Plugin to connect to your Vigipool device, you must complete the following two parameters
-- “IP address of this equipment”
-- “ID of this equipment”
+- “IP address of this equipment” (Adresse IP de cet équipement)
+- “ID of this equipment” (ID de cet équipement)
 
 There are several ways to do this
 
 - Automatically
 
-You have a “Search Vigipool products” button which will scan all the IP addresses on your network and display its results in the “Vigipool devices detected” list.
+You have a “Search Vigipool products” (Rechercher les produits Vigipool) button which will scan all the IP addresses on your network and display its results in the “Vigipool devices detected” (Périphériques Vigipool détectés) list.
 
-The "Fast" button is less comprehensive than the "Slow" button.
+The "Fast" (rapide) button is less comprehensive than the "Slow" (lent) button.
 
-You can then click on the result to automatically complete "IP address of this equipment" and "ID of this equipment".
+You can then click on the result to automatically complete "IP address of this equipment" (Adresse IP de cet équipement) and "ID of this equipment" (ID de cet équipement).
 
 - Manually
 
 You can find the IP by yourself and find the ID on the Mobile Vigipool app
 
-If you have the IP address of your device, but not the ID, you can use "Get ID from IP" after filling in the IP address of this device parameter
+If you have the IP address of your device, but not the ID, you can use "Get ID from IP" (Récupérer l'ID à partir de l'IP) after filling in the IP address of this device parameter
 
 At the end, don't forget to click "Save".
 
