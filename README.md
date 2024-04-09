@@ -21,9 +21,9 @@ Link to plugin : https://market.jeedom.com/index.php?v=d&p=market_display&id=443
 
 ## Add equipment
 
-After installing the Jeedom Vigipool Plugin
-You will receive a message saying "Do you want to go to the configuration page of your new plugin?"
-Click OK
+- After installing the Jeedom Vigipool Plugin
+- You will receive a message saying "Do you want to go to the configuration page of your new plugin?"
+- Click OK
 
 ![Capture d’écran du 2024-04-09 12-55-55](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/de464c4b-ff5d-4eae-bd32-cf44ecb042f8)
 
@@ -43,10 +43,10 @@ Click on “Add” ("Ajouter")
 
 ![Capture d’écran du 2024-04-09 12-56-50](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/dca96fec-19b2-4bac-b61d-1cf00dd5af31)
 
-Enter the name of the equipment you want.
-If you don't know the device name, this won't stop the plugin from working.
-In our example, it will be a Tild
-Click OK.
+- Enter the name of the equipment you want.
+- If you don't know the device name, this won't stop the plugin from working.
+- In our example, it will be a Tild
+- Click OK.
 
 ![Capture d’écran du 2024-04-09 12-57-00](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/3be34132-bcf4-4590-9be7-94ce09ce8eb7)
 
