@@ -39,7 +39,7 @@ Go to the “Plugins” menu then “Connected Objects” then “Vigipool”
 
 ![Capture d’écran du 2024-04-09 12-56-20](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/93d5d041-c803-4c35-ba6c-bc3cddffe1d1)
 
-Click on “Add” ("ajouter")
+Click on “Add” ("Ajouter")
 
 ![Capture d’écran du 2024-04-09 12-56-50](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/dca96fec-19b2-4bac-b61d-1cf00dd5af31)
 
