@@ -1,3 +1,6 @@
+[![en](https://img.shields.io/badge/lang-en-white.svg)](https://github.com/developer-ccei-pool/jeedom-vigipool/blob/master/README.md)
+[![fr](https://img.shields.io/badge/lang-fr-white.svg)](https://github.com/developer-ccei-pool/jeedom-vigipool/blob/master/README.fr.md)
+
 <p align="center">
   <a href="https://market.jeedom.com/index.php?v=d&p=market_display&id=4437/">
     <img src="https://market.jeedom.com/filestore/market/plugin/images/vigipool_icon.png" alt="Vigipool Jeedom Logo" width="150">
@@ -7,71 +10,89 @@
 <h3 align="center">Plugin Jeedom - Vigipool</h3>
 
 <p align="center">
-  Vigipool, l'appli innovante pour contrôler et piloter votre piscine à distance.
-  <!-- <br>
-  <a href="https://getbootstrap.com/docs/5.3/"><strong>Explore Bootstrap docs »</strong></a>
-  <br>
-  <br>
-  <a href="https://github.com/twbs/bootstrap/issues/new?assignees=-&labels=bug&template=bug_report.yml">Report bug</a>
-  ·
-  <a href="https://github.com/twbs/bootstrap/issues/new?assignees=&labels=feature&template=feature_request.yml">Request feature</a>
-  ·
-  <a href="https://themes.getbootstrap.com/">Themes</a>
-  ·
-  <a href="https://blog.getbootstrap.com/">Blog</a> -->
+  Vigipool, the innovative app to control and manage your swimming pool remotely.
 </p>
 
-# Tutoriel pour utiliser le plugin Vigipool pour Jeedom
+# Tutorial to use the Vigipool plugin for Jeedom
 
-Lien vers le plugin : https://market.jeedom.com/index.php?v=d&p=market_display&id=4437
+Link to plugin : https://market.jeedom.com/index.php?v=d&p=market_display&id=4437
 
-## Ajouter un équipement
+![Capture d’écran du 2024-04-09 12-55-38](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/f5080427-8bc7-4977-8265-b49efdf33f81)
 
-Après installer le Plugin Jeedom Vigipool, aller dans le menu "Plugins" puis "Objets Connectés" puis "Vigipool"
+## Add equipment
 
-Cliquer sur "Ajouter"
+- After installing the Jeedom Vigipool Plugin
+- You will receive a message saying "Do you want to go to the configuration page of your new plugin?"
+- Click OK
 
-Entrer le nom de l'équipement que vous voulez (Si vous ne connaissez pas le nom de l'équipement, cela n'empêchera pas le plugin de fonctionner), puis cliquez sur Ok
+![Capture d’écran du 2024-04-09 12-55-55](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/de464c4b-ff5d-4eae-bd32-cf44ecb042f8)
 
-Une fois dans le menu des "Paramètres généraux"
-Pensez à choisir un Objet parent si vous voulez
-Penser à activer les cases "Activer et Visible"
+Then, in the “Status” window, next to the “Action” label, click the “Activate” button.
 
-Pour que le Plugin se connecte à votre périphérique Vigipool, il faudra remplir obligatoirement les deux Paramètres suivants
-- "Adresse IP de cet équipement"
-- "ID de cet équipement"
+![Capture d’écran du 2024-04-09 12-56-05](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/7a701953-2daf-4597-88cf-b3a4c7cc2230)
 
-Il y a plusieurs moyens pour le faire
+Normally, the banner of the "Status" window has turned green and its "Status" is "Active"
 
-- Automatiquement
+![Capture d’écran du 2024-04-09 12-56-13](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/0c51c4eb-fbe2-44a7-998a-a380fb6f9a9b)
 
-Vous avez un bouton "Rechercher les produits Vigipool" qui va scanner toutes les adresses IP de votre réseau et va afficher dans la liste "Périphériques Vigipool détectés" ses résultats
+Go to the “Plugins” menu then “Connected Objects” then “Vigipool”
 
-Le bouton "Rapide" est moins exhaustif que le bouton "Lent"
+![Capture d’écran du 2024-04-09 12-56-20](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/93d5d041-c803-4c35-ba6c-bc3cddffe1d1)
 
-Vous pouvez ensuite cliquer sur le résultat pour compléter automatiquement "Adresse IP de cet équipement" et "ID de cet équipement"
+Click on “Add” ("Ajouter")
 
-- Manuellement
+![Capture d’écran du 2024-04-09 12-56-50](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/dca96fec-19b2-4bac-b61d-1cf00dd5af31)
 
-Vous pouvez trouver par vous-même l'IP et trouver l'ID sur l'application Mobile Vigipool
+- Enter the name of the equipment you want.
+- If you don't know the device name, this won't stop the plugin from working.
+- In our example, it will be a Tild
+- Click OK.
 
-Si vous avez l'adresse IP de votre périphérique, mais pas l'ID, vous pouvez utiliser "Récupérer l'ID à partir de l'IP " après avoir rempli le paramètre Adresse IP de cet équipement
+![Capture d’écran du 2024-04-09 12-57-00](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/3be34132-bcf4-4590-9be7-94ce09ce8eb7)
 
-À la fin, n'oubliez pas de cliquer sur "Sauvegarder"
+Once in the “General Settings” (Paramètres Généraux) menu
+Remember to choose a Parent Object (Objet parent) if you want
+Remember to activate the “Activate” (Activer) and “Visible” (Visible) boxes
 
-## Redimensionner le Plugin
+For the Plugin to connect to your Vigipool device, you must complete the following two parameters
+- “IP address of this equipment” (Adresse IP de cet équipement)
+- “ID of this equipment” (ID de cet équipement)
 
-Une fois le plugin configuré, vous allez pouvoir le retrouver dans votre tableau de bord
+There are several ways to do this
 
-Il y a de forte chances que la taille de la fenêtre par défaut soit trop petite, si c'est le cas un message s'affichera pour vous prévenir
+- Automatically
 
-Pour régler ce problème utilisé le crayon en haut a droit de la fenêtre pour l'agrandir
+You have a “Search Vigipool products” (Rechercher les produits Vigipool) button which will scan all the IP addresses on your network and display its results in the “Vigipool devices detected” (Périphériques Vigipool détectés) list.
 
-## Utiliser le plugin
+The "Fast" (rapide) button is less comprehensive than the "Slow" (lent) button.
 
-Vous pouvez voir
-- En haut à droite : la version de votre équipement
-- À gauche : vous pouvez cliquer sur la roue dentée pour accéder à certaines options
-- En bas à gauche : L'icône de connexion est verte, jaune, rouge ou grise en fonction de la qualité de la connexion avec le périphérique Vigipool
+You can then click on the result to automatically complete "IP address of this equipment" (Adresse IP de cet équipement) and "ID of this equipment" (ID de cet équipement).
 
-En dessous vont apparaitre en fonction des périphériques connecter les fonctionnalités similaires à l'application mobile Vigipool
+- Manually
+
+You can find the IP by yourself and find the ID on the Mobile Vigipool app
+
+If you have the IP address of your device, but not the ID, you can use "Get ID from IP" (Récupérer l'ID à partir de l'IP) after filling in the IP address of this device parameter
+
+At the end, don't forget to click "Save".
+
+![Capture d’écran du 2024-04-09 12-57-13](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/b4d521ff-d44c-432c-be80-5c4250ae5a1d)
+
+## Resize the Plugin
+
+Once the plugin is configured, you will be able to find it in your dashboard
+
+There is a good chance that the default window size is too small. If this is the case, a message will be displayed to warn you.
+
+To solve this problem use the pencil at the top right of the window to enlarge it
+
+## Use the plugin
+
+You can see
+- Top right: the version of your equipment
+- On the left: you can click on the gear to access certain options
+- Bottom left: The connection icon is green, yellow, red or gray depending on the quality of the connection with the Vigipool device
+
+Below, functionalities similar to the Vigipool mobile application will appear depending on the devices connected.
+
+![Capture d’écran du 2024-04-09 12-57-33](https://github.com/developer-ccei-pool/jeedom-vigipool/assets/127429327/7447815d-7951-4601-b6f5-8fd1ad37cb01)
