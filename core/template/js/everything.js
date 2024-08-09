@@ -22125,8 +22125,9 @@ function update_vigipool_ui_source_ph() {
 
         $(".vigipool_ui_ph_vol_max_24h_label > p").eq(i).html(get_text("vol_24h_inject"));
 
-        var vol_max_24h = get_value_from_position(i, "vol_max_24h");
-        $(".vigipool_ui_ph_vol_max_24h_state > p").eq(i).html(`0.0 L / ${vol_max_24h} L`);
+        var vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "phileox");
+        var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "phileox");
+        $(".vigipool_ui_ph_vol_max_24h_state > p").eq(i).html(`${vol_24h_inject} L / ${vol_max_24h} L`);
     }
 }$(".vigipool_ui_source_orp_label > p").html(get_text("orp_regulation"));
 $(".vigipool_ui_orp_inject_on_label > p").html(get_text("injection_in_progress"));
@@ -22173,8 +22174,15 @@ function update_vigipool_ui_source_orp() {
 
         $(".vigipool_ui_orp_vol_max_24h_label > p").eq(i).html(get_text("vol_24h_inject"));
 
-        var vol_max_24h = get_value_from_position(i, "vol_max_24h");
-        $(".vigipool_ui_orp_vol_max_24h_state > p").eq(i).html(`0.0 L / ${vol_max_24h} L`);
+        var vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "oxeox");
+        if (vol_24h_inject == undefined) {
+            var vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "zelix");
+        }
+        var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "oxeox");
+        if (vol_max_24h == undefined) {
+            var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "zelix");
+        }
+        $(".vigipool_ui_orp_vol_max_24h_state > p").eq(i).html(`${vol_24h_inject} L / ${vol_max_24h} L`);
     }
 }
 function update_vigipool_ui_value_ph() {

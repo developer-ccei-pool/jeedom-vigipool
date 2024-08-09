@@ -496,7 +496,7 @@ class vigipool extends eqLogic {
         $logger->setSubType("string");
         $logger->setIsHistorized(1);
         $logger->setIsVisible(0);
-        $logger->setValue($ip_selected);
+        // $logger->setValue($ip_selected);
         $logger->save();
 
         // language
@@ -556,6 +556,58 @@ class vigipool extends eqLogic {
         $refresh->setType("action");
         $refresh->setSubType("other");
         $refresh->save();
+
+        // action_light_on
+        $action_light_on = $this_or_eqlogic->getCmd(null, "action_light_on");
+        if (!is_object($action_light_on)) {
+            $action_light_on = new vigipoolCmd();
+            $action_light_on->setName(__("action_light_on", __FILE__));
+        }
+        $action_light_on->setEqLogic_id($this_or_eqlogic->getId());
+        $action_light_on->setLogicalId("action_light_on");
+        $action_light_on->setType("action");
+        $action_light_on->setSubType("other");
+        $action_light_on->setIsVisible(0);
+        $action_light_on->save();
+        
+        // action_light_off
+        $action_light_off = $this_or_eqlogic->getCmd(null, "action_light_off");
+        if (!is_object($action_light_off)) {
+            $action_light_off = new vigipoolCmd();
+            $action_light_off->setName(__("action_light_off", __FILE__));
+        }
+        $action_light_off->setEqLogic_id($this_or_eqlogic->getId());
+        $action_light_off->setLogicalId("action_light_off");
+        $action_light_off->setType("action");
+        $action_light_off->setSubType("other");
+        $action_light_off->setIsVisible(0);
+        $action_light_off->save();
+
+        // action_filtration_on
+        $action_filtration_on = $this_or_eqlogic->getCmd(null, "action_filtration_on");
+        if (!is_object($action_filtration_on)) {
+            $action_filtration_on = new vigipoolCmd();
+            $action_filtration_on->setName(__("action_filtration_on", __FILE__));
+        }
+        $action_filtration_on->setEqLogic_id($this_or_eqlogic->getId());
+        $action_filtration_on->setLogicalId("action_filtration_on");
+        $action_filtration_on->setType("action");
+        $action_filtration_on->setSubType("other");
+        $action_filtration_on->setIsVisible(0);
+        $action_filtration_on->save();
+        
+        // action_filtration_off
+        $action_filtration_off = $this_or_eqlogic->getCmd(null, "action_filtration_off");
+        if (!is_object($action_filtration_off)) {
+            $action_filtration_off = new vigipoolCmd();
+            $action_filtration_off->setName(__("action_filtration_off", __FILE__));
+        }
+        $action_filtration_off->setEqLogic_id($this_or_eqlogic->getId());
+        $action_filtration_off->setLogicalId("action_filtration_off");
+        $action_filtration_off->setType("action");
+        $action_filtration_off->setSubType("other");
+        $action_filtration_off->setIsVisible(0);
+        $action_filtration_off->save();
     }
 
 }
@@ -593,6 +645,128 @@ class vigipoolCmd extends cmd {
                     $cmd->remove();
                 }
                 $eqlogic->AutoAddCmd($eqlogic);
+
+                break;
+
+            case "action_light_on":
+
+                // we retrieve the device's IP
+                $ip = $eqlogic->getConfiguration('param1');
+
+                // we retrieve the mqtt data
+                $data_all = $eqlogic->getAllData($ip);
+
+                // we retrieve the device ids
+                $results = array();
+                foreach ($data_all as $data) {
+                    $variable_name = "device_id";
+                    if (preg_match("/$variable_name/i", $data)) {
+                        $name_value = explode(" ", $data);
+                        array_push($results, $name_value[1]);
+                    }
+                }
+                $devices_id = $results;
+
+                // we send the command to all devices concerned by the action                
+                foreach ($devices_id as $device_id) {
+                    $is_device_using_light_state = false;
+                    if (strpos($device_id, "tild_") !== false) $is_device_using_light_state = true;
+                    if (strpos($device_id, "timeo_") !== false) $is_device_using_light_state = true;
+                    if (strpos($device_id, "anteam_") !== false) $is_device_using_light_state = true;
+                    if ($is_device_using_light_state) shell_exec("mosquitto_pub -t '$device_id/u8_w/light_state/info/desired' -h $ip -m '1'");
+                }
+
+                break;
+
+            case "action_light_off":
+
+                // we retrieve the device's IP
+                $ip = $eqlogic->getConfiguration('param1');
+
+                // we retrieve the mqtt data
+                $data_all = $eqlogic->getAllData($ip);
+
+                // we retrieve the device ids
+                $results = array();
+                foreach ($data_all as $data) {
+                    $variable_name = "device_id";
+                    if (preg_match("/$variable_name/i", $data)) {
+                        $name_value = explode(" ", $data);
+                        array_push($results, $name_value[1]);
+                    }
+                }
+                $devices_id = $results;
+
+                // we send the command to all devices concerned by the action                
+                foreach ($devices_id as $device_id) {
+                    $is_device_using_light_state = false;
+                    if (strpos($device_id, "tild_") !== false) $is_device_using_light_state = true;
+                    if (strpos($device_id, "timeo_") !== false) $is_device_using_light_state = true;
+                    if (strpos($device_id, "anteam_") !== false) $is_device_using_light_state = true;
+                    if ($is_device_using_light_state) shell_exec("mosquitto_pub -t '$device_id/u8_w/light_state/info/desired' -h $ip -m '0'");
+                }
+                
+                break;
+
+            case "action_filtration_on":
+
+                // we retrieve the device's IP
+                $ip = $eqlogic->getConfiguration('param1');
+
+                // we retrieve the mqtt data
+                $data_all = $eqlogic->getAllData($ip);
+
+                // we retrieve the device ids
+                $results = array();
+                foreach ($data_all as $data) {
+                    $variable_name = "device_id";
+                    if (preg_match("/$variable_name/i", $data)) {
+                        $name_value = explode(" ", $data);
+                        array_push($results, $name_value[1]);
+                    }
+                }
+                $devices_id = $results;
+
+                // we send the command to all devices concerned by the action                
+                foreach ($devices_id as $device_id) {
+                    $is_device_using_filtration_state = false;
+                    if (strpos($device_id, "tild_") !== false) $is_device_using_filtration_state = true;
+                    if (strpos($device_id, "timeo_") !== false) $is_device_using_filtration_state = true;
+                    if (strpos($device_id, "anteam_") !== false) $is_device_using_filtration_state = true;
+                    if ($is_device_using_filtration_state) shell_exec("mosquitto_pub -t '$device_id/u8_w/filt_state/info/desired' -h $ip -m '1'");
+                }
+
+                break;
+
+            case "action_filtration_off":
+
+                // we retrieve the device's IP
+                $ip = $eqlogic->getConfiguration('param1');
+
+                // we retrieve the mqtt data
+                $data_all = $eqlogic->getAllData($ip);
+
+                // we retrieve the device ids
+                $results = array();
+                foreach ($data_all as $data) {
+                    $variable_name = "device_id";
+                    if (preg_match("/$variable_name/i", $data)) {
+                        $name_value = explode(" ", $data);
+                        array_push($results, $name_value[1]);
+                    }
+                }
+                $devices_id = $results;
+
+                // we send the command to all devices concerned by the action                
+                foreach ($devices_id as $device_id) {
+                    $is_device_using_filtration_state = false;
+                    if (strpos($device_id, "tild_") !== false) $is_device_using_filtration_state = true;
+                    if (strpos($device_id, "timeo_") !== false) $is_device_using_filtration_state = true;
+                    if (strpos($device_id, "anteam_") !== false) $is_device_using_filtration_state = true;
+                    if ($is_device_using_filtration_state) shell_exec("mosquitto_pub -t '$device_id/u8_w/filt_state/info/desired' -h $ip -m '0'");
+                }
+                
+                break;
         }
     }
 
