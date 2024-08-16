@@ -4,8 +4,26 @@ function update_vigipool_modal_orp() {
 
     // Variables
 
-    var vol_max_24h = get_value_from_position(eq_modal, "vol_max_24h");
+    var oxeox_inject_on = get_value_from_eq(eq_modal, "inject_on", "oxeox");
+    var oxeox_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "oxeox");
+    var oxeox_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "oxeox");
+    var oxeox_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "oxeox");
 
+    var zelix_inject_on = get_value_from_eq(eq_modal, "inject_on", "zelix");
+    var zelix_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "zelix");
+    var zelix_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "zelix");
+    var zelix_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "zelix");
+
+    if (oxeox_inject_on != undefined) var inject_on = oxeox_inject_on;
+    if (oxeox_vol_24h_inject != undefined) var vol_24h_inject = oxeox_vol_24h_inject;
+    if (oxeox_vol_max_24h != undefined) var vol_max_24h = oxeox_vol_max_24h;
+    if (oxeox_vol_bac != undefined) var vol_bac = oxeox_vol_bac;
+
+    if (zelix_inject_on != undefined) var inject_on = zelix_inject_on;
+    if (zelix_vol_24h_inject != undefined) var vol_24h_inject = zelix_vol_24h_inject;
+    if (zelix_vol_max_24h != undefined) var vol_max_24h = zelix_vol_max_24h;
+    if (zelix_vol_bac != undefined) var vol_bac = zelix_vol_bac;
+    
     // Logs
 
     // console.log("vol_max_24h = " + vol_max_24h);
@@ -34,9 +52,6 @@ function update_vigipool_modal_orp() {
     $(`.vigipool_modal_source_orp_${to_ui}`).addClass("btn-primary");
 
     // vol_bac
-
-    var vol_bac = get_value_from_position(eq_modal, "vol_bac");
-    // console.log("vol_bac = " + vol_bac);
 
     for (var i = 0; i < 50; i++) {
         $(`.vigipool_modal_source_orp_${i}`).removeClass("btn-primary");

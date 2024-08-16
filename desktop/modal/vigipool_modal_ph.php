@@ -45,13 +45,33 @@ modal_top();
     var id_selected = $(".vigipool_device_id").eq(eq_modal).html();
     set_title(ip_selected, id_selected, "vigipool_modal_title");
 
+    var phileox_inject_on = get_value_from_eq(eq_modal, "inject_on", "phileox");
+    var phileox_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "phileox");
+    var phileox_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "phileox");
+    var phileox_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "phileox");
+
+    var daisyph_inject_on = get_value_from_eq(eq_modal, "inject_on", "daisyph");
+    var daisyph_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "daisyph");
+    var daisyph_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "daisyph");
+    var daisyph_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "daisyph");
+
+    if (phileox_inject_on != undefined) var inject_on = phileox_inject_on;
+    if (phileox_vol_24h_inject != undefined) var vol_24h_inject = phileox_vol_24h_inject;
+    if (phileox_vol_max_24h != undefined) var vol_max_24h = phileox_vol_max_24h;
+    if (phileox_vol_bac != undefined) var vol_bac = phileox_vol_bac;
+
+    if (daisyph_inject_on != undefined) var inject_on = daisyph_inject_on;
+    if (daisyph_vol_24h_inject != undefined) var vol_24h_inject = daisyph_vol_24h_inject;
+    if (daisyph_vol_max_24h != undefined) var vol_max_24h = daisyph_vol_max_24h;
+    if (daisyph_vol_bac != undefined) var vol_bac = daisyph_vol_bac;
+
+
     // Volume maximum injecté
 
     var id = "vol_max_24h";
-    var vol_max_24h = get_value_from_position(eq_modal, "vol_max_24h");
     var init_value = vol_max_24h * 10;
     var division = 10;
-    var unit = "L/Day";
+    var unit = "L/" + get_text("day");
     var disable = true;
     var type = "u16_w";
     var variable = "vol_max_24h";
@@ -63,8 +83,6 @@ modal_top();
     // Volume produit disponible
 
     var id = "vol_bac";
-    var vol_bac = get_value_from_position(eq_modal, "vol_bac");
-    console.log(vol_bac);
     var init_value = vol_bac / 100;
     var division = 1;
     var unit = "L";

@@ -22088,14 +22088,44 @@ function update_vigipool_ui_source_ph() {
 
     var max_devices = $(".vigipool_ipaddr").length;
 
+    // console.log("max_devices = " + max_devices);
+
     for (var i = 0, max = max_devices; i < max; i++) {
 
         var source_ph = get_value_from_position(i, "source_ph");
-        var inject_on = get_value_from_eq(i, "inject_on", "phileox");
-        var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "phileox");
+
+        var phileox_inject_on = get_value_from_eq(i, "inject_on", "phileox");
+        var phileox_vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "phileox");
+        var phileox_vol_max_24h = get_value_from_eq(i, "vol_max_24h", "phileox");
+        var phileox_vol_bac = get_value_from_eq(i, "vol_bac", "phileox");
+
+        var daisyph_inject_on = get_value_from_eq(i, "inject_on", "daisyph");
+        var daisyph_vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "daisyph");
+        var daisyph_vol_max_24h = get_value_from_eq(i, "vol_max_24h", "daisyph");
+        var daisyph_vol_bac = get_value_from_eq(i, "vol_bac", "daisyph");
+
+        if (phileox_inject_on != undefined) var inject_on = phileox_inject_on;
+        if (phileox_vol_24h_inject != undefined) var vol_24h_inject = phileox_vol_24h_inject;
+        if (phileox_vol_max_24h != undefined) var vol_max_24h = phileox_vol_max_24h;
+        if (phileox_vol_bac != undefined) var vol_bac = phileox_vol_bac;
+
+        if (daisyph_inject_on != undefined) var inject_on = daisyph_inject_on;
+        if (daisyph_vol_24h_inject != undefined) var vol_24h_inject = daisyph_vol_24h_inject;
+        if (daisyph_vol_max_24h != undefined) var vol_max_24h = daisyph_vol_max_24h;
+        if (daisyph_vol_bac != undefined) var vol_bac = daisyph_vol_bac;
 
         // console.log("source_ph = " + source_ph);
+        // console.log("phileox_inject_on = " + phileox_inject_on);
+        // console.log("phileox_vol_24h_inject = " + phileox_vol_24h_inject);
+        // console.log("phileox_vol_max_24h = " + phileox_vol_max_24h);
+        // console.log("daisyph_inject_on = " + daisyph_inject_on);
+        // console.log("daisyph_vol_24h_inject = " + daisyph_vol_24h_inject);
+        // console.log("daisyph_vol_max_24h = " + daisyph_vol_max_24h);
         // console.log("inject_on = " + inject_on);
+        // console.log("vol_24h_inject = " + vol_24h_inject);
+        // console.log("vol_max_24h = " + vol_max_24h);
+        // console.log("inject_on = " + inject_on);
+        // console.log("vol_24h_inject = " + vol_24h_inject);
         // console.log("vol_max_24h = " + vol_max_24h);
 
         if (!is_variable_available(i, "source_ph")) {
@@ -22125,8 +22155,6 @@ function update_vigipool_ui_source_ph() {
 
         $(".vigipool_ui_ph_vol_max_24h_label > p").eq(i).html(get_text("vol_24h_inject"));
 
-        var vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "phileox");
-        var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "phileox");
         $(".vigipool_ui_ph_vol_max_24h_state > p").eq(i).html(`${vol_24h_inject} L / ${vol_max_24h} L`);
     }
 }$(".vigipool_ui_source_orp_label > p").html(get_text("orp_regulation"));
@@ -22140,11 +22168,35 @@ function update_vigipool_ui_source_orp() {
     for (var i = 0, max = max_devices; i < max; i++) {
 
         var source_orp = get_value_from_position(i, "source_orp");
-        var inject_on = get_value_from_eq(i, "inject_on", "oxeox");
-        var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "oxeox");
+
+        var oxeox_inject_on = get_value_from_eq(i, "inject_on", "oxeox");
+        var oxeox_vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "oxeox");
+        var oxeox_vol_max_24h = get_value_from_eq(i, "vol_max_24h", "oxeox");
+
+        var zelix_inject_on = get_value_from_eq(i, "inject_on", "zelix");
+        var zelix_vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "zelix");
+        var zelix_vol_max_24h = get_value_from_eq(i, "vol_max_24h", "zelix");
+
+        if (oxeox_inject_on != undefined) var inject_on = oxeox_inject_on;
+        if (oxeox_vol_24h_inject != undefined) var vol_24h_inject = oxeox_vol_24h_inject;
+        if (oxeox_vol_max_24h != undefined) var vol_max_24h = oxeox_vol_max_24h;
+
+        if (zelix_inject_on != undefined) var inject_on = zelix_inject_on;
+        if (zelix_vol_24h_inject != undefined) var vol_24h_inject = zelix_vol_24h_inject;
+        if (zelix_vol_max_24h != undefined) var vol_max_24h = zelix_vol_max_24h;
 
         // console.log("source_orp = " + source_orp);
+        // console.log("oxeox_inject_on = " + oxeox_inject_on);
+        // console.log("oxeox_vol_24h_inject = " + oxeox_vol_24h_inject);
+        // console.log("oxeox_vol_max_24h = " + oxeox_vol_max_24h);
+        // console.log("zelix_inject_on = " + zelix_inject_on);
+        // console.log("zelix_vol_24h_inject = " + zelix_vol_24h_inject);
+        // console.log("zelix_vol_max_24h = " + zelix_vol_max_24h);
         // console.log("inject_on = " + inject_on);
+        // console.log("vol_24h_inject = " + vol_24h_inject);
+        // console.log("vol_max_24h = " + vol_max_24h);
+        // console.log("inject_on = " + inject_on);
+        // console.log("vol_24h_inject = " + vol_24h_inject);
         // console.log("vol_max_24h = " + vol_max_24h);
 
         if (is_variable_available(i, "source_orp") && is_variable_available(i, "inject_on")) {
@@ -22173,15 +22225,6 @@ function update_vigipool_ui_source_orp() {
         }
 
         $(".vigipool_ui_orp_vol_max_24h_label > p").eq(i).html(get_text("vol_24h_inject"));
-
-        var vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "oxeox");
-        if (vol_24h_inject == undefined) {
-            var vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "zelix");
-        }
-        var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "oxeox");
-        if (vol_max_24h == undefined) {
-            var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "zelix");
-        }
         $(".vigipool_ui_orp_vol_max_24h_state > p").eq(i).html(`${vol_24h_inject} L / ${vol_max_24h} L`);
     }
 }
@@ -23579,9 +23622,29 @@ function orp_to_position(orp) {
 
     // Variables
 
-    var mode_ph = get_value_from_position(eq_modal, "mode_ph");
-    var vol_max_24h = get_value_from_position(eq_modal, "vol_max_24h");
-    var vol_bac = get_value_from_position(eq_modal, "vol_bac");
+    var phileox_inject_on = get_value_from_eq(eq_modal, "inject_on", "phileox");
+    var phileox_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "phileox");
+    var phileox_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "phileox");
+    var phileox_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "phileox");
+    var phileox_mode_ph = get_value_from_eq(eq_modal, "mode_ph", "phileox");
+
+    var daisyph_inject_on = get_value_from_eq(eq_modal, "inject_on", "daisyph");
+    var daisyph_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "daisyph");
+    var daisyph_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "daisyph");
+    var daisyph_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "daisyph");
+    var daisyph_mode_ph = get_value_from_eq(eq_modal, "mode_ph", "daisyph");
+
+    if (phileox_inject_on != undefined) var inject_on = phileox_inject_on;
+    if (phileox_vol_24h_inject != undefined) var vol_24h_inject = phileox_vol_24h_inject;
+    if (phileox_vol_max_24h != undefined) var vol_max_24h = phileox_vol_max_24h;
+    if (phileox_vol_bac != undefined) var vol_bac = phileox_vol_bac;
+    if (phileox_mode_ph != undefined) var mode_ph = phileox_mode_ph;
+
+    if (daisyph_inject_on != undefined) var inject_on = daisyph_inject_on;
+    if (daisyph_vol_24h_inject != undefined) var vol_24h_inject = daisyph_vol_24h_inject;
+    if (daisyph_vol_max_24h != undefined) var vol_max_24h = daisyph_vol_max_24h;
+    if (daisyph_vol_bac != undefined) var vol_bac = daisyph_vol_bac;
+    if (daisyph_mode_ph != undefined) var mode_ph = daisyph_mode_ph;
 
     // Logs
 
@@ -23638,8 +23701,26 @@ function orp_to_position(orp) {
 
     // Variables
 
-    var vol_max_24h = get_value_from_position(eq_modal, "vol_max_24h");
+    var oxeox_inject_on = get_value_from_eq(eq_modal, "inject_on", "oxeox");
+    var oxeox_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "oxeox");
+    var oxeox_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "oxeox");
+    var oxeox_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "oxeox");
 
+    var zelix_inject_on = get_value_from_eq(eq_modal, "inject_on", "zelix");
+    var zelix_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "zelix");
+    var zelix_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "zelix");
+    var zelix_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "zelix");
+
+    if (oxeox_inject_on != undefined) var inject_on = oxeox_inject_on;
+    if (oxeox_vol_24h_inject != undefined) var vol_24h_inject = oxeox_vol_24h_inject;
+    if (oxeox_vol_max_24h != undefined) var vol_max_24h = oxeox_vol_max_24h;
+    if (oxeox_vol_bac != undefined) var vol_bac = oxeox_vol_bac;
+
+    if (zelix_inject_on != undefined) var inject_on = zelix_inject_on;
+    if (zelix_vol_24h_inject != undefined) var vol_24h_inject = zelix_vol_24h_inject;
+    if (zelix_vol_max_24h != undefined) var vol_max_24h = zelix_vol_max_24h;
+    if (zelix_vol_bac != undefined) var vol_bac = zelix_vol_bac;
+    
     // Logs
 
     // console.log("vol_max_24h = " + vol_max_24h);
@@ -23668,9 +23749,6 @@ function orp_to_position(orp) {
     $(`.vigipool_modal_source_orp_${to_ui}`).addClass("btn-primary");
 
     // vol_bac
-
-    var vol_bac = get_value_from_position(eq_modal, "vol_bac");
-    // console.log("vol_bac = " + vol_bac);
 
     for (var i = 0; i < 50; i++) {
         $(`.vigipool_modal_source_orp_${i}`).removeClass("btn-primary");

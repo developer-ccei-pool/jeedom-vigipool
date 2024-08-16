@@ -38,13 +38,33 @@ modal_top();
     var id_selected = $(".vigipool_device_id").eq(eq_modal).html();
     set_title(ip_selected, id_selected, "vigipool_modal_title");
 
+    var oxeox_inject_on = get_value_from_eq(eq_modal, "inject_on", "oxeox");
+    var oxeox_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "oxeox");
+    var oxeox_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "oxeox");
+    var oxeox_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "oxeox");
+
+    var zelix_inject_on = get_value_from_eq(eq_modal, "inject_on", "zelix");
+    var zelix_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "zelix");
+    var zelix_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "zelix");
+    var zelix_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "zelix");
+
+    if (oxeox_inject_on != undefined) var inject_on = oxeox_inject_on;
+    if (oxeox_vol_24h_inject != undefined) var vol_24h_inject = oxeox_vol_24h_inject;
+    if (oxeox_vol_max_24h != undefined) var vol_max_24h = oxeox_vol_max_24h;
+    if (oxeox_vol_bac != undefined) var vol_bac = oxeox_vol_bac;
+
+    if (zelix_inject_on != undefined) var inject_on = zelix_inject_on;
+    if (zelix_vol_24h_inject != undefined) var vol_24h_inject = zelix_vol_24h_inject;
+    if (zelix_vol_max_24h != undefined) var vol_max_24h = zelix_vol_max_24h;
+    if (zelix_vol_bac != undefined) var vol_bac = zelix_vol_bac;
+
+
     // Volume maximum injecté
 
     var id = "vol_max_24h";
-    var vol_max_24h = get_value_from_position(eq_modal, "vol_max_24h");
     var init_value = vol_max_24h * 10;
     var division = 10;
-    var unit = "L/Day";
+    var unit = "L/" + get_text("day");
     var disable = true;
     var type = "u16_w";
     var variable = "vol_max_24h";
@@ -56,8 +76,6 @@ modal_top();
     // Volume produit disponible
 
     var id = "vol_bac";
-    var vol_bac = get_value_from_position(eq_modal, "vol_bac");
-    console.log(vol_bac);
     var init_value = vol_bac / 100;
     var division = 1;
     var unit = "L";

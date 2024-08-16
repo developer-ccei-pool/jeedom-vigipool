@@ -9,11 +9,35 @@ function update_vigipool_ui_source_orp() {
     for (var i = 0, max = max_devices; i < max; i++) {
 
         var source_orp = get_value_from_position(i, "source_orp");
-        var inject_on = get_value_from_eq(i, "inject_on", "oxeox");
-        var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "oxeox");
+
+        var oxeox_inject_on = get_value_from_eq(i, "inject_on", "oxeox");
+        var oxeox_vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "oxeox");
+        var oxeox_vol_max_24h = get_value_from_eq(i, "vol_max_24h", "oxeox");
+
+        var zelix_inject_on = get_value_from_eq(i, "inject_on", "zelix");
+        var zelix_vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "zelix");
+        var zelix_vol_max_24h = get_value_from_eq(i, "vol_max_24h", "zelix");
+
+        if (oxeox_inject_on != undefined) var inject_on = oxeox_inject_on;
+        if (oxeox_vol_24h_inject != undefined) var vol_24h_inject = oxeox_vol_24h_inject;
+        if (oxeox_vol_max_24h != undefined) var vol_max_24h = oxeox_vol_max_24h;
+
+        if (zelix_inject_on != undefined) var inject_on = zelix_inject_on;
+        if (zelix_vol_24h_inject != undefined) var vol_24h_inject = zelix_vol_24h_inject;
+        if (zelix_vol_max_24h != undefined) var vol_max_24h = zelix_vol_max_24h;
 
         // console.log("source_orp = " + source_orp);
+        // console.log("oxeox_inject_on = " + oxeox_inject_on);
+        // console.log("oxeox_vol_24h_inject = " + oxeox_vol_24h_inject);
+        // console.log("oxeox_vol_max_24h = " + oxeox_vol_max_24h);
+        // console.log("zelix_inject_on = " + zelix_inject_on);
+        // console.log("zelix_vol_24h_inject = " + zelix_vol_24h_inject);
+        // console.log("zelix_vol_max_24h = " + zelix_vol_max_24h);
         // console.log("inject_on = " + inject_on);
+        // console.log("vol_24h_inject = " + vol_24h_inject);
+        // console.log("vol_max_24h = " + vol_max_24h);
+        // console.log("inject_on = " + inject_on);
+        // console.log("vol_24h_inject = " + vol_24h_inject);
         // console.log("vol_max_24h = " + vol_max_24h);
 
         if (is_variable_available(i, "source_orp") && is_variable_available(i, "inject_on")) {
@@ -42,15 +66,6 @@ function update_vigipool_ui_source_orp() {
         }
 
         $(".vigipool_ui_orp_vol_max_24h_label > p").eq(i).html(get_text("vol_24h_inject"));
-
-        var vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "oxeox");
-        if (vol_24h_inject == undefined) {
-            var vol_24h_inject = get_value_from_eq(i, "vol_24h_inject", "zelix");
-        }
-        var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "oxeox");
-        if (vol_max_24h == undefined) {
-            var vol_max_24h = get_value_from_eq(i, "vol_max_24h", "zelix");
-        }
         $(".vigipool_ui_orp_vol_max_24h_state > p").eq(i).html(`${vol_24h_inject} L / ${vol_max_24h} L`);
     }
 }

@@ -4,9 +4,29 @@ function update_vigipool_modal_ph() {
 
     // Variables
 
-    var mode_ph = get_value_from_position(eq_modal, "mode_ph");
-    var vol_max_24h = get_value_from_position(eq_modal, "vol_max_24h");
-    var vol_bac = get_value_from_position(eq_modal, "vol_bac");
+    var phileox_inject_on = get_value_from_eq(eq_modal, "inject_on", "phileox");
+    var phileox_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "phileox");
+    var phileox_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "phileox");
+    var phileox_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "phileox");
+    var phileox_mode_ph = get_value_from_eq(eq_modal, "mode_ph", "phileox");
+
+    var daisyph_inject_on = get_value_from_eq(eq_modal, "inject_on", "daisyph");
+    var daisyph_vol_24h_inject = get_value_from_eq(eq_modal, "vol_24h_inject", "daisyph");
+    var daisyph_vol_max_24h = get_value_from_eq(eq_modal, "vol_max_24h", "daisyph");
+    var daisyph_vol_bac = get_value_from_eq(eq_modal, "vol_bac", "daisyph");
+    var daisyph_mode_ph = get_value_from_eq(eq_modal, "mode_ph", "daisyph");
+
+    if (phileox_inject_on != undefined) var inject_on = phileox_inject_on;
+    if (phileox_vol_24h_inject != undefined) var vol_24h_inject = phileox_vol_24h_inject;
+    if (phileox_vol_max_24h != undefined) var vol_max_24h = phileox_vol_max_24h;
+    if (phileox_vol_bac != undefined) var vol_bac = phileox_vol_bac;
+    if (phileox_mode_ph != undefined) var mode_ph = phileox_mode_ph;
+
+    if (daisyph_inject_on != undefined) var inject_on = daisyph_inject_on;
+    if (daisyph_vol_24h_inject != undefined) var vol_24h_inject = daisyph_vol_24h_inject;
+    if (daisyph_vol_max_24h != undefined) var vol_max_24h = daisyph_vol_max_24h;
+    if (daisyph_vol_bac != undefined) var vol_bac = daisyph_vol_bac;
+    if (daisyph_mode_ph != undefined) var mode_ph = daisyph_mode_ph;
 
     // Logs
 
