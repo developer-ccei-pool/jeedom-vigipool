@@ -18222,14 +18222,14 @@ function update_vigipool_ui_x3_state() {
         // console.log(x3_color + " !== " + x3_fun_value);
     }
     if (x3_color === x3_ocean_value) {
-        console.log("x3_color === x3_ocean_value");
-        console.log("x3_color = " + x3_color);
-        console.log("x3_ocean_value = " + x3_ocean_value);
+        // console.log("x3_color === x3_ocean_value");
+        // console.log("x3_color = " + x3_color);
+        // console.log("x3_ocean_value = " + x3_ocean_value);
         $(x3_ocean_button).attr("src", x3_ocean_image_ok);
     } else {
-        console.log("x3_color !== x3_ocean_value");
-        console.log("x3_color = " + x3_color);
-        console.log("x3_ocean_value = " + x3_ocean_value);
+        // console.log("x3_color !== x3_ocean_value");
+        // console.log("x3_color = " + x3_color);
+        // console.log("x3_ocean_value = " + x3_ocean_value);
         $(x3_ocean_button).attr("src", x3_ocean_image);
     }
     if (x3_color === x3_flamme_value) {
@@ -18854,7 +18854,12 @@ function update_vigipool_ui_light_state() {
         } else {
 
             var light_state = parseInt(light_state);
-            var light_code = parseInt(light_code);
+            var light_code_parsed = parseInt(light_code);
+            
+            if (isNaN(light_code_parsed)) {
+                console.log(`WARNING: light_code is NaN, raw value: ${light_code}`);
+                light_code_parsed = 0;
+            }
 
             if (light_state === 0) {
                 $('.vigipool_ui_light_circle').eq(i).css("background-color", "#085a7d");
@@ -18862,7 +18867,7 @@ function update_vigipool_ui_light_state() {
                 $(".vigipool_ui_light_circle").eq(i).attr("src", "/plugins/vigipool/desktop/img/light_off.png");
             } else {
                 $(".vigipool_ui_light_circle").eq(i).attr("src", "/plugins/vigipool/desktop/img/light_white.png");
-                switch (light_code) {
+                switch (light_code_parsed) {
                     case 0:
                         $('.vigipool_ui_light_circle').eq(i).css("background-color", warm);
                         $('.vigipool_ui_light_circle').eq(i).css("background-image", "none");
